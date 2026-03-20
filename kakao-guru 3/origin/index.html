@@ -1,0 +1,2181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vietnam Cacao — kakao.guru</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:      #F7F2E8;
+  --paper:      #EDE6D6;
+  --warm:       #DDD4BF;
+  --cacao:      #3B1F0E;
+  --cacao-mid:  #6B3A1F;
+  --cacao-lt:   #9C6644;
+  --gold:       #B07D3A;
+  --amber:      #C8913A;
+  --tropical:   #2D5E3A;
+  --trop-lt:    #3D7A4E;
+  --trop-pale:  #EBF3ED;
+  --text:       #2A1A0E;
+  --muted:      #9C8878;
+  --border:     rgba(59,31,14,0.1);
+  --white:      #FDFAF4;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background: var(--white);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── ANNOUNCE BAR ─── */
+.announce {
+  background: var(--tropical); color: #fff;
+  text-align: center; padding: 0.55rem 1rem;
+  font-size: 0.78rem; letter-spacing: 0.06em; font-weight: 400;
+}
+.announce a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+
+/* ─── NAV ─── */
+nav {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(253,250,244,0.96);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.3s;
+}
+.nav-inner {
+  max-width: 1300px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3rem; height: 68px;
+}
+.nav-logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.35rem; font-weight: 300; letter-spacing: -0.02em;
+  color: var(--cacao); text-decoration: none; flex-shrink: 0;
+}
+.nav-logo .logo-dot { color: var(--tropical); }
+.nav-menu { display: flex; gap: 0; list-style: none; }
+.nav-item { position: relative; }
+.nav-item > a {
+  display: flex; align-items: center; gap: 0.3rem;
+  padding: 0 1.1rem; height: 68px;
+  font-size: 0.82rem; font-weight: 500; letter-spacing: 0.01em;
+  color: var(--text); text-decoration: none; transition: color 0.2s;
+}
+.nav-item > a:hover, .nav-item > a.active { color: var(--tropical); }
+.nav-item > a.active { border-bottom: 2px solid var(--tropical); }
+.nav-actions { display: flex; align-items: center; gap: 0.8rem; }
+.nav-icon-btn {
+  width: 38px; height: 38px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: none; border: none; cursor: pointer;
+  color: var(--text); transition: background 0.2s, color 0.2s; font-size: 1rem;
+}
+.nav-icon-btn:hover { background: var(--paper); color: var(--tropical); }
+.nav-shop-btn {
+  font-size: 0.8rem; font-weight: 600;
+  background: var(--tropical); color: #fff;
+  padding: 0.6rem 1.4rem; border-radius: 100px;
+  text-decoration: none; letter-spacing: 0.01em;
+  transition: background 0.2s, transform 0.2s;
+}
+.nav-shop-btn:hover { background: var(--trop-lt); transform: translateY(-1px); }
+
+.nav-chevron {
+  width: 10px; height: 10px; border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg); margin-top: -3px;
+  transition: transform 0.2s;
+}
+.nav-item:hover .nav-chevron { transform: rotate(-135deg); margin-top: 3px; }
+
+/* Dropdown */
+.dropdown {
+  position: absolute; top: 100%; left: 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--tropical);
+  min-width: 220px; padding: 1rem 0;
+  box-shadow: 0 20px 60px rgba(59,31,14,0.1);
+  opacity: 0; visibility: hidden; transform: translateY(8px);
+  transition: all 0.25s ease;
+  pointer-events: none;
+}
+.nav-item:hover .dropdown {
+  opacity: 1; visibility: visible; transform: translateY(0);
+  pointer-events: all;
+}
+.dropdown a {
+  display: block; padding: 0.6rem 1.5rem;
+  font-size: 0.82rem; color: var(--text); text-decoration: none;
+  transition: all 0.15s;
+}
+.dropdown a:hover { background: var(--trop-pale); color: var(--tropical); padding-left: 1.8rem; }
+.dropdown .sep {
+  height: 1px; background: var(--border); margin: 0.5rem 1.5rem;
+}
+.dropdown .dd-label {
+  padding: 0.4rem 1.5rem;
+  font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); font-weight: 500;
+}
+
+/* Wide dropdown for Story */
+.dropdown.wide {
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-width: 380px;
+}
+.dropdown.wide .dd-col { padding: 0.5rem 0; }
+
+/* Mega dropdown for Learn Health */
+.dropdown.mega-dropdown {
+  display: flex; gap: 0;
+  min-width: 580px; padding: 0;
+  left: 50%; transform: translateX(-50%) translateY(8px);
+}
+.nav-item:hover .dropdown.mega-dropdown {
+  transform: translateX(-50%) translateY(0);
+}
+.mega-col {
+  flex: 1; padding: 1.2rem 0 1.2rem;
+  border-right: 1px solid var(--border);
+}
+.mega-col:last-child { border-right: none; }
+.mega-col .dd-label { padding: 0.4rem 1.5rem 0.3rem; }
+.mega-col a { padding: 0.45rem 1.5rem; font-size: 0.8rem; }
+
+/* ─── BREADCRUMB ─── */
+.breadcrumb {
+  max-width: 1300px; margin: 0 auto;
+  padding: 1.2rem 3rem 0;
+  font-size: 0.74rem; color: var(--muted); letter-spacing: 0.04em;
+}
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--tropical); }
+.breadcrumb span { margin: 0 0.5rem; }
+
+/* ─── SHARED UTILITIES ─── */
+.sec-label {
+  display: inline-block;
+  font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--tropical); font-weight: 500; margin-bottom: 1.2rem;
+}
+.btn-cacao {
+  font-size: 0.85rem; font-weight: 600;
+  background: var(--cacao); color: var(--cream);
+  padding: 0.9rem 2.2rem; border-radius: 100px;
+  text-decoration: none; box-shadow: 0 4px 20px rgba(59,31,14,0.25);
+  transition: all 0.25s; display: inline-block;
+}
+.btn-cacao:hover { background: var(--cacao-mid); transform: translateY(-2px); }
+.btn-outline {
+  font-size: 0.85rem; font-weight: 400;
+  color: var(--cacao); text-decoration: none;
+  border-bottom: 1.5px solid var(--border); padding-bottom: 2px;
+  transition: border-color 0.2s, color 0.2s; display: inline-block;
+}
+.btn-outline:hover { color: var(--tropical); border-color: var(--tropical); }
+
+/* ─── HERO ─── */
+.page-hero {
+  background: var(--cacao);
+  padding: 6rem 3rem 0;
+  position: relative; overflow: hidden;
+  min-height: 72vh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+}
+.page-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(45,94,58,0.35) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 80%, rgba(176,125,58,0.2) 0%, transparent 50%);
+}
+/* Subtle grain texture */
+.page-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.4; pointer-events: none;
+}
+.hero-inner {
+  max-width: 1300px; margin: 0 auto; width: 100%;
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: end;
+  padding-bottom: 5rem;
+}
+.hero-text { padding-bottom: 1rem; }
+.hero-eyebrow {
+  font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(235,243,237,0.6); font-weight: 500; margin-bottom: 1.4rem;
+  display: flex; align-items: center; gap: 0.7rem;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block; width: 24px; height: 1px;
+  background: rgba(235,243,237,0.4);
+}
+.hero-h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(3rem, 5.5vw, 6.5rem);
+  font-weight: 200; line-height: 0.95;
+  letter-spacing: -0.04em; color: var(--cream);
+  opacity: 0; animation: fadeUp 0.9s 0.15s forwards;
+}
+.hero-h1 em { font-style: normal; font-weight: 600; color: var(--amber); }
+.hero-sub {
+  font-size: 1.05rem; line-height: 1.8; font-weight: 300;
+  color: rgba(247,242,232,0.65);
+  margin-top: 2rem; max-width: 440px;
+  opacity: 0; animation: fadeUp 0.9s 0.35s forwards;
+}
+.hero-tags {
+  display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem;
+  opacity: 0; animation: fadeUp 0.9s 0.5s forwards;
+}
+.hero-tag {
+  font-size: 0.72rem; font-weight: 400;
+  border: 1px solid rgba(247,242,232,0.2);
+  border-radius: 100px; padding: 0.3rem 0.85rem;
+  color: rgba(247,242,232,0.65);
+}
+
+/* Hero right — stat cards */
+.hero-stats {
+  display: flex; flex-direction: column; gap: 1rem;
+  opacity: 0; animation: fadeIn 1.1s 0.5s forwards;
+}
+.hstat {
+  background: rgba(247,242,232,0.06);
+  border: 1px solid rgba(247,242,232,0.12);
+  border-radius: 16px; padding: 1.4rem 1.8rem;
+  backdrop-filter: blur(10px);
+}
+.hstat-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.2rem; font-weight: 200;
+  color: var(--amber); letter-spacing: -0.04em; line-height: 1;
+}
+.hstat-label {
+  font-size: 0.78rem; font-weight: 300;
+  color: rgba(247,242,232,0.55); margin-top: 0.3rem; line-height: 1.5;
+}
+
+/* Hero bottom bar */
+.hero-bar {
+  border-top: 1px solid rgba(247,242,232,0.08);
+  position: relative; z-index: 1;
+}
+.hero-bar-inner {
+  max-width: 1300px; margin: 0 auto;
+  padding: 1.5rem 3rem;
+  display: flex; gap: 3rem; align-items: center;
+}
+.hbar-item {
+  font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(247,242,232,0.4); font-weight: 400;
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.hbar-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--tropical); }
+
+/* ─── INTRO PULL QUOTE ─── */
+.pullquote-sec {
+  max-width: 900px; margin: 0 auto;
+  padding: 6rem 3rem;
+  text-align: center;
+}
+.pq-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.6rem, 2.8vw, 2.6rem);
+  font-weight: 200; line-height: 1.45;
+  letter-spacing: -0.02em; color: var(--cacao);
+}
+.pq-text strong { font-weight: 500; color: var(--tropical); }
+.pq-divider {
+  width: 40px; height: 2px; background: var(--border);
+  margin: 2rem auto; border-radius: 2px;
+}
+.pq-source {
+  font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); font-weight: 400;
+}
+
+/* ─── TERROIR SECTION ─── */
+.terroir-sec {
+  background: var(--paper);
+  padding: 7rem 3rem;
+}
+.terroir-inner {
+  max-width: 1300px; margin: 0 auto;
+}
+.terroir-header {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: end; margin-bottom: 4rem;
+}
+.terroir-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-weight: 200; letter-spacing: -0.03em;
+  color: var(--cacao); line-height: 1.1;
+}
+.terroir-title strong { font-weight: 600; }
+.terroir-intro {
+  font-size: 0.95rem; line-height: 1.85;
+  font-weight: 300; color: var(--muted);
+}
+.terroir-intro strong { font-weight: 500; color: var(--text); }
+
+/* Climate cards grid */
+.climate-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem; margin-top: 3rem;
+}
+.ccard {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.8rem 1.4rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.ccard:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(59,31,14,0.08); }
+.ccard-icon { font-size: 1.6rem; margin-bottom: 1rem; display: block; }
+.ccard-label {
+  font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); font-weight: 500; margin-bottom: 0.5rem;
+}
+.ccard-val {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.6rem; font-weight: 200;
+  color: var(--cacao); letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.4rem;
+}
+.ccard-desc {
+  font-size: 0.78rem; line-height: 1.6; font-weight: 300; color: var(--muted);
+  margin-top: 0.5rem;
+}
+.ccard-impact {
+  font-size: 0.72rem; line-height: 1.55; font-style: italic;
+  color: var(--tropical); margin-top: 0.8rem; padding-top: 0.8rem;
+  border-top: 1px solid var(--border);
+}
+
+/* Variety badge */
+.variety-banner {
+  margin-top: 3.5rem;
+  background: var(--cacao);
+  border-radius: 16px; padding: 2.5rem 3rem;
+  display: flex; align-items: center; gap: 3rem;
+  position: relative; overflow: hidden;
+}
+.variety-banner::before {
+  content: '';
+  position: absolute; top: -40px; right: -40px;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: rgba(176,125,58,0.12);
+}
+.vb-label {
+  font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(247,242,232,0.45); font-weight: 500; margin-bottom: 0.5rem;
+}
+.vb-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem; font-weight: 200;
+  color: var(--cream); letter-spacing: -0.02em;
+}
+.vb-title strong { font-weight: 600; color: var(--amber); }
+.vb-divider { width: 1px; height: 60px; background: rgba(247,242,232,0.1); flex-shrink: 0; }
+.vb-text {
+  font-size: 0.9rem; line-height: 1.75; font-weight: 300;
+  color: rgba(247,242,232,0.6); max-width: 500px;
+}
+.vb-text strong { font-weight: 500; color: rgba(247,242,232,0.9); }
+
+/* ─── REGIONS / FLAVOR PROFILES ─── */
+.regions-sec {
+  max-width: 1300px; margin: 0 auto;
+  padding: 7rem 3rem;
+}
+.regions-header {
+  text-align: center; margin-bottom: 5rem;
+}
+.regions-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-weight: 200; letter-spacing: -0.03em;
+  color: var(--cacao); line-height: 1.1; margin-top: 0.8rem;
+}
+.regions-title strong { font-weight: 600; }
+.regions-sub {
+  font-size: 0.95rem; line-height: 1.8; font-weight: 300;
+  color: var(--muted); max-width: 560px; margin: 1rem auto 0;
+}
+
+/* Region comparison — 2 big cards */
+.region-pair {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2rem; margin-bottom: 2rem;
+}
+.rcard {
+  border-radius: 20px; overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.rcard:hover { transform: translateY(-4px); box-shadow: 0 30px 80px rgba(59,31,14,0.12); }
+
+.rcard-img {
+  height: 240px; position: relative; overflow: hidden;
+  display: flex; align-items: flex-end;
+}
+.rcard-img-highlands {
+  background: linear-gradient(160deg, #2A4A30 0%, #1A3520 40%, #3B1F0E 100%);
+}
+.rcard-img-delta {
+  background: linear-gradient(160deg, #1C3B4A 0%, #2D5E3A 50%, #4A7A3A 100%);
+}
+/* Decorative terrain SVG inside card */
+.rcard-terrain {
+  position: absolute; bottom: 0; left: 0; right: 0;
+}
+.rcard-badge {
+  position: absolute; top: 1.2rem; left: 1.2rem;
+  background: rgba(253,250,244,0.12); backdrop-filter: blur(10px);
+  border: 1px solid rgba(253,250,244,0.2);
+  border-radius: 100px; padding: 0.3rem 0.9rem;
+  font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(255,255,255,0.8); font-weight: 500;
+}
+.rcard-region-name {
+  position: absolute; bottom: 1.5rem; left: 1.5rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem; font-weight: 300; color: #fff;
+  letter-spacing: -0.02em;
+}
+.rcard-region-name strong { font-weight: 600; }
+
+.rcard-body { padding: 2rem; background: var(--white); }
+.rcard-type {
+  font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); font-weight: 500; margin-bottom: 0.6rem;
+}
+
+/* Radar chart */
+.radar-wrap {
+  display: flex; flex-direction: column; align-items: center;
+  margin: 1.4rem 0 0.5rem;
+}
+.radar-chart {
+  width: 180px; height: 180px; overflow: visible;
+}
+.radar-area {
+  transition: points 0s; /* JS handles animation via setAttribute */
+}
+.radar-label {
+  font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); font-weight: 500; margin-top: 0.3rem;
+}
+
+.rcard-notes {
+  display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.2rem;
+}
+.rnote {
+  font-size: 0.7rem; font-weight: 500;
+  background: var(--trop-pale); color: var(--tropical);
+  border: 1px solid rgba(45,94,58,0.15); border-radius: 100px;
+  padding: 0.2rem 0.7rem;
+}
+.rcard:nth-child(2) .rnote {
+  background: rgba(200,145,58,0.1); color: var(--amber);
+  border-color: rgba(200,145,58,0.2);
+}
+
+.rcard-desc {
+  font-size: 0.85rem; line-height: 1.75; font-weight: 300;
+  color: var(--muted); margin-top: 1.2rem;
+}
+.rcard-cta {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  margin-top: 1.5rem; font-size: 0.82rem; font-weight: 500;
+  color: var(--tropical); text-decoration: none;
+  border-bottom: 1px solid rgba(45,94,58,0.3); padding-bottom: 2px;
+  transition: gap 0.2s, border-color 0.2s;
+}
+.rcard-cta:hover { gap: 0.7rem; border-color: var(--tropical); }
+.rcard:nth-child(2) .rcard-cta { color: var(--amber); border-color: rgba(200,145,58,0.3); }
+.rcard:nth-child(2) .rcard-cta:hover { border-color: var(--amber); }
+
+/* Other regions — smaller cards */
+.other-regions {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2rem; margin-top: 2rem;
+}
+.ocard {
+  border: 1px solid var(--border); border-radius: 16px;
+  padding: 2rem; background: var(--cream);
+  display: flex; gap: 1.5rem; align-items: flex-start;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.ocard:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(59,31,14,0.08); }
+.ocard-dot {
+  width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+}
+.ocard:nth-child(1) .ocard-dot { background: rgba(45,94,58,0.12); }
+.ocard:nth-child(2) .ocard-dot { background: rgba(176,125,58,0.12); }
+.ocard-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem; font-weight: 400; color: var(--cacao);
+  letter-spacing: -0.01em; margin-bottom: 0.5rem;
+}
+.ocard-subtitle {
+  font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); font-weight: 500; margin-bottom: 0.7rem;
+}
+.ocard-desc {
+  font-size: 0.85rem; line-height: 1.7; font-weight: 300; color: var(--muted);
+}
+.ocard-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
+.otag {
+  font-size: 0.68rem; font-weight: 500;
+  background: var(--white); color: var(--cacao-lt);
+  border: 1px solid var(--border); border-radius: 100px; padding: 0.2rem 0.65rem;
+}
+
+/* ─── FERMENTATION SECTION ─── */
+.ferm-sec {
+  background: var(--cacao);
+  padding: 7rem 3rem;
+  position: relative; overflow: hidden;
+}
+.ferm-sec::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(45,94,58,0.2) 0%, transparent 55%);
+}
+.ferm-inner {
+  max-width: 1300px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 6rem; align-items: center;
+  position: relative; z-index: 1;
+}
+.ferm-left .sec-label { color: rgba(235,243,237,0.6); }
+.ferm-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 200; letter-spacing: -0.03em;
+  color: var(--cream); line-height: 1.1; margin-bottom: 1.5rem;
+}
+.ferm-title strong { font-weight: 600; color: var(--amber); }
+.ferm-text {
+  font-size: 0.92rem; line-height: 1.85; font-weight: 300;
+  color: rgba(247,242,232,0.6);
+}
+.ferm-text strong { font-weight: 500; color: rgba(247,242,232,0.9); }
+.ferm-text + .ferm-text { margin-top: 1rem; }
+
+/* Fermentation timeline */
+.ferm-timeline { display: flex; flex-direction: column; gap: 0; }
+.ferm-day {
+  display: flex; gap: 1.5rem; align-items: flex-start;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid rgba(247,242,232,0.07);
+  position: relative;
+}
+.ferm-day:last-child { border-bottom: none; }
+.fd-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--amber); width: 50px; flex-shrink: 0; padding-top: 2px;
+}
+.fd-bar {
+  width: 3px; min-height: 40px; border-radius: 2px;
+  background: rgba(247,242,232,0.08); flex-shrink: 0;
+  position: relative; overflow: hidden;
+}
+.fd-bar-fill {
+  position: absolute; top: 0; left: 0; right: 0;
+  border-radius: 2px; background: var(--amber);
+  transition: height 1.5s ease;
+}
+.fd-content { flex: 1; }
+.fd-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem; font-weight: 400; color: var(--cream); margin-bottom: 0.3rem;
+}
+.fd-desc {
+  font-size: 0.8rem; line-height: 1.65; font-weight: 300;
+  color: rgba(247,242,232,0.5);
+}
+.fd-result {
+  display: inline-block; margin-top: 0.5rem;
+  font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em;
+  color: var(--tropical); background: rgba(45,94,58,0.15);
+  border-radius: 100px; padding: 0.2rem 0.7rem;
+}
+
+/* ─── WHY IT MATTERS ─── */
+.matters-sec {
+  background: var(--cream); padding: 7rem 3rem;
+}
+.matters-inner {
+  max-width: 1300px; margin: 0 auto;
+}
+.matters-header { text-align: center; margin-bottom: 4rem; }
+.matters-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 200; letter-spacing: -0.03em;
+  color: var(--cacao); line-height: 1.1; margin-top: 0.8rem;
+}
+.matters-title strong { font-weight: 600; }
+.matters-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.mcard {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 16px; padding: 2.2rem 1.8rem;
+  transition: transform 0.3s;
+}
+.mcard:hover { transform: translateY(-4px); }
+.mcard-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 3rem; font-weight: 200; line-height: 1;
+  color: var(--border); letter-spacing: -0.04em; margin-bottom: 1rem;
+}
+.mcard-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem; font-weight: 400; color: var(--cacao); margin-bottom: 0.8rem;
+}
+.mcard-text {
+  font-size: 0.85rem; line-height: 1.8; font-weight: 300; color: var(--muted);
+}
+.mcard-text strong { font-weight: 500; color: var(--text); }
+
+/* ─── CTA SECTION ─── */
+.cta-sec {
+  background: var(--tropical); padding: 6rem 3rem;
+  text-align: center; position: relative; overflow: hidden;
+}
+.cta-sec::before {
+  content: '';
+  position: absolute; top: -80px; right: -80px;
+  width: 400px; height: 400px; border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+}
+.cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+.cta-label {
+  font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(235,243,237,0.6); font-weight: 500;
+  margin-bottom: 1.2rem; display: block;
+}
+.cta-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  font-weight: 200; letter-spacing: -0.03em;
+  color: #fff; line-height: 1.05;
+}
+.cta-title strong { font-weight: 600; }
+.cta-sub {
+  font-size: 0.95rem; line-height: 1.75; font-weight: 300;
+  color: rgba(235,243,237,0.7);
+  margin: 1.5rem auto 2.5rem;
+}
+.cta-btns { display: flex; gap: 1rem; justify-content: center; }
+/* ─── CTA COLOR SYSTEM — Primary=Amber · Secondary=Cacao · Ghost=underline ─── */
+.btn-cream {
+  font-size: 0.85rem; font-weight: 600;
+  background: var(--amber); color: var(--cacao);
+  padding: 0.9rem 2.2rem; border-radius: 100px;
+  text-decoration: none; transition: all 0.25s;
+  box-shadow: 0 4px 20px rgba(200,145,58,0.3);
+}
+.btn-cream:hover { background: #d9a040; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(200,145,58,0.4); }
+.btn-ghost {
+  font-size: 0.85rem; font-weight: 400;
+  color: rgba(247,242,232,0.75); text-decoration: none;
+  border-bottom: 1px solid rgba(247,242,232,0.3);
+  padding: 0 0 2px; transition: color 0.2s, border-color 0.2s;
+}
+.btn-ghost:hover { color: #fff; border-color: rgba(247,242,232,0.7); }
+
+/* ─── FOOTER ─── */
+footer { background: var(--white); border-top: 1px solid var(--border); }
+.footer-top {
+  max-width: 1300px; margin: 0 auto;
+  padding: 4rem 3rem 3rem;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 3rem;
+}
+.footer-logo-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem; font-weight: 300;
+  letter-spacing: -0.02em; color: var(--cacao);
+}
+.footer-logo-text .dot { color: var(--tropical); }
+.footer-tagline {
+  font-size: 0.8rem; line-height: 1.7; color: var(--muted);
+  font-weight: 300; margin-top: 0.8rem; max-width: 220px;
+}
+.footer-col-title {
+  font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); font-weight: 500; margin-bottom: 1rem;
+}
+.footer-col a {
+  display: block; font-size: 0.82rem; color: var(--text);
+  text-decoration: none; padding: 0.3rem 0; transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--tropical); }
+.footer-bottom {
+  max-width: 1300px; margin: 0 auto;
+  padding: 1.5rem 3rem; border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.footer-copy { font-size: 0.74rem; color: var(--muted); font-weight: 300; }
+.footer-socials { display: flex; gap: 0.5rem; }
+.social-btn {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.68rem; color: var(--muted); text-decoration: none;
+  transition: all 0.2s; font-weight: 500; text-transform: uppercase;
+}
+.social-btn:hover { border-color: var(--tropical); color: var(--tropical); }
+
+/* ─── HERO VALUE PROP + CTA ─── */
+.hero-micro-tagline {
+  font-size: 0.82rem; letter-spacing: 0.04em;
+  color: var(--amber); font-weight: 500;
+  margin-top: 1.4rem; margin-bottom: 0.5rem;
+  opacity: 0; animation: fadeUp 0.9s 0.28s forwards;
+}
+.hero-value-prop {
+  font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase;
+  color: rgba(235,243,237,0.4); font-weight: 400;
+  margin-bottom: 1rem;
+}
+.hero-cta-row {
+  display: flex; gap: 1rem; align-items: center;
+  margin-top: 2rem; margin-bottom: 1.5rem;
+  opacity: 0; animation: fadeUp 0.9s 0.55s forwards;
+}
+.btn-hero-primary {
+  font-size: 0.88rem; font-weight: 600;
+  background: var(--amber); color: var(--cacao);
+  padding: 0.9rem 2rem; border-radius: 100px;
+  text-decoration: none;
+  box-shadow: 0 4px 24px rgba(200,145,58,0.35);
+  transition: all 0.25s;
+}
+.btn-hero-primary:hover { background: #d9a040; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(200,145,58,0.4); }
+.btn-hero-ghost {
+  font-size: 0.85rem; font-weight: 400;
+  color: rgba(247,242,232,0.7); text-decoration: none;
+  border-bottom: 1px solid rgba(247,242,232,0.25);
+  padding-bottom: 2px; transition: color 0.2s, border-color 0.2s;
+}
+.btn-hero-ghost:hover { color: rgba(247,242,232,1); border-color: rgba(247,242,232,0.6); }
+
+/* ─── RCARD EXPAND HINT ─── */
+.rcard-expand-hint {
+  position: absolute; top: 1.2rem; right: 1.2rem;
+  font-size: 0.68rem; letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.55); font-weight: 400;
+  background: rgba(0,0,0,0.15); backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 100px; padding: 0.25rem 0.7rem;
+  transition: all 0.2s;
+}
+.rcard:hover .rcard-expand-hint { color: rgba(255,255,255,0.9); background: rgba(0,0,0,0.25); }
+
+/* ─── RADAR CHART ─── */
+.radar-wrap {
+  margin: 1.2rem 0 0.8rem;
+  display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+}
+.radar-chart { width: 160px; height: 160px; }
+.radar-area { transition: all 1.2s cubic-bezier(0.34, 1.56, 0.64, 1); }
+.radar-label {
+  font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); font-weight: 500;
+}
+
+/* ─── INLINE FUNNEL CTA (between sections) ─── */
+.funnel-nudge {
+  background: var(--trop-pale);
+  border: 1px solid rgba(45,94,58,0.15);
+  border-radius: 14px; padding: 1.2rem 1.8rem;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; margin-top: 3rem;
+}
+.fn-text { font-size: 0.88rem; font-weight: 400; color: var(--cacao); }
+.fn-text span { font-weight: 300; color: var(--muted); font-size: 0.82rem; display: block; margin-top: 0.15rem; }
+.fn-btn {
+  font-size: 0.82rem; font-weight: 600;
+  background: var(--amber); color: var(--cacao);
+  padding: 0.65rem 1.5rem; border-radius: 100px;
+  text-decoration: none; white-space: nowrap;
+  transition: all 0.2s; flex-shrink: 0;
+}
+.fn-btn:hover { background: #d9a040; transform: translateY(-1px); }
+
+/* ─── MODAL ─── */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 500;
+  background: rgba(30,14,5,0.7); backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  padding: 2rem;
+}
+.modal-overlay.open { opacity: 1; visibility: visible; }
+.modal-box {
+  background: var(--white); border-radius: 24px;
+  max-width: 680px; width: 100%;
+  max-height: 88vh; overflow-y: auto;
+  transform: translateY(20px) scale(0.98);
+  transition: transform 0.35s cubic-bezier(0.34, 1.3, 0.64, 1);
+  box-shadow: 0 40px 100px rgba(30,14,5,0.35);
+}
+.modal-overlay.open .modal-box { transform: translateY(0) scale(1); }
+.modal-header {
+  padding: 2rem 2rem 0;
+  display: flex; align-items: flex-start; justify-content: space-between;
+}
+.modal-close {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--paper); border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-size: 1.1rem;
+  transition: background 0.2s; flex-shrink: 0;
+}
+.modal-close:hover { background: var(--warm); color: var(--cacao); }
+.modal-img {
+  height: 200px; margin: 1.2rem 2rem 0;
+  border-radius: 14px; overflow: hidden;
+}
+.modal-img-highlands { background: linear-gradient(160deg, #2A4A30 0%, #1A3520 40%, #3B1F0E 100%); }
+.modal-img-delta { background: linear-gradient(160deg, #1C3B4A 0%, #2D5E3A 50%, #4A7A3A 100%); }
+.modal-body { padding: 1.5rem 2rem 2rem; }
+.modal-region-type {
+  font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); font-weight: 500; margin-bottom: 0.5rem;
+}
+.modal-region-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem; font-weight: 200; letter-spacing: -0.03em;
+  color: var(--cacao); margin-bottom: 1.2rem; line-height: 1;
+}
+.modal-region-name strong { font-weight: 600; }
+.modal-detail-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;
+}
+.mdg-item { background: var(--paper); border-radius: 10px; padding: 0.9rem 1rem; }
+.mdg-label {
+  font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); font-weight: 500; margin-bottom: 0.3rem;
+}
+.mdg-val { font-size: 0.9rem; font-weight: 500; color: var(--cacao); }
+.modal-desc {
+  font-size: 0.88rem; line-height: 1.8; font-weight: 300;
+  color: var(--muted); margin-bottom: 1.5rem;
+}
+.modal-flavor-notes { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.8rem; }
+.modal-cta {
+  display: block; text-align: center;
+  font-size: 0.88rem; font-weight: 600;
+  background: var(--amber); color: var(--cacao);
+  padding: 0.95rem; border-radius: 100px;
+  text-decoration: none; transition: all 0.25s;
+  box-shadow: 0 4px 20px rgba(200,145,58,0.3);
+}
+.modal-cta:hover { background: #d9a040; transform: translateY(-2px); }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.reveal {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+.d1 { transition-delay: 0.05s; }
+.d2 { transition-delay: 0.12s; }
+.d3 { transition-delay: 0.19s; }
+.d4 { transition-delay: 0.26s; }
+
+/* ─── CACAO VIDEO ─── */
+.cacao-video {
+  position: relative;
+  width: 100%;
+  margin: 60px 0 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(59,31,14,0.2);
+}
+.cacao-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.05) 0%,
+    rgba(0,0,0,0.15) 60%,
+    rgba(59,31,14,0.35) 100%
+  );
+  pointer-events: none;
+}
+
+/* ─── STICKY SIDE CTA ─── */
+.sticky-cta {
+  position: fixed; right: 0; top: 50%; transform: translateY(-50%);
+  z-index: 300;
+  display: flex; flex-direction: column;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.4s, transform 0.4s;
+  transform: translateY(-50%) translateX(4px);
+}
+.sticky-cta.visible {
+  opacity: 1; pointer-events: all;
+  transform: translateY(-50%) translateX(0);
+}
+.scta-tab {
+  writing-mode: vertical-rl; text-orientation: mixed;
+  background: var(--cacao); color: var(--cream);
+  font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 1rem 0.6rem;
+  border-radius: 8px 0 0 0;
+  cursor: default;
+}
+.scta-panel {
+  background: var(--white);
+  border: 1px solid var(--border); border-right: none;
+  border-radius: 12px 0 0 12px;
+  box-shadow: -8px 0 40px rgba(59,31,14,0.12);
+  padding: 1.2rem 1rem; width: 160px;
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.scta-label {
+  font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); font-weight: 500; margin-bottom: 0.2rem;
+}
+.scta-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem; font-weight: 300; color: var(--cacao);
+  letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 0.5rem;
+}
+.scta-btn {
+  display: block; text-align: center;
+  font-size: 0.75rem; font-weight: 600;
+  background: var(--cacao); color: var(--cream);
+  padding: 0.55rem 0.8rem; border-radius: 100px;
+  text-decoration: none; transition: all 0.2s; margin-bottom: 0.3rem;
+}
+.scta-btn:hover { background: var(--cacao-mid); }
+.scta-btn.btn-amber {
+  background: var(--amber); color: var(--cacao);
+}
+.scta-btn.btn-amber:hover { background: #d9a040; }
+.scta-btn.btn-ghost-sm {
+  background: none; color: var(--muted);
+  border: 1px solid var(--border);
+  font-weight: 400; font-size: 0.7rem;
+}
+.scta-btn.btn-ghost-sm:hover { border-color: var(--cacao-lt); color: var(--cacao); }
+.scta-divider { height: 1px; background: var(--border); margin: 0.2rem 0; }
+@media (max-width: 1024px) { .sticky-cta { display: none; } }
+
+/* ─── WHAT THIS MEANS FOR YOUR CUP ─── */
+.cup-sec {
+  background: var(--cacao); padding: 7rem 3rem;
+  position: relative; overflow: hidden;
+}
+.cup-sec::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 15% 50%, rgba(200,145,58,0.12) 0%, transparent 50%),
+              radial-gradient(ellipse at 85% 20%, rgba(45,94,58,0.2) 0%, transparent 45%);
+}
+.cup-inner {
+  max-width: 1300px; margin: 0 auto; position: relative; z-index: 1;
+}
+.cup-header { text-align: center; margin-bottom: 4rem; }
+.cup-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-weight: 200; letter-spacing: -0.03em;
+  color: var(--cream); line-height: 1.1; margin-top: 0.8rem;
+}
+.cup-title strong { font-weight: 600; color: var(--amber); }
+.cup-sub {
+  font-size: 0.9rem; line-height: 1.75; font-weight: 300;
+  color: rgba(247,242,232,0.5); max-width: 480px; margin: 1rem auto 0;
+}
+.cup-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+}
+.cup-card {
+  background: rgba(247,242,232,0.05);
+  border: 1px solid rgba(247,242,232,0.1);
+  border-radius: 16px; padding: 2rem;
+  transition: background 0.3s, transform 0.3s;
+}
+.cup-card:hover {
+  background: rgba(247,242,232,0.08);
+  transform: translateY(-3px);
+}
+.cup-card-icon { font-size: 1.8rem; margin-bottom: 1.2rem; display: block; }
+.cup-card-context {
+  font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(235,243,237,0.4); font-weight: 500; margin-bottom: 0.4rem;
+}
+.cup-card-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem; font-weight: 400; color: var(--cream);
+  margin-bottom: 0.8rem; line-height: 1.25;
+}
+.cup-card-desc {
+  font-size: 0.82rem; line-height: 1.75; font-weight: 300;
+  color: rgba(247,242,232,0.5);
+}
+.cup-card-desc strong { font-weight: 500; color: rgba(247,242,232,0.85); }
+.cup-card-origin {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  margin-top: 1rem; font-size: 0.68rem; font-weight: 500;
+  color: var(--amber); letter-spacing: 0.06em;
+}
+.cup-card-origin::before {
+  content: ''; width: 16px; height: 1px; background: var(--amber); opacity: 0.5;
+}
+
+/* Region cards — 4-part redesign */
+.rcard-meta-row {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0.6rem; margin: 1rem 0 1.2rem;
+}
+.rcard-meta-item {
+  background: var(--paper); border-radius: 8px; padding: 0.6rem 0.7rem;
+}
+.rcard-meta-label {
+  font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); font-weight: 500; margin-bottom: 0.2rem;
+}
+.rcard-meta-val {
+  font-size: 0.8rem; font-weight: 500; color: var(--cacao);
+}
+.rcard-use {
+  font-size: 0.72rem; font-weight: 400; color: var(--muted);
+  margin-top: 0.8rem; padding: 0.7rem 0.9rem;
+  background: var(--cream); border-radius: 8px; border-left: 3px solid var(--tropical);
+  line-height: 1.5;
+}
+.rcard:nth-child(2) .rcard-use { border-left-color: var(--amber); }
+
+/* Fermentation heat curve */
+.ferm-curve-wrap {
+  margin-top: 2rem; background: rgba(247,242,232,0.04);
+  border: 1px solid rgba(247,242,232,0.1);
+  border-radius: 14px; padding: 1.5rem;
+}
+.ferm-curve-label {
+  font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(247,242,232,0.3); font-weight: 500; margin-bottom: 1rem;
+}
+.ferm-curve-svg { width: 100%; overflow: visible; }
+.heat-path {
+  fill: none; stroke: var(--amber); stroke-width: 2;
+  stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 400; stroke-dashoffset: 400;
+  transition: stroke-dashoffset 2s ease 0.3s;
+}
+.heat-path.animated { stroke-dashoffset: 0; }
+.heat-area {
+  opacity: 0; transition: opacity 1s ease 0.8s;
+}
+.heat-area.animated { opacity: 1; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-stats { flex-direction: row; flex-wrap: wrap; }
+  .hstat { flex: 1; min-width: 160px; }
+  .terroir-header { grid-template-columns: 1fr; gap: 1.5rem; }
+  .climate-grid { grid-template-columns: repeat(2, 1fr); }
+  .variety-banner { flex-direction: column; gap: 1.5rem; }
+  .vb-divider { width: 60px; height: 1px; }
+  .region-pair, .other-regions { grid-template-columns: 1fr; }
+  .ferm-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .matters-grid { grid-template-columns: 1fr 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .cup-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .nav-inner { padding: 0 1.5rem; }
+  .nav-menu { display: none; }
+  .page-hero { padding: 4rem 1.5rem 0; }
+  .hero-bar-inner { padding: 1.2rem 1.5rem; flex-wrap: wrap; gap: 1rem; }
+  .pullquote-sec, .terroir-sec, .regions-sec,
+  .ferm-sec, .matters-sec, .cta-sec, .cup-sec { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .climate-grid { grid-template-columns: 1fr; }
+  .matters-grid { grid-template-columns: 1fr; }
+  .cup-grid { grid-template-columns: 1fr; }
+  .cta-btns { flex-direction: column; align-items: center; }
+  .footer-top { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+  .footer-bottom { padding: 1.2rem 1.5rem; flex-direction: column; gap: 1rem; }
+  .breadcrumb { padding: 1rem 1.5rem 0; }
+  .rcard-meta-row { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCE BAR -->
+<div class="announce">
+  Free shipping on orders over €60 &nbsp;·&nbsp; Direct from Vietnam &nbsp;·&nbsp; <a href="#contact">Contact Sales →</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">kakao<span class="logo-dot">.</span>guru</a>
+    <ul class="nav-menu">
+
+      <!-- SHOP -->
+      <li class="nav-item">
+        <a href="/shop/">Products <span class="nav-chevron"></span></a>
+        <div class="dropdown">
+          <div class="dd-label">Our Products</div>
+          <a href="/shop/">250g Ceremonial Cacao Block</a>
+          <a href="/shop/">500g Ceremonial Cacao Block</a>
+          <div class="sep"></div>
+          <a href="/shop/">→ View All Products</a>
+        </div>
+      </li>
+
+      <!-- STORY -->
+      <li class="nav-item">
+        <a href="/origin/">Story <span class="nav-chevron"></span></a>
+        <div class="dropdown">
+            <div class="dd-label">Our Story</div>
+            <a href="/origin/">About Us</a>
+            <a href="/origin/">Vietnam Cacao</a>
+            <div class="sep"></div>
+            <div class="dd-label">Sourcing</div>
+            <a href="/trace/">QR Traceability</a>
+        </div>
+      </li>
+
+      <!-- LEARN -->
+      <li class="nav-item">
+        <a href="/learn/ceremonial-cacao-101/">Learn <span class="nav-chevron"></span></a>
+        <div class="dropdown">
+          <a href="/learn/ceremonial-cacao-101/">Ceremonial Cacao 101</a>
+          <a href="/learn/ceremonial-cacao-101/">What is Ceremonial Cacao?</a>
+          <a href="/learn/superfood/">Why Cacao is a Superfood</a>
+          <a href="/learn/cacao-vs-coffee/">Cacao vs Coffee</a>
+          <a href="/learn/cacao-vs-chocolate/">Cacao vs Chocolate</a>
+          <a href="/learn/ceremonial-vs-powder/">Ceremonial Cacao vs Cacao Powder</a>
+          <div class="sep"></div>
+          <a href="/#ritual">Recipes</a>
+        </div>
+      </li>
+
+      <!-- HEALTH -->
+      <li class="nav-item">
+        <a href="/#science">Health <span class="nav-chevron"></span></a>
+        <div class="dropdown mega-dropdown">
+          <div class="mega-col">
+            <div class="dd-label">Wellness</div>
+            <a href="/#science">Reduce or Replace Coffee</a>
+            <a href="/#science">Cacao &amp; Stress Regulation</a>
+            <a href="/#science">Magnesium &amp; Sleep</a>
+            <a href="/#science">Cacao &amp; Emotional Wellbeing</a>
+            <a href="/#science">High in Flavonoids</a>
+            <a href="/#science">Emotional Wellbeing</a>
+          </div>
+          <div class="mega-col">
+            <div class="dd-label">Biohacking</div>
+            <a href="/#science">Theobromine Benefits</a>
+            <a href="/#science">Cacao &amp; Focus</a>
+            <a href="/#science">Antioxidant Power</a>
+            <a href="/#science">Longevity &amp; Anti-Ageing</a>
+            <a href="/#science">Gut Microbiome</a>
+            <a href="/#science">Stress &amp; Mood Support</a>
+            <a href="/#science">Heart Health</a>
+            <a href="/#science">Neuroplasticity</a>
+            <a href="/#science">Nitric Oxide &amp; Circulation</a>
+            <a href="/#science">Metabolic Health</a>
+            <a href="/#science">Cognitive Performance</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- RITUALS -->
+      <li class="nav-item">
+        <a href="/#ritual">Rituals <span class="nav-chevron"></span></a>
+        <div class="dropdown">
+          <a href="/#ritual">Morning Ritual</a>
+          <a href="/#ritual">Evening Ritual</a>
+          <a href="/#ritual">Latte Recipes</a>
+          <a href="/#ritual">Mindful Cacao Practice</a>
+        </div>
+      </li>
+
+      <!-- ABOUT / FAQ -->
+      <li class="nav-item">
+        <a href="/#faq">About <span class="nav-chevron"></span></a>
+        <div class="dropdown">
+          <a href="/origin/">About kakao.guru</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/#faq">Contact</a>
+        </div>
+      </li>
+
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" title="Search">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M12.5 12.5 L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <button class="nav-icon-btn" title="Cart">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M1 1 L3.5 1 L5.5 11 L14 11 L16 4 L4.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="7" cy="14.5" r="1.5" fill="currentColor"/>
+          <circle cx="13" cy="14.5" r="1.5" fill="currentColor"/>
+        </svg>
+      </button>
+      <a href="/cdn-cgi/l/email-protection#f685979a9385b69d979d9799d891838483" class="nav-shop-btn">Contact Sales</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── STICKY SIDE CTA ─── -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="scta-panel">
+    <div class="scta-label">Vietnam Cacao</div>
+    <div class="scta-title">Ceremonial Cacao Block</div>
+    <a href="#contact" class="scta-btn btn-amber">Contact Sales</a>
+  </div>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="/">Home</a><span>›</span>
+  <a href="/origin/">Story</a><span>›</span>
+  Vietnam Cacao
+</div>
+
+<!-- ─── HERO ─── -->
+<section class="page-hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Vietnam · Cacao Origin</div>
+      <h1 class="hero-h1">
+        A cacao that<br>
+        grows in the<br>
+        <em>in-between.</em>
+      </h1>
+      <p class="hero-micro-tagline">Ceremonial-grade cacao blocks · Direct from Vietnamese farmers.</p>
+      <p class="hero-value-prop">Single-origin Vietnamese cacao — directly from small farmers.</p>
+      <p class="hero-sub">
+        Not yet famous. Not yet industrialized. Vietnam's cacao is still in the hands of families — and that's exactly what makes it extraordinary.
+      </p>
+      <div class="hero-cta-row">
+        <a href="#contact" class="btn-hero-primary">Contact Sales</a>
+        <a href="#regions" class="btn-hero-ghost">Compare origins ↓</a>
+      </div>
+      <div class="hero-tags">
+        <span class="hero-tag">Trinitario Variety</span>
+        <span class="hero-tag">Highland Terroir</span>
+        <span class="hero-tag">River Delta</span>
+        <span class="hero-tag">Single Origin</span>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="hstat-num">1,400m</div>
+        <div class="hstat-label">Altitude of Dak Lak highland farms — where complex flavor begins</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-num">6–7 days</div>
+        <div class="hstat-label">Fermentation time — the step that turns a bean into a flavor</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-num">~30°C</div>
+        <div class="hstat-label">Average temperature — the narrow band where cacao thrives</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-bar">
+    <div class="hero-bar-inner">
+      <span class="hbar-item"><span class="hbar-dot"></span>Đák Lák Highlands</span>
+      <span class="hbar-item"><span class="hbar-dot"></span>Lâm Đóng Plateau</span>
+      <span class="hbar-item"><span class="hbar-dot"></span>Tiến Giang Delta</span>
+      <span class="hbar-item"><span class="hbar-dot"></span>Bèn Tre Coast</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PULL QUOTE ─── -->
+<div class="pullquote-sec reveal">
+  <p class="pq-text">
+    "Vietnam isn't famous for cacao — and <strong>maybe that's the magic.</strong><br>
+    No giant estates. No monoculture. Just micro-farms and families who know their land."
+  </p>
+  <div class="pq-divider"></div>
+  <span class="pq-source">kakao.guru · Field Notes</span>
+</div>
+
+<!-- ─── HERO VIDEO ─── -->
+<div style="max-width:1300px;margin:0 auto;padding:0 3rem;">
+  <div class="cacao-video reveal">
+    <video autoplay muted loop playsinline>
+      <source src="vietnam-cacao-highlands.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+</div>
+
+<!-- ─── TERROIR & CLIMATE ─── -->
+<section class="terroir-sec" id="terroir">
+  <div class="terroir-inner">
+    <div class="terroir-header">
+      <div class="reveal">
+        <span class="sec-label">Terroir & Climate</span>
+        <h2 class="terroir-title">Why Vietnam's soil<br>produces <strong>exceptional</strong> cacao.</h2>
+      </div>
+      <div class="terroir-intro reveal d2">
+        <p>Terroir — the French concept borrowed from wine — describes how soil, altitude, rainfall, and microclimate shape flavor. In cacao, it's just as real. Vietnam's highlands sit at a unique convergence of conditions that produce cacao with depth and complexity you simply can't manufacture.</p>
+      </div>
+    </div>
+
+    <div class="climate-grid">
+      <div class="ccard reveal d1">
+        <span class="ccard-icon">⛰️</span>
+        <div class="ccard-label">Altitude</div>
+        <div class="ccard-val">800–1,400m</div>
+        <p class="ccard-desc">Dak Lak's highland farms sit far above typical cacao elevation. Cooler nights slow bean development.</p>
+        <p class="ccard-impact">Slower ripening = deeper flavor compounds, more complex acids, richer finish.</p>
+      </div>
+      <div class="ccard reveal d2">
+        <span class="ccard-icon">🌧️</span>
+        <div class="ccard-label">Rainfall</div>
+        <div class="ccard-val">1,800mm/yr</div>
+        <p class="ccard-desc">Heavy seasonal rains followed by a distinct dry season — the natural rhythm cacao needs.</p>
+        <p class="ccard-impact">Defined wet/dry cycles produce stress that concentrates sugars in the pod.</p>
+      </div>
+      <div class="ccard reveal d3">
+        <span class="ccard-icon">🌡️</span>
+        <div class="ccard-label">Temperature</div>
+        <div class="ccard-val">20–32°C</div>
+        <p class="ccard-desc">Vietnam's central highlands sit in cacao's ideal band — never too hot, never too cold.</p>
+        <p class="ccard-impact">Consistent warmth without heat stress allows full flavanol development.</p>
+      </div>
+      <div class="ccard reveal d4">
+        <span class="ccard-icon">🌱</span>
+        <div class="ccard-label">Soil Type</div>
+        <div class="ccard-val">Basaltic</div>
+        <p class="ccard-desc">Volcanic red basalt soils, rich in minerals, naturally drain well and retain moisture.</p>
+        <p class="ccard-impact">Mineral-rich soil translates directly into the earthy, complex notes in highland cacao.</p>
+      </div>
+    </div>
+
+    <div class="variety-banner reveal">
+      <div>
+        <div class="vb-label">Cacao Variety</div>
+        <div class="vb-title">Vietnam grows <strong>Trinitario.</strong></div>
+      </div>
+      <div class="vb-divider"></div>
+      <p class="vb-text">
+        Trinitario is the most prized cacao variety — a natural hybrid of Criollo and Forastero that combines <strong>flavor complexity with disease resistance.</strong> It's the variety behind most of the world's finest single-origin chocolate. In Vietnam's highland terroir, it develops notes found nowhere else: red fruit, dark earth, light floral, and a long clean finish that improves with every sip.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── FLAVOR PROFILES / REGIONS ─── -->
+<section class="regions-sec" id="regions">
+  <div class="regions-header reveal">
+    <span class="sec-label">Flavor Profiles</span>
+    <h2 class="regions-title">Same country.<br><strong>Two completely different cacaos.</strong></h2>
+    <p class="regions-sub">Vietnam's geography creates two distinct cacao worlds — the highlands of the interior and the river delta of the south. Each produces a radically different flavor experience.</p>
+  </div>
+
+  <div class="region-pair">
+    <!-- Dak Lak -->
+    <div class="rcard reveal d1" onclick="openModal('modal-daklak')" style="cursor:pointer;">
+      <div class="rcard-img" style="background:url('daklak.jpg') center/cover no-repeat;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(30,15,5,0.1) 0%,rgba(30,15,5,0.55) 100%);"></div>
+        <span class="rcard-badge">Highland Origin</span>
+        <span class="rcard-expand-hint">Tap to explore →</span>
+        <div class="rcard-region-name"><strong>Đák Lák</strong></div>
+      </div>
+      <div class="rcard-body">
+        <div class="rcard-type">Central Highlands · 800–1,400m altitude</div>
+
+        <!-- Terroir indicator -->
+        <div class="rcard-meta-row">
+          <div class="rcard-meta-item">
+            <div class="rcard-meta-label">Terroir</div>
+            <div class="rcard-meta-val">⛰️ Volcanic highland</div>
+          </div>
+          <div class="rcard-meta-item">
+            <div class="rcard-meta-label">Soil</div>
+            <div class="rcard-meta-val">Red basalt</div>
+          </div>
+          <div class="rcard-meta-item">
+            <div class="rcard-meta-label">Bitterness</div>
+            <div class="rcard-meta-val" style="display:flex;align-items:center;gap:4px;">
+              <span style="display:flex;gap:2px;">
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--cacao);"></span>
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--cacao);"></span>
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--cacao);"></span>
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--border);border:1.5px solid var(--cacao-lt);"></span>
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--border);border:1.5px solid var(--cacao-lt);"></span>
+              </span>
+              <span style="font-size:0.65rem;color:var(--muted);">High</span>
+            </div>
+          </div>
+          <div class="rcard-meta-item">
+            <div class="rcard-meta-label">Sweetness</div>
+            <div class="rcard-meta-val" style="display:flex;align-items:center;gap:4px;">
+              <span style="display:flex;gap:2px;">
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--amber);"></span>
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--border);border:1.5px solid var(--amber);opacity:0.4;"></span>
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--border);border:1.5px solid var(--amber);opacity:0.4;"></span>
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--border);border:1.5px solid var(--amber);opacity:0.4;"></span>
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--border);border:1.5px solid var(--amber);opacity:0.4;"></span>
+              </span>
+              <span style="font-size:0.65rem;color:var(--muted);">Low</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SVG Radar Chart -->
+        <div class="radar-wrap">
+          <svg class="radar-chart" viewBox="0 0 200 200" id="radar-daklak">
+            <polygon points="100,30 152,65 152,135 100,170 48,135 48,65" fill="none" stroke="rgba(59,31,14,0.07)" stroke-width="1"/>
+            <polygon points="100,50 140,75 140,125 100,150 60,125 60,75" fill="none" stroke="rgba(59,31,14,0.07)" stroke-width="1"/>
+            <polygon points="100,70 128,85 128,115 100,130 72,115 72,85" fill="none" stroke="rgba(59,31,14,0.07)" stroke-width="1"/>
+            <line x1="100" y1="100" x2="100" y2="30" stroke="rgba(59,31,14,0.08)" stroke-width="1"/>
+            <line x1="100" y1="100" x2="152" y2="65" stroke="rgba(59,31,14,0.08)" stroke-width="1"/>
+            <line x1="100" y1="100" x2="152" y2="135" stroke="rgba(59,31,14,0.08)" stroke-width="1"/>
+            <line x1="100" y1="100" x2="100" y2="170" stroke="rgba(59,31,14,0.08)" stroke-width="1"/>
+            <line x1="100" y1="100" x2="48" y2="135" stroke="rgba(59,31,14,0.08)" stroke-width="1"/>
+            <line x1="100" y1="100" x2="48" y2="65" stroke="rgba(59,31,14,0.08)" stroke-width="1"/>
+            <polygon class="radar-area" id="radar-poly-daklak"
+              points="100,100 100,100 100,100 100,100 100,100 100,100"
+              data-points="100,36 148,68 148,130 100,158 56,122 55,72"
+              fill="rgba(45,94,58,0.18)" stroke="#2D5E3A" stroke-width="1.5" stroke-linejoin="round"/>
+            <text x="100" y="24" text-anchor="middle" font-size="8" fill="rgba(42,26,14,0.5)" font-family="DM Sans">Earthiness</text>
+            <text x="162" y="64" text-anchor="start" font-size="8" fill="rgba(42,26,14,0.5)" font-family="DM Sans">Body</text>
+            <text x="162" y="140" text-anchor="start" font-size="8" fill="rgba(42,26,14,0.5)" font-family="DM Sans">Bitter</text>
+            <text x="100" y="182" text-anchor="middle" font-size="8" fill="rgba(42,26,14,0.5)" font-family="DM Sans">Sweet</text>
+            <text x="38" y="140" text-anchor="end" font-size="8" fill="rgba(42,26,14,0.5)" font-family="DM Sans">Floral</text>
+            <text x="38" y="64" text-anchor="end" font-size="8" fill="rgba(42,26,14,0.5)" font-family="DM Sans">Fruit</text>
+          </svg>
+          <div class="radar-label">Flavor Profile</div>
+        </div>
+
+        <div class="rcard-notes">
+          <span class="rnote">Dark Cherry</span>
+          <span class="rnote">Forest Floor</span>
+          <span class="rnote">Tobacco</span>
+          <span class="rnote">Red Wine</span>
+          <span class="rnote">Long Finish</span>
+        </div>
+
+        <!-- Use case -->
+        <div class="rcard-use">
+          <strong>Best for:</strong> Morning ritual, meditation, ceremonial use, chocolate making. Full-body, grounding experience.
+        </div>
+
+        <p class="rcard-desc">Volcanic soil, agroforestry canopy, slow highland ripening. Complex, dark, earthy.</p>
+        <a href="#" class="rcard-cta" onclick="event.stopPropagation()">Contact Sales →</a>
+      </div>
+    </div>
+
+    <!-- Ben Tre -->
+    <div class="rcard reveal d2" onclick="openModal('modal-bentre')" style="cursor:pointer;">
+      <div class="rcard-img" style="background:url('bentre.png') center/cover no-repeat;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,35,20,0.1) 0%,rgba(20,35,20,0.55) 100%);"></div>
+        <span class="rcard-badge">River Delta</span>
+        <span class="rcard-expand-hint">Tap to explore →</span>
+        <div class="rcard-region-name"><strong>Bèn Tre</strong></div>
+      </div>
+      <div class="rcard-body">
+        <div class="rcard-type">Mekong Delta · Sea-level · Coastal</div>
+
+        <!-- Terroir indicator -->
+        <div class="rcard-meta-row">
+          <div class="rcard-meta-item">
+            <div class="rcard-meta-label">Terroir</div>
+            <div class="rcard-meta-val">🌊 Alluvial delta</div>
+          </div>
+          <div class="rcard-meta-item">
+            <div class="rcard-meta-label">Soil</div>
+            <div class="rcard-meta-val">River sediment</div>
+          </div>
+          <div class="rcard-meta-item">
+            <div class="rcard-meta-label">Bitterness</div>
+            <div class="rcard-meta-val" style="display:flex;align-items:center;gap:4px;">
+              <span style="display:flex;gap:2px;">
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--cacao);"></span>
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--border);border:1.5px solid var(--cacao-lt);"></span>
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--border);border:1.5px solid var(--cacao-lt);"></span>
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--border);border:1.5px solid var(--cacao-lt);"></span>
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--border);border:1.5px solid var(--cacao-lt);"></span>
+              </span>
+              <span style="font-size:0.65rem;color:var(--muted);">Low</span>
+            </div>
+          </div>
+          <div class="rcard-meta-item">
+            <div class="rcard-meta-label">Sweetness</div>
+            <div class="rcard-meta-val" style="display:flex;align-items:center;gap:4px;">
+              <span style="display:flex;gap:2px;">
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--amber);"></span>
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--amber);"></span>
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--amber);"></span>
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--amber);"></span>
+                <span style="width:7px;height:7px;border-radius:50%;background:var(--border);border:1.5px solid var(--amber);opacity:0.4;"></span>
+              </span>
+              <span style="font-size:0.65rem;color:var(--muted);">High</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SVG Radar Chart -->
+        <div class="radar-wrap">
+          <svg class="radar-chart" viewBox="0 0 200 200" id="radar-bentre">
+            <polygon points="100,30 152,65 152,135 100,170 48,135 48,65" fill="none" stroke="rgba(59,31,14,0.07)" stroke-width="1"/>
+            <polygon points="100,50 140,75 140,125 100,150 60,125 60,75" fill="none" stroke="rgba(59,31,14,0.07)" stroke-width="1"/>
+            <polygon points="100,70 128,85 128,115 100,130 72,115 72,85" fill="none" stroke="rgba(59,31,14,0.07)" stroke-width="1"/>
+            <line x1="100" y1="100" x2="100" y2="30" stroke="rgba(59,31,14,0.08)" stroke-width="1"/>
+            <line x1="100" y1="100" x2="152" y2="65" stroke="rgba(59,31,14,0.08)" stroke-width="1"/>
+            <line x1="100" y1="100" x2="152" y2="135" stroke="rgba(59,31,14,0.08)" stroke-width="1"/>
+            <line x1="100" y1="100" x2="100" y2="170" stroke="rgba(59,31,14,0.08)" stroke-width="1"/>
+            <line x1="100" y1="100" x2="48" y2="135" stroke="rgba(59,31,14,0.08)" stroke-width="1"/>
+            <line x1="100" y1="100" x2="48" y2="65" stroke="rgba(59,31,14,0.08)" stroke-width="1"/>
+            <polygon class="radar-area" id="radar-poly-bentre"
+              points="100,100 100,100 100,100 100,100 100,100 100,100"
+              data-points="100,58 143,74 143,130 100,142 56,108 62,72"
+              fill="rgba(200,145,58,0.15)" stroke="#C8913A" stroke-width="1.5" stroke-linejoin="round"/>
+            <text x="100" y="24" text-anchor="middle" font-size="8" fill="rgba(42,26,14,0.5)" font-family="DM Sans">Earthiness</text>
+            <text x="162" y="64" text-anchor="start" font-size="8" fill="rgba(42,26,14,0.5)" font-family="DM Sans">Body</text>
+            <text x="162" y="140" text-anchor="start" font-size="8" fill="rgba(42,26,14,0.5)" font-family="DM Sans">Bitter</text>
+            <text x="100" y="182" text-anchor="middle" font-size="8" fill="rgba(42,26,14,0.5)" font-family="DM Sans">Sweet</text>
+            <text x="38" y="140" text-anchor="end" font-size="8" fill="rgba(42,26,14,0.5)" font-family="DM Sans">Floral</text>
+            <text x="38" y="64" text-anchor="end" font-size="8" fill="rgba(42,26,14,0.5)" font-family="DM Sans">Fruit</text>
+          </svg>
+          <div class="radar-label">Flavor Profile</div>
+        </div>
+
+        <div class="rcard-notes">
+          <span class="rnote">Mango</span>
+          <span class="rnote">Jasmine</span>
+          <span class="rnote">Coconut</span>
+          <span class="rnote">Light Acid</span>
+          <span class="rnote">Clean Finish</span>
+        </div>
+
+        <!-- Use case -->
+        <div class="rcard-use">
+          <strong>Best for:</strong> Evening wind-down, beginner ritual, drinking chocolate, gifting. Bright, joyful, approachable.
+        </div>
+
+        <p class="rcard-desc">Alluvial Mekong soils, year-round warmth, coconut agroforestry. Sweet, bright, tropical.</p>
+        <a href="#" class="rcard-cta" onclick="event.stopPropagation()">Contact Sales →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Other regions -->
+  <div class="other-regions">
+    <div class="ocard reveal d1">
+      <div class="ocard-dot">🌿</div>
+      <div>
+        <div class="ocard-subtitle">Highland Plateau</div>
+        <div class="ocard-title">Lâm Đóng</div>
+        <p class="ocard-desc">Vietnam's flower capital sits at 1,500m — one of the highest cacao-growing zones in Asia. The cool nights produce cacao with striking floral notes and bright acidity. Still emerging, but already producing some of Vietnam's most complex beans.</p>
+        <div class="ocard-tags">
+          <span class="otag">Rose · Citrus</span>
+          <span class="otag">High altitude</span>
+          <span class="otag">Emerging origin</span>
+        </div>
+      </div>
+    </div>
+    <div class="ocard reveal d2">
+      <div class="ocard-dot">💧</div>
+      <div>
+        <div class="ocard-subtitle">Mekong Delta</div>
+        <div class="ocard-title">Tiến Giang</div>
+        <p class="ocard-desc">Neighboring Bèn Tre in the Mekong Delta, Tiến Giang's cacao grows in a landscape of rivers, canals, and fruit orchards. Its beans share the delta's sweetness but with a rounder body and distinct stone fruit character.</p>
+        <div class="ocard-tags">
+          <span class="otag">Plum · Honey</span>
+          <span class="otag">River delta</span>
+          <span class="otag">Stone fruit</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FERMENTATION ─── -->
+<section class="ferm-sec" id="fermentation">
+  <div class="ferm-inner">
+    <div class="ferm-left">
+      <span class="sec-label">The Craft of Fermentation</span>
+      <h2 class="ferm-title">The step that turns<br>a seed into<br><strong>a flavor.</strong></h2>
+      <p class="ferm-text">
+        Fermentation is the most misunderstood step in cacao. Most people think flavor comes from roasting. It doesn't. <strong>80% of a cacao's final flavor is determined during fermentation</strong> — a 5–7 day process that happens in wooden boxes, in the backyards of farming families.
+      </p>
+      <p class="ferm-text" style="margin-top:1rem;">
+        In Vietnam, fermentation is still done the traditional way — <strong>in small batches, turned by hand, watched closely</strong>. No industrial fermenting tanks. No shortcuts. The knowledge lives with the families who do it.
+      </p>
+    </div>
+    <div class="ferm-right">
+      <!-- Vector fermentation box illustration -->
+      <div class="ferm-box-wrap reveal d1">
+        <svg class="ferm-box-svg" viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
+          <!-- Box shadow -->
+          <ellipse cx="210" cy="310" rx="130" ry="8" fill="rgba(0,0,0,0.2)"/>
+          <!-- Wooden box body -->
+          <rect x="60" y="140" width="300" height="150" rx="4" fill="#5C3317" stroke="#7A4520" stroke-width="1.5"/>
+          <!-- Wood grain lines on front -->
+          <line x1="60" y1="165" x2="360" y2="165" stroke="#7A4520" stroke-width="0.8" opacity="0.5"/>
+          <line x1="60" y1="190" x2="360" y2="190" stroke="#7A4520" stroke-width="0.8" opacity="0.5"/>
+          <line x1="60" y1="215" x2="360" y2="215" stroke="#7A4520" stroke-width="0.8" opacity="0.5"/>
+          <line x1="60" y1="240" x2="360" y2="240" stroke="#7A4520" stroke-width="0.8" opacity="0.5"/>
+          <line x1="60" y1="265" x2="360" y2="265" stroke="#7A4520" stroke-width="0.8" opacity="0.5"/>
+          <!-- Vertical planks -->
+          <line x1="120" y1="140" x2="120" y2="290" stroke="#4A2810" stroke-width="1.5"/>
+          <line x1="180" y1="140" x2="180" y2="290" stroke="#4A2810" stroke-width="1.5"/>
+          <line x1="240" y1="140" x2="240" y2="290" stroke="#4A2810" stroke-width="1.5"/>
+          <line x1="300" y1="140" x2="300" y2="290" stroke="#4A2810" stroke-width="1.5"/>
+          <!-- Box top edge highlight -->
+          <rect x="60" y="140" width="300" height="8" rx="2" fill="#7A4520" opacity="0.6"/>
+          <!-- Box left side -->
+          <path d="M60,140 L30,120 L30,270 L60,290 Z" fill="#3D2010" stroke="#4A2810" stroke-width="1"/>
+          <!-- Box bottom left -->
+          <rect x="55" y="284" width="18" height="20" rx="2" fill="#3D2010"/>
+          <rect x="327" y="284" width="18" height="20" rx="2" fill="#3D2010"/>
+          <!-- Cacao beans in box (top open view suggested by subtle beans) -->
+          <ellipse cx="140" cy="148" rx="12" ry="7" fill="#6B3A1F" stroke="#8B5030" stroke-width="1" transform="rotate(-20 140 148)"/>
+          <ellipse cx="170" cy="145" rx="11" ry="6" fill="#7A4020" stroke="#9A6040" stroke-width="1" transform="rotate(10 170 145)"/>
+          <ellipse cx="200" cy="147" rx="13" ry="7" fill="#5C2A10" stroke="#7A4020" stroke-width="1" transform="rotate(-5 200 147)"/>
+          <ellipse cx="230" cy="144" rx="11" ry="6" fill="#6B3A1F" stroke="#8B5030" stroke-width="1" transform="rotate(15 230 144)"/>
+          <ellipse cx="260" cy="146" rx="12" ry="7" fill="#7A4020" stroke="#8B5030" stroke-width="1" transform="rotate(-10 260 146)"/>
+          <ellipse cx="290" cy="145" rx="10" ry="6" fill="#5C2A10" stroke="#7A4020" stroke-width="1" transform="rotate(8 290 145)"/>
+          <!-- Steam/heat wisps -->
+          <path d="M155,135 Q160,120 155,105 Q150,90 155,78" stroke="rgba(247,242,232,0.2)" stroke-width="2" fill="none" stroke-linecap="round" class="steam-path"/>
+          <path d="M210,130 Q215,112 210,96 Q205,80 210,66" stroke="rgba(247,242,232,0.15)" stroke-width="2" fill="none" stroke-linecap="round" class="steam-path" style="animation-delay:0.4s"/>
+          <path d="M265,133 Q270,116 265,100 Q260,85 265,70" stroke="rgba(247,242,232,0.2)" stroke-width="2" fill="none" stroke-linecap="round" class="steam-path" style="animation-delay:0.8s"/>
+          <!-- Temperature label -->
+          <rect x="285" y="60" width="90" height="38" rx="8" fill="rgba(200,145,58,0.15)" stroke="rgba(200,145,58,0.3)" stroke-width="1"/>
+          <text x="330" y="74" text-anchor="middle" font-size="11" fill="#C8913A" font-family="Outfit, sans-serif" font-weight="300">Peak temp</text>
+          <text x="330" y="90" text-anchor="middle" font-size="14" fill="#C8913A" font-family="Outfit, sans-serif" font-weight="600">48–50°C</text>
+          <!-- Day counter -->
+          <rect x="40" y="60" width="78" height="38" rx="8" fill="rgba(45,94,58,0.15)" stroke="rgba(45,94,58,0.25)" stroke-width="1"/>
+          <text x="79" y="74" text-anchor="middle" font-size="11" fill="#3D7A4E" font-family="Outfit, sans-serif" font-weight="300">Duration</text>
+          <text x="79" y="90" text-anchor="middle" font-size="14" fill="#3D7A4E" font-family="Outfit, sans-serif" font-weight="600">6–7 days</text>
+          <!-- Arrow showing turning action -->
+          <path d="M385,180 Q400,165 385,150" stroke="rgba(247,242,232,0.3)" stroke-width="2" fill="none" stroke-linecap="round" marker-end="url(#arrowhead)"/>
+          <defs>
+            <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+              <path d="M0,0 L6,3 L0,6 Z" fill="rgba(247,242,232,0.3)"/>
+            </marker>
+          </defs>
+          <text x="395" y="168" font-size="9" fill="rgba(247,242,232,0.3)" font-family="DM Sans" text-anchor="middle">Turn</text>
+          <text x="395" y="178" font-size="9" fill="rgba(247,242,232,0.3)" font-family="DM Sans" text-anchor="middle">daily</text>
+        </svg>
+        <p class="ferm-box-caption">Traditional wooden fermentation box · Dak Lak, Vietnam</p>
+      </div>
+
+      <div class="ferm-timeline">
+        <div class="ferm-day reveal d2">
+          <div class="fd-num">Day 1–2</div>
+          <div class="fd-bar"><div class="fd-bar-fill" style="height:30%"></div></div>
+          <div class="fd-content">
+            <div class="fd-title">Pulp breakdown begins</div>
+            <p class="fd-desc">Fresh cacao beans, covered in white mucilage, are packed into wooden boxes. Wild yeasts begin consuming the sugary pulp. Temperature rises rapidly.</p>
+            <span class="fd-result">→ Alcohols form</span>
+          </div>
+        </div>
+        <div class="ferm-day reveal d3">
+          <div class="fd-num">Day 3–4</div>
+          <div class="fd-bar"><div class="fd-bar-fill" style="height:60%"></div></div>
+          <div class="fd-content">
+            <div class="fd-title">Acid development</div>
+            <p class="fd-desc">Bacteria convert alcohols into acetic acid. The box heats to 48–50°C. Beans are turned by hand to ensure even fermentation.</p>
+            <span class="fd-result">→ Acids & esters form</span>
+          </div>
+        </div>
+        <div class="ferm-day reveal d4">
+          <div class="fd-num">Day 5–7</div>
+          <div class="fd-bar"><div class="fd-bar-fill" style="height:100%"></div></div>
+          <div class="fd-content">
+            <div class="fd-title">Flavor precursors lock in → Sun drying</div>
+            <p class="fd-desc">Enzymes break down proteins into flavor precursors. Beans move to wooden drying racks under the Vietnamese sun. Moisture drops to below 7.5%.</p>
+            <span class="fd-result">→ Final flavor locked</span>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="ferm-curve-wrap reveal d3">
+          <div class="ferm-curve-label">Fermentation Heat Curve — °C over 7 days</div>
+          <svg class="ferm-curve-svg" viewBox="0 0 340 120" id="heatCurveSvg">
+            <!-- Grid lines -->
+            <line x1="0" y1="100" x2="340" y2="100" stroke="rgba(247,242,232,0.08)" stroke-width="1"/>
+            <line x1="0" y1="70" x2="340" y2="70" stroke="rgba(247,242,232,0.06)" stroke-width="1" stroke-dasharray="4,4"/>
+            <line x1="0" y1="40" x2="340" y2="40" stroke="rgba(247,242,232,0.06)" stroke-width="1" stroke-dasharray="4,4"/>
+            <line x1="0" y1="15" x2="340" y2="15" stroke="rgba(247,242,232,0.06)" stroke-width="1" stroke-dasharray="4,4"/>
+            <!-- Y-axis labels -->
+            <text x="0" y="103" font-size="7" fill="rgba(247,242,232,0.25)" font-family="DM Sans">25°</text>
+            <text x="0" y="73" font-size="7" fill="rgba(247,242,232,0.25)" font-family="DM Sans">35°</text>
+            <text x="0" y="43" font-size="7" fill="rgba(247,242,232,0.25)" font-family="DM Sans">45°</text>
+            <text x="0" y="18" font-size="7" fill="rgba(200,145,58,0.8)" font-family="DM Sans" font-weight="600">50°</text>
+            <!-- X-axis day labels -->
+            <text x="28" y="112" font-size="7" fill="rgba(247,242,232,0.25)" font-family="DM Sans" text-anchor="middle">D1</text>
+            <text x="76" y="112" font-size="7" fill="rgba(247,242,232,0.25)" font-family="DM Sans" text-anchor="middle">D2</text>
+            <text x="124" y="112" font-size="7" fill="rgba(247,242,232,0.25)" font-family="DM Sans" text-anchor="middle">D3</text>
+            <text x="172" y="112" font-size="7" fill="rgba(247,242,232,0.25)" font-family="DM Sans" text-anchor="middle">D4</text>
+            <text x="220" y="112" font-size="7" fill="rgba(247,242,232,0.25)" font-family="DM Sans" text-anchor="middle">D5</text>
+            <text x="268" y="112" font-size="7" fill="rgba(247,242,232,0.25)" font-family="DM Sans" text-anchor="middle">D6</text>
+            <text x="316" y="112" font-size="7" fill="rgba(247,242,232,0.25)" font-family="DM Sans" text-anchor="middle">D7</text>
+            <!-- Fill area under curve -->
+            <path class="heat-area" id="heatArea"
+              d="M28,98 C45,90 60,55 76,30 C90,10 110,12 124,18 C138,24 148,20 172,22 C196,24 204,38 220,50 C236,62 252,78 268,85 C284,90 300,92 316,94 L316,100 L28,100 Z"
+              fill="url(#heatGrad)"/>
+            <defs>
+              <linearGradient id="heatGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="rgba(200,145,58,0.25)"/>
+                <stop offset="100%" stop-color="rgba(200,145,58,0.03)"/>
+              </linearGradient>
+            </defs>
+            <!-- Heat curve path -->
+            <path class="heat-path" id="heatPath"
+              d="M28,98 C45,90 60,55 76,30 C90,10 110,12 124,18 C138,24 148,20 172,22 C196,24 204,38 220,50 C236,62 252,78 268,85 C284,90 300,92 316,94"/>
+            <!-- Peak annotation -->
+            <circle cx="172" cy="22" r="3" fill="var(--amber)" opacity="0"/>
+            <text x="180" y="18" font-size="7" fill="rgba(200,145,58,0.8)" font-family="DM Sans">peak 48–50°C</text>
+            <!-- Turning arrows -->
+            <text x="120" y="9" font-size="6" fill="rgba(247,242,232,0.25)" font-family="DM Sans" text-anchor="middle">↻ turn</text>
+            <text x="220" y="44" font-size="6" fill="rgba(247,242,232,0.25)" font-family="DM Sans" text-anchor="middle">↻ turn</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </div>
+</section>
+
+<!-- ─── WHAT THIS MEANS FOR YOUR CUP ─── -->
+<section class="cup-sec" id="your-cup">
+  <div class="cup-inner">
+    <div class="cup-header reveal">
+      <span class="sec-label" style="color:rgba(235,243,237,0.5);">From Farm to Cup</span>
+      <h2 class="cup-title">What does this mean<br>for your <strong>daily ritual?</strong></h2>
+      <p class="cup-sub">Every choice — altitude, soil, fermentation length — lands directly in your cup. Here's what Vietnam's terroir actually gives you.</p>
+    </div>
+    <div class="cup-grid">
+      <div class="cup-card reveal d1">
+        <span class="cup-card-icon">🌄</span>
+        <div class="cup-card-context">Highland altitude effect</div>
+        <div class="cup-card-title">A longer, deeper finish — not just bitterness.</div>
+        <p class="cup-card-desc">High-altitude cacao develops more complex organic acids during the slower growth cycle. <strong>The result: a dry, lingering finish</strong> that evolves as you drink — more like a fine wine than a commodity chocolate.</p>
+        <span class="cup-card-origin">Đák Lák · Central Highlands</span>
+      </div>
+      <div class="cup-card reveal d2">
+        <span class="cup-card-icon">🍃</span>
+        <div class="cup-card-context">Volcanic soil effect</div>
+        <div class="cup-card-title">Mineral depth you can actually taste.</div>
+        <p class="cup-card-desc">Basaltic soils transfer trace minerals directly into the bean. <strong>This creates earthy, forest-floor undertones</strong> that industrial cacao — grown in depleted lowland soils — simply cannot replicate.</p>
+        <span class="cup-card-origin">Đák Lák · Basalt terroir</span>
+      </div>
+      <div class="cup-card reveal d3">
+        <span class="cup-card-icon">🌺</span>
+        <div class="cup-card-context">Delta & agroforestry effect</div>
+        <div class="cup-card-title">Tropical brightness from the trees around it.</div>
+        <p class="cup-card-desc">Cacao grown among coconut palms, mango, and jasmine absorbs aromatic volatiles from its surroundings. <strong>The floral and fruit notes in Bèn Tre cacao are real</strong> — they come from the landscape itself.</p>
+        <span class="cup-card-origin">Bèn Tre · Mekong Delta</span>
+      </div>
+      <div class="cup-card reveal d4">
+        <span class="cup-card-icon">🫙</span>
+        <div class="cup-card-context">Traditional fermentation effect</div>
+        <div class="cup-card-title">80% of your cup's flavor happens before roasting.</div>
+        <p class="cup-card-desc">Vietnam's hand-turned, small-batch fermentation preserves flavor precursors that industrial fermenters destroy with heat shortcuts. <strong>What you taste is what the farmer built</strong> — over 7 days, by hand.</p>
+        <span class="cup-card-origin">All origins · Traditional process</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY IT MATTERS ─── -->
+<section class="matters-sec">
+  <div class="matters-inner">
+    <div class="matters-header reveal">
+      <span class="sec-label">Why It Matters</span>
+      <h2 class="matters-title">Why Vietnam cacao is<br><strong>worth paying attention to.</strong></h2>
+    </div>
+    <div class="matters-grid">
+      <div class="mcard reveal d1">
+        <div class="mcard-num">01</div>
+        <div class="mcard-title">It's still human-scale</div>
+        <p class="mcard-text">Vietnam's cacao industry hasn't been taken over by agribusiness. <strong>Most farms are under 2 hectares.</strong> The knowledge is personal, the relationships are direct, and every decision is made by a person — not a supply chain algorithm.</p>
+      </div>
+      <div class="mcard reveal d2">
+        <div class="mcard-num">02</div>
+        <div class="mcard-title">The terroir is genuinely unique</div>
+        <p class="mcard-text">No other cacao origin offers this combination: <strong>highland altitude, volcanic basalt soil, distinct seasons, and traditional fermentation</strong> all in one country. The flavor profiles from Dak Lak simply don't exist anywhere else.</p>
+      </div>
+      <div class="mcard reveal d3">
+        <div class="mcard-num">03</div>
+        <div class="mcard-title">You're early</div>
+        <p class="mcard-text">Vietnam cacao is where Colombian coffee was 20 years ago — <strong>exceptional quality, still undiscovered by the mainstream.</strong> The people who find it now get direct access to the farmers and the story before it becomes a commodity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CEREMONIAL USE ─── -->
+<section style="background:var(--cream);padding:7rem 3rem;">
+  <div style="max-width:1300px;margin:0 auto;">
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;">
+      <!-- Left: text -->
+      <div class="reveal">
+        <span class="sec-label">Ceremonial Use</span>
+        <h2 style="font-family:'Outfit',sans-serif;font-size:clamp(2rem,3vw,3rem);font-weight:200;letter-spacing:-0.03em;color:var(--cacao);line-height:1.1;margin-bottom:1.5rem;">
+          Cacao isn't just a drink.<br>It's a <strong style="font-weight:600;">practice.</strong>
+        </h2>
+        <p style="font-size:0.92rem;line-height:1.85;font-weight:300;color:var(--muted);margin-bottom:1rem;">
+          For thousands of years, Mesoamerican and Southeast Asian cultures prepared cacao slowly, intentionally — not as fuel, but as a ritual of presence. Vietnam's highland cacao, with its earthy depth and long finish, is <strong style="font-weight:500;color:var(--text);">exceptionally suited to this practice.</strong>
+        </p>
+        <p style="font-size:0.92rem;line-height:1.85;font-weight:300;color:var(--muted);margin-bottom:2rem;">
+          A ceremonial cup asks you to slow down. To prepare with attention. To drink without distraction. <strong style="font-weight:500;color:var(--text);">That's the ritual — and the cacao makes it real.</strong>
+        </p>
+        <a href="#" class="btn-cacao" style="background:var(--amber);color:var(--cacao);box-shadow:0 4px 20px rgba(200,145,58,0.3);">Discover Ceremonial Cacao →</a>
+      </div>
+
+      <!-- Right: ritual qualities grid -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;" class="reveal d2">
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.8rem 1.5rem;">
+          <div style="font-size:1.5rem;margin-bottom:0.8rem;">🕊️</div>
+          <div style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:400;color:var(--cacao);margin-bottom:0.5rem;">Presence</div>
+          <p style="font-size:0.78rem;line-height:1.7;font-weight:300;color:var(--muted);">Theobromine opens focus without caffeine anxiety. Vietnam highland cacao sustains 3–4 hours of calm clarity.</p>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.8rem 1.5rem;">
+          <div style="font-size:1.5rem;margin-bottom:0.8rem;">🧘</div>
+          <div style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:400;color:var(--cacao);margin-bottom:0.5rem;">Mindfulness</div>
+          <p style="font-size:0.78rem;line-height:1.7;font-weight:300;color:var(--muted);">The slow preparation — grating, heating, stirring — is itself a grounding practice before the cup is even raised.</p>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.8rem 1.5rem;">
+          <div style="font-size:1.5rem;margin-bottom:0.8rem;">💛</div>
+          <div style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:400;color:var(--cacao);margin-bottom:0.5rem;">Heart Opening</div>
+          <p style="font-size:0.78rem;line-height:1.7;font-weight:300;color:var(--muted);">PEA and anandamide — cacao's natural mood compounds — create a gentle warmth that supports emotional openness.</p>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.8rem 1.5rem;">
+          <div style="font-size:1.5rem;margin-bottom:0.8rem;">🌄</div>
+          <div style="font-family:'Outfit',sans-serif;font-size:0.95rem;font-weight:400;color:var(--cacao);margin-bottom:0.5rem;">Slow Ritual</div>
+          <p style="font-size:0.78rem;line-height:1.7;font-weight:300;color:var(--muted);">Morning or evening — Vietnam highland cacao's earthy depth is a natural anchor for meditation and intentional rest.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom quote -->
+    <div class="reveal" style="margin-top:4rem;padding:2rem 2.5rem;background:var(--cacao);border-radius:16px;display:flex;align-items:center;gap:2rem;">
+      <div style="font-size:2rem;flex-shrink:0;">🫘</div>
+      <p style="font-size:0.92rem;line-height:1.75;font-weight:300;color:rgba(247,242,232,0.7);font-style:italic;">
+        "Dak Lak cacao — grown at altitude, fermented slowly, dried under the highland sun — produces a cup with a <strong style="font-weight:500;color:rgba(247,242,232,0.95);">depth and grounding quality</strong> that makes it one of the finest ceremonial origins in the world."
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section class="cta-sec">
+  <div class="cta-inner">
+    <span class="cta-label">Experience Vietnam Cacao</span>
+    <h2 class="cta-title reveal">
+      Taste the difference<br><strong>terroir makes.</strong>
+    </h2>
+    <p class="cta-sub reveal">
+      Every kakao.guru block is traceable to a specific region, farm, and fermenter. Choose your origin — highlands or delta — and taste the difference for yourself.
+    </p>
+    <div class="cta-btns reveal">
+      <a href="#contact" class="btn-cream">Contact Sales</a>
+      <a href="/origin/" class="btn-ghost">Read our story →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MODALS ─── -->
+<div class="modal-overlay" id="modal-daklak" onclick="if(event.target===this)closeModal('modal-daklak')">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div>
+        <div class="modal-region-type">Central Highlands · 800–1,400m altitude</div>
+        <div class="modal-region-name"><strong>Đák Lák</strong></div>
+      </div>
+      <button class="modal-close" onclick="closeModal('modal-daklak')">✕</button>
+    </div>
+    <div class="modal-img" style="background:url('daklak.jpg') center/cover no-repeat;"></div>
+    <div class="modal-body">
+      <div class="modal-detail-grid">
+        <div class="mdg-item"><div class="mdg-label">Altitude</div><div class="mdg-val">800–1,400m</div></div>
+        <div class="mdg-item"><div class="mdg-label">Soil</div><div class="mdg-val">Volcanic basalt</div></div>
+        <div class="mdg-item"><div class="mdg-label">Variety</div><div class="mdg-val">Trinitario</div></div>
+        <div class="mdg-item"><div class="mdg-label">Fermentation</div><div class="mdg-val">6–7 days, box</div></div>
+        <div class="mdg-item"><div class="mdg-label">Harvest</div><div class="mdg-val">Oct–Dec (main)</div></div>
+        <div class="mdg-item"><div class="mdg-label">Drying</div><div class="mdg-val">Sun-dried, 7–10d</div></div>
+      </div>
+      <p class="modal-desc">Dak Lak sits at the heart of Vietnam's Central Highlands — a region better known for its coffee than its cacao. But the same volcanic soil, elevation, and distinct wet/dry seasons that produce world-class robusta are creating something remarkable in cacao. Farms here are small, typically under 2 hectares, grown under a canopy of shade trees. The altitude slows bean development, concentrating complex flavor compounds not possible in lowland origins. Dark, earthy, grounding — this is cacao for the serious palate.</p>
+      <div class="modal-flavor-notes">
+        <span class="rnote">Dark Cherry</span>
+        <span class="rnote">Forest Floor</span>
+        <span class="rnote">Tobacco</span>
+        <span class="rnote">Red Wine</span>
+        <span class="rnote">Long Dry Finish</span>
+        <span class="rnote">Dark Chocolate</span>
+      </div>
+      <a href="#contact" class="modal-cta">Contact Sales →</a>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-bentre" onclick="if(event.target===this)closeModal('modal-bentre')">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div>
+        <div class="modal-region-type">Mekong Delta · Sea-level · Coastal</div>
+        <div class="modal-region-name"><strong>Bèn Tre</strong></div>
+      </div>
+      <button class="modal-close" onclick="closeModal('modal-bentre')">✕</button>
+    </div>
+    <div class="modal-img" style="background:url('bentre.png') center/cover no-repeat;"></div>
+    <div class="modal-body">
+      <div class="modal-detail-grid">
+        <div class="mdg-item"><div class="mdg-label">Altitude</div><div class="mdg-val">Sea level</div></div>
+        <div class="mdg-item"><div class="mdg-label">Soil</div><div class="mdg-val">Alluvial (delta)</div></div>
+        <div class="mdg-item"><div class="mdg-label">Variety</div><div class="mdg-val">Trinitario</div></div>
+        <div class="mdg-item"><div class="mdg-label">Fermentation</div><div class="mdg-val">5–6 days, box</div></div>
+        <div class="mdg-item"><div class="mdg-label">Harvest</div><div class="mdg-val">Year-round</div></div>
+        <div class="mdg-item"><div class="mdg-label">Drying</div><div class="mdg-val">Sun-dried, 5–7d</div></div>
+      </div>
+      <p class="modal-desc">Bèn Tre sits in the Mekong Delta — a maze of rivers, canals, and coconut palms stretching to the South China Sea. Vietnam's earliest cacao region, it benefits from rich alluvial soils deposited over millennia by the Mekong. The warm, humid climate and year-round growing season produce cacao that's riper, sweeter, and more expressive than highland origins. Notes of tropical fruit and jasmine come from the surrounding orchards; coconut palms act as natural windbreaks. Approachable, joyful, and unmistakably Vietnamese.</p>
+      <div class="modal-flavor-notes">
+        <span class="rnote" style="background:rgba(200,145,58,0.1);color:var(--amber);border-color:rgba(200,145,58,0.2);">Mango</span>
+        <span class="rnote" style="background:rgba(200,145,58,0.1);color:var(--amber);border-color:rgba(200,145,58,0.2);">Jasmine</span>
+        <span class="rnote" style="background:rgba(200,145,58,0.1);color:var(--amber);border-color:rgba(200,145,58,0.2);">Coconut</span>
+        <span class="rnote" style="background:rgba(200,145,58,0.1);color:var(--amber);border-color:rgba(200,145,58,0.2);">Light Acid</span>
+        <span class="rnote" style="background:rgba(200,145,58,0.1);color:var(--amber);border-color:rgba(200,145,58,0.2);">Clean Finish</span>
+        <span class="rnote" style="background:rgba(200,145,58,0.1);color:var(--amber);border-color:rgba(200,145,58,0.2);">Milk Chocolate</span>
+      </div>
+      <a href="#contact" class="modal-cta">Contact Sales →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="footer-logo-text">kakao<span class="dot">.</span>guru</span>
+      <p class="footer-tagline">Premium ceremonial cacao from the highlands of Vietnam. Pure, traceable, ethically sourced.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Products</div>
+      <a href="#">250g Cacao Block</a>
+      <a href="#">500g Cacao Block</a>
+      <a href="#">Artisan Sales</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Story</div>
+      <a href="/origin/">About Us</a>
+      <a href="#">Vietnam Cacao</a>
+      <a href="#">Our Farmers</a>
+      <a href="#">Traceability</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Learn</div>
+      <a href="#">Ceremonial Cacao 101</a>
+      <a href="#">Cacao vs Coffee</a>
+      <a href="#">Why Cacao is a Superfood</a>
+      <a href="#">Cacao Recipes</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Help</div>
+      <a href="#">FAQ</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Shipping Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 kakao.guru — Pure Ceremonial Cacao · Spain · Vietnam</div>
+    <div class="footer-socials">
+      <a href="#" class="social-btn">ig</a>
+      <a href="#" class="social-btn">tk</a>
+      <a href="#" class="social-btn">yt</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => io.observe(el));
+
+// Nav scroll shadow
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').style.boxShadow =
+    window.scrollY > 10 ? '0 4px 30px rgba(59,31,14,0.08)' : 'none';
+});
+
+// ─── RADAR CHART ANIMATION ───
+function parsePoints(str) {
+  return str.trim().split(' ').map(p => p.split(',').map(Number));
+}
+function lerp(a, b, t) { return a + (b - a) * t; }
+function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+function animateRadar(polyEl) {
+  const targetPts = parsePoints(polyEl.getAttribute('data-points'));
+  const originPts = targetPts.map(() => [100, 100]);
+  const duration = 900;
+  const start = performance.now();
+
+  function frame(now) {
+    const raw = (now - start) / duration;
+    const t = easeOut(Math.min(raw, 1));
+    const pts = originPts.map((o, i) => [
+      lerp(o[0], targetPts[i][0], t),
+      lerp(o[1], targetPts[i][1], t)
+    ]);
+    polyEl.setAttribute('points', pts.map(p => p.join(',')).join(' '));
+    if (raw < 1) requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+}
+
+const radarObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const poly = e.target.querySelector('.radar-area');
+      if (poly) animateRadar(poly);
+      radarObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.4 });
+document.querySelectorAll('.radar-chart').forEach(c => radarObserver.observe(c));
+
+// ─── MODAL ───
+function openModal(id) {
+  const m = document.getElementById(id);
+  if (!m) return;
+  m.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // Animate radar inside modal if present
+  m.querySelectorAll('.radar-area').forEach(p => {
+    setTimeout(() => animateRadar(p), 200);
+  });
+}
+function closeModal(id) {
+  const m = document.getElementById(id);
+  if (!m) return;
+  m.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open').forEach(m => {
+      m.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  }
+});
+
+// ─── STICKY CTA ───
+const stickyCta = document.getElementById('stickyCta');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    stickyCta.classList.add('visible');
+  } else {
+    stickyCta.classList.remove('visible');
+  }
+});
+
+// ─── HEAT CURVE ANIMATION ───
+const heatPath = document.getElementById('heatPath');
+const heatArea = document.getElementById('heatArea');
+if (heatPath) {
+  const len = heatPath.getTotalLength();
+  heatPath.style.strokeDasharray = len;
+  heatPath.style.strokeDashoffset = len;
+  const heatObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        heatPath.style.transition = 'stroke-dashoffset 2s ease 0.2s';
+        heatPath.style.strokeDashoffset = '0';
+        if (heatArea) {
+          heatArea.style.transition = 'opacity 1.2s ease 0.9s';
+          heatArea.style.opacity = '1';
+        }
+        heatObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  heatObserver.observe(document.getElementById('heatCurveSvg'));
+}
+
+
+const fermObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.fd-bar-fill').forEach((bar, i) => {
+        const h = bar.style.height;
+        bar.style.height = '0';
+        setTimeout(() => { bar.style.height = h; }, i * 250);
+      });
+      fermObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.2 });
+document.querySelectorAll('.ferm-timeline').forEach(t => fermObserver.observe(t));
+
+// ─── STEAM ANIMATION ───
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes steam {
+    0%   { opacity: 0; transform: translateY(0) scaleX(1); }
+    30%  { opacity: 0.6; }
+    100% { opacity: 0; transform: translateY(-18px) scaleX(1.3); }
+  }
+  .steam-path { animation: steam 2.8s ease-in-out infinite; }
+`;
+document.head.appendChild(style);
+</script>
+</body>
+</html>
