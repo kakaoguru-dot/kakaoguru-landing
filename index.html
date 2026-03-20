@@ -1844,17 +1844,15 @@ document.querySelectorAll('.size-opt').forEach(btn => {
   });
 });
 
-// Nav dropdown click/touch support
-document.querySelectorAll('.nav-item > a').forEach(link => {
-  link.addEventListener('click', function(e) {
-    const dropdown = this.parentElement.querySelector('.dropdown');
-    if (!dropdown) return;
-    const isOpen = this.parentElement.classList.contains('touch-open');
+// Nav dropdown click/touch support — chevron toggles dropdown, link navigates
+document.querySelectorAll('.nav-item > a .nav-chevron').forEach(chevron => {
+  chevron.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const navItem = this.closest('.nav-item');
+    const isOpen = navItem.classList.contains('touch-open');
     document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('touch-open'));
-    if (!isOpen) {
-      e.preventDefault();
-      this.parentElement.classList.add('touch-open');
-    }
+    if (!isOpen) navItem.classList.add('touch-open');
   });
 });
 document.addEventListener('click', function(e) {
