@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cacao Rituals — Morning, Evening, Recipes & Mindful Practice | kakao.guru</title>
+<link rel="canonical" href="https://kakao.guru/ritual/">
+<meta name="description" content="Explore cacao ritual guides — morning ritual, evening wind-down, latte recipes, and mindful ceremonial practice. All made with 100% pure kakao.guru cacao.">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F7F2E8;--paper:#EDE6D6;--warm:#DDD4BF;--cacao:#3B1F0E;--cacao-mid:#6B3A1F;--amber:#C8913A;--tropical:#2D5E3A;--trop-pale:#EBF3ED;--text:#2A1A0E;--muted:#9C8878;--border:rgba(59,31,14,0.1);--white:#FDFAF4;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+.announce{background:var(--tropical);color:#fff;text-align:center;padding:0.55rem 1rem;font-size:0.78rem;letter-spacing:0.06em;}
+nav{position:sticky;top:0;z-index:200;background:rgba(253,250,244,0.96);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--border);}
+.nav-inner{max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:68px;}
+.nav-logo{font-family:'Outfit',sans-serif;font-size:1.35rem;font-weight:300;letter-spacing:-0.02em;color:var(--cacao);text-decoration:none;}
+.nav-logo .logo-dot{color:var(--tropical);}
+.nav-menu{display:flex;list-style:none;}
+.nav-item{position:relative;}
+.nav-item>a{display:flex;align-items:center;gap:0.3rem;padding:0 1.1rem;height:68px;font-size:0.88rem;color:var(--text);text-decoration:none;transition:color 0.2s;white-space:nowrap;}
+.nav-item>a:hover,.nav-item:hover>a{color:var(--tropical);}
+.nav-chevron{display:inline-block;width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-2px;transition:transform 0.25s;}
+.nav-item:hover .nav-chevron{transform:rotate(-135deg);margin-top:3px;}
+.dropdown{position:absolute;top:calc(100% + 2px);left:50%;transform:translateX(-50%) translateY(8px);background:var(--white);border:1px solid var(--border);border-radius:14px;padding:0.6rem;min-width:220px;box-shadow:0 8px 40px rgba(59,31,14,0.1);opacity:0;visibility:hidden;pointer-events:none;transition:all 0.2s;z-index:300;}
+.nav-item:hover .dropdown,.nav-item.touch-open .dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+.dropdown a{display:block;padding:0.55rem 0.9rem;font-size:0.84rem;color:var(--text);text-decoration:none;border-radius:8px;transition:all 0.15s;white-space:nowrap;}
+.dropdown a:hover{background:var(--trop-pale);color:var(--tropical);padding-left:1.8rem;}
+.dropdown .sep{height:1px;background:var(--border);margin:0.4rem 0;}
+.dd-label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);padding:0.4rem 0.9rem 0.2rem;font-weight:500;}
+.dropdown.mega-dropdown{min-width:480px;display:flex;padding:1rem;left:0;transform:translateY(8px);}
+.nav-item:hover .dropdown.mega-dropdown,.nav-item.touch-open .dropdown.mega-dropdown{transform:translateY(0);opacity:1;visibility:visible;pointer-events:auto;}
+.mega-col{flex:1;}
+.nav-actions{display:flex;}
+.nav-shop-btn{background:var(--cacao);color:var(--cream);padding:0.5rem 1.2rem;border-radius:99px;font-size:0.82rem;font-weight:500;text-decoration:none;}
+/* HERO */
+.page-hero{background:var(--cacao);padding:5rem 3rem 4rem;}
+.page-hero-inner{max-width:1300px;margin:0 auto;}
+.page-hero-label{font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:1rem;}
+.page-hero-title{font-family:'Outfit',sans-serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:300;color:var(--cream);line-height:1.1;letter-spacing:-0.02em;margin-bottom:1rem;}
+.page-hero-title em{font-style:italic;color:var(--amber);}
+.page-hero-sub{font-size:1.05rem;font-weight:300;color:rgba(247,242,232,0.55);max-width:560px;line-height:1.7;}
+/* CARDS */
+.rituals-sec{padding:5rem 3rem;background:var(--white);}
+.rituals-inner{max-width:1300px;margin:0 auto;}
+.rituals-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;}
+.rcard{display:block;text-decoration:none;border:1px solid var(--warm);border-radius:24px;overflow:hidden;transition:transform 0.25s,box-shadow 0.25s;background:var(--white);}
+.rcard:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(59,31,14,0.1);}
+.rcard-top{padding:2.5rem 2.5rem 2rem;background:var(--paper);}
+.rcard-emoji{font-size:3rem;margin-bottom:1rem;}
+.rcard-name{font-family:'Outfit',sans-serif;font-size:1.6rem;font-weight:600;color:var(--cacao);margin-bottom:0.5rem;}
+.rcard-tagline{font-size:0.88rem;font-weight:300;color:var(--muted);}
+.rcard-tags{display:flex;gap:0.4rem;margin-top:1rem;flex-wrap:wrap;}
+.rtag{background:var(--trop-pale);color:var(--tropical);padding:0.25rem 0.7rem;border-radius:99px;font-size:0.72rem;font-weight:600;}
+.rcard-body{padding:1.8rem 2.5rem;}
+.rcard-desc{font-size:0.9rem;font-weight:300;color:var(--text);line-height:1.7;opacity:0.8;margin-bottom:1.5rem;}
+.rcard-link{font-size:0.9rem;font-weight:600;color:var(--tropical);display:flex;align-items:center;gap:0.4rem;}
+.rcard-arrow{transition:transform 0.2s;}
+.rcard:hover .rcard-arrow{transform:translateX(4px);}
+footer{background:var(--cacao);padding:4rem 3rem 2rem;}
+.footer-top{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(253,250,244,0.1);}
+.footer-logo-text{font-family:'Outfit',sans-serif;font-size:1.4rem;font-weight:300;color:var(--cream);margin-bottom:1rem;display:block;letter-spacing:-0.02em;}
+.footer-logo-text .dot{color:var(--amber);}
+.footer-tagline{font-size:0.85rem;color:rgba(235,243,237,0.55);font-weight:300;line-height:1.7;max-width:240px;}
+.footer-col-title{font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(235,243,237,0.45);font-weight:500;margin-bottom:1.2rem;}
+.footer-col a{display:block;font-size:0.85rem;color:rgba(235,243,237,0.7);text-decoration:none;margin-bottom:0.6rem;}
+.footer-col a:hover{color:var(--cream);}
+.footer-bottom{max-width:1300px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-top:2rem;}
+.footer-copy{font-size:0.75rem;color:rgba(235,243,237,0.3);}
+.footer-socials{display:flex;gap:0.8rem;}
+.social-btn{width:36px;height:36px;border-radius:50%;border:1px solid rgba(235,243,237,0.2);display:flex;align-items:center;justify-content:center;color:rgba(235,243,237,0.45);font-size:0.8rem;text-decoration:none;}
+.reveal{opacity:1;transform:translateY(0);transition:opacity 0.8s ease,transform 0.8s ease;}
+.js-loaded .reveal{opacity:0;transform:translateY(28px);}
+.js-loaded .reveal.visible{opacity:1;transform:translateY(0);}
+.d1{transition-delay:0.06s;}.d2{transition-delay:0.12s;}.d3{transition-delay:0.18s;}.d4{transition-delay:0.22s;}
+</style>
+</head>
+<body>
+<div class="announce">Free shipping on orders over €95 · Ceremonial Grade · Single Origin Vietnam</div>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">kakao<span class="logo-dot">.</span>guru</a>
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="/shop/">Products <span class="nav-chevron"></span></a>
+        <div class="dropdown"><div class="dd-label">Our Products</div><a href="/shop/250g/">250g Ceremonial Cacao Block</a><a href="/shop/500g/">500g Ceremonial Cacao Block</a><div class="sep"></div><a href="/shop/">→ View All Products</a></div></li>
+      <li class="nav-item"><a href="/origin/">Story <span class="nav-chevron"></span></a>
+        <div class="dropdown"><a href="/origin/">About Us</a><a href="/origin/">Vietnam Cacao</a><div class="sep"></div><a href="/trace/">QR Traceability</a></div></li>
+      <li class="nav-item"><a href="/learn/">Learn <span class="nav-chevron"></span></a>
+        <div class="dropdown"><a href="/learn/ceremonial-cacao-101/">Ceremonial Cacao 101</a><a href="/learn/superfood/">Why Cacao is a Superfood</a><a href="/learn/cacao-vs-coffee/">Cacao vs Coffee</a><a href="/learn/cacao-vs-chocolate/">Cacao vs Chocolate</a><a href="/learn/ceremonial-vs-powder/">Ceremonial Cacao vs Cacao Powder</a><div class="sep"></div><a href="/ritual/" style="color:var(--tropical)">Recipes →</a></div></li>
+      <li class="nav-item"><a href="/#science">Health <span class="nav-chevron"></span></a>
+        <div class="dropdown mega-dropdown"><div class="mega-col"><div class="dd-label">Wellness</div><a href="/#science">Reduce or Replace Coffee</a><a href="/#science">Magnesium &amp; Sleep</a><a href="/#science">Emotional Wellbeing</a></div><div class="mega-col"><div class="dd-label">Biohacking</div><a href="/health/theobromine/">Theobromine Benefits</a><a href="/health/focus/">Cacao &amp; Focus</a><a href="/#science">Antioxidant Power</a></div></div></li>
+      <li class="nav-item"><a href="/ritual/" style="color:var(--tropical)">Rituals <span class="nav-chevron"></span></a>
+        <div class="dropdown"><a href="/ritual/morning/">Morning Ritual</a><a href="/ritual/evening/">Evening Ritual</a><a href="/ritual/latte-recipes/">Latte Recipes</a><a href="/ritual/mindful-practice/">Mindful Cacao Practice</a></div></li>
+      <li class="nav-item"><a href="/faq/">About <span class="nav-chevron"></span></a>
+        <div class="dropdown"><a href="/origin/">About kakao.guru</a><a href="/faq/">FAQ</a><a href="/faq/">Contact</a></div></li>
+    </ul>
+    <div class="nav-actions"><a href="/shop/" class="nav-shop-btn">Shop Now</a></div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-label">Rituals & Recipes</div>
+    <h1 class="page-hero-title">How to use your <em>cacao</em></h1>
+    <p class="page-hero-sub">From a quick morning latte to a full ceremonial practice — four guides for making cacao a genuine part of your daily life.</p>
+  </div>
+</section>
+
+<section class="rituals-sec">
+  <div class="rituals-inner">
+    <div class="rituals-grid">
+      <a href="/ritual/morning/" class="rcard reveal d1">
+        <div class="rcard-top">
+          <div class="rcard-emoji">☀️</div>
+          <div class="rcard-name">Morning Ritual</div>
+          <div class="rcard-tagline">Replace your coffee. Start grounded.</div>
+          <div class="rcard-tags"><span class="rtag">5–10 min</span><span class="rtag">Coffee alternative</span><span class="rtag">Daily</span></div>
+        </div>
+        <div class="rcard-body">
+          <p class="rcard-desc">A four-step morning practice — shave, heat, blend, intend. Calm, sustained energy from theobromine rather than caffeine's spike. The ritual that most people start with, and never leave.</p>
+          <div class="rcard-link">Read the guide <span class="rcard-arrow">→</span></div>
+        </div>
+      </a>
+      <a href="/ritual/evening/" class="rcard reveal d2">
+        <div class="rcard-top">
+          <div class="rcard-emoji">🌙</div>
+          <div class="rcard-name">Evening Ritual</div>
+          <div class="rcard-tagline">Wind down without alcohol.</div>
+          <div class="rcard-tags"><span class="rtag">15g dose</span><span class="rtag">Sleep-friendly</span><span class="rtag">Calming</span></div>
+        </div>
+        <div class="rcard-body">
+          <p class="rcard-desc">A smaller, softer dose with warming spices — cinnamon, nutmeg, coconut milk. Cacao's magnesium and tryptophan support natural relaxation. A conscious transition from the day.</p>
+          <div class="rcard-link">Read the guide <span class="rcard-arrow">→</span></div>
+        </div>
+      </a>
+      <a href="/ritual/latte-recipes/" class="rcard reveal d3">
+        <div class="rcard-top">
+          <div class="rcard-emoji">☕</div>
+          <div class="rcard-name">Latte Recipes</div>
+          <div class="rcard-tagline">Six recipes for every mood.</div>
+          <div class="rcard-tags"><span class="rtag">6 recipes</span><span class="rtag">Hot & iced</span><span class="rtag">All occasions</span></div>
+        </div>
+        <div class="rcard-body">
+          <p class="rcard-desc">Classic oat latte, spiced cacao, golden cacao with turmeric, iced latte, adaptogen blend with lion's mane, and pure black cacao. All built on the same 4-step base recipe.</p>
+          <div class="rcard-link">See all recipes <span class="rcard-arrow">→</span></div>
+        </div>
+      </a>
+      <a href="/ritual/mindful-practice/" class="rcard reveal d4">
+        <div class="rcard-top">
+          <div class="rcard-emoji">🧘</div>
+          <div class="rcard-name">Mindful Cacao Practice</div>
+          <div class="rcard-tagline">A tool for inner clarity.</div>
+          <div class="rcard-tags"><span class="rtag">30–60 min</span><span class="rtag">Ceremonial</span><span class="rtag">Meditation</span></div>
+        </div>
+        <div class="rcard-body">
+          <p class="rcard-desc">A complete guide to using cacao intentionally for meditation, journaling, reflection, or creative work. Includes a full 6-phase session structure, intention prompts, and guidance for solo vs. shared practice.</p>
+          <div class="rcard-link">Read the guide <span class="rcard-arrow">→</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><span class="footer-logo-text">kakao<span class="dot">.</span>guru</span><p class="footer-tagline">Premium ceremonial cacao from the highlands of Vietnam. Pure, traceable, ethically sourced.</p></div>
+    <div class="footer-col"><div class="footer-col-title">Products</div><a href="/shop/250g/">250g Cacao Block</a><a href="/shop/500g/">500g Cacao Block</a></div>
+    <div class="footer-col"><div class="footer-col-title">Story</div><a href="/origin/">About Us</a><a href="/origin/">Vietnam Cacao</a><a href="/trace/">Traceability</a></div>
+    <div class="footer-col"><div class="footer-col-title">Rituals</div><a href="/ritual/morning/">Morning Ritual</a><a href="/ritual/evening/">Evening Ritual</a><a href="/ritual/latte-recipes/">Latte Recipes</a><a href="/ritual/mindful-practice/">Mindful Practice</a></div>
+    <div class="footer-col"><div class="footer-col-title">Help</div><a href="/faq/">FAQ</a><a href="/faq/">Contact Us</a><span style="color:rgba(235,243,237,0.4);cursor:default;">Shipping Policy</span><span style="color:rgba(235,243,237,0.4);cursor:default;">Terms of Service</span></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 kakao.guru — Pure Ceremonial Cacao · Spain · Vietnam</div>
+    <div class="footer-socials"><a href="#" class="social-btn">ig</a><a href="#" class="social-btn">tk</a><a href="#" class="social-btn">yt</a></div>
+  </div>
+</footer>
+<script>
+document.documentElement.classList.add('js-loaded');
+const reveals = document.querySelectorAll('.reveal');
+if (reveals.length && 'IntersectionObserver' in window) {
+  const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.05 });
+  reveals.forEach(el => io.observe(el));
+  reveals.forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight + 50) el.classList.add('visible'); });
+}
+
+// Nav touch — chevron toggles dropdown, link navigates
+document.querySelectorAll('.nav-item > a .nav-chevron').forEach(chevron => {
+  chevron.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const navItem = this.closest('.nav-item');
+    const isOpen = navItem.classList.contains('touch-open');
+    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('touch-open'));
+    if (!isOpen) navItem.classList.add('touch-open');
+  });
+});
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.nav-item')) {
+    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('touch-open'));
+  }
+});
+</script>
+</body>
+</html>
