@@ -406,8 +406,14 @@ nav{position:sticky;top:0;z-index:200;background:rgba(253,250,244,.96);backdrop-
 .glossary-def{font-size:.82rem;line-height:1.6;color:var(--muted);}
 
 /* REVEAL */
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease;}
-.reveal.visible{opacity:1;transform:none;}
+.reveal {
+  opacity: 1; transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.js-loaded .reveal {
+  opacity: 0; transform: translateY(32px);
+}
+.js-loaded .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* FOOTER */
 footer{background:var(--cacao);color:var(--cream);padding:3rem 3rem 2rem;}
