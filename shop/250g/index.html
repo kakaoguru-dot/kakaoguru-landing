@@ -467,13 +467,17 @@ footer .footer-logo span { color: var(--trop-lt); }
   .reviews-section { padding: 3rem 1.5rem; }
   .breadcrumb { padding: 1rem 1.5rem 0; }
 }
+
+.nav-item.touch-open .dropdown { opacity:1; visibility:visible; pointer-events:auto; transform:translateY(0); }
+.nav-item.touch-open .dropdown.mega-dropdown { opacity:1; visibility:visible; pointer-events:auto; transform:translateY(0); }
+
 </style>
 </head>
 <body>
 
 <!-- Announce -->
 <div class="announce">
-  🌿 Fresh harvest from Vietnam — free shipping on orders over $60 &nbsp;<a href="#">Details →</a>
+  🌿 Fresh harvest from Vietnam — free shipping on orders over $60 &nbsp;<a href="/shop/250g/">Details →</a>
 </div>
 
 <!-- Nav -->
@@ -484,8 +488,8 @@ footer .footer-logo span { color: var(--trop-lt); }
       <li class="nav-item"><a href="/shop/">Products <span class="nav-chevron"></span></a>
         <div class="dropdown">
           <div class="dd-label">Our Products</div>
-          <a href="/shop/">250g Ceremonial Cacao Block</a>
-          <a href="/shop/">500g Ceremonial Cacao Block</a>
+          <a href="/shop/250g/">250g Ceremonial Cacao Block</a>
+          <a href="/shop/500g/">500g Ceremonial Cacao Block</a>
           <div class="sep"></div>
           <a href="/shop/">→ View All Products</a>
         </div>
@@ -559,11 +563,11 @@ footer .footer-logo span { color: var(--trop-lt); }
 
 <!-- Breadcrumb -->
 <div class="breadcrumb">
-  <a href="#">Home</a>
+  <a href="/">Home</a>
   <span>›</span>
-  <a href="#">Products</a>
+  <a href="/shop/">Products</a>
   <span>›</span>
-  <a href="#">Ceremonial Cacao</a>
+  <a href="/shop/250g/">Ceremonial Cacao</a>
   <span>›</span>
   250g
 </div>
@@ -894,4 +898,28 @@ function switchImg(thumb, src) {
 // Sticky bar on scroll
 const stickyBar = document.getElementById('stickyBar');
 window.addEventListener('scroll', () => {
-  if (window
+  if (window.scrollY > 400) {
+    stickyBar.classList.add('visible');
+  } else {
+    stickyBar.classList.remove('visible');
+  }
+});
+
+// Nav dropdown click/touch support
+document.querySelectorAll('.nav-item > a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const dropdown = this.parentElement.querySelector('.dropdown');
+    if (!dropdown) return;
+    const isOpen = this.parentElement.classList.contains('touch-open');
+    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('touch-open'));
+    if (!isOpen) { e.preventDefault(); this.parentElement.classList.add('touch-open'); }
+  });
+});
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.nav-item')) {
+    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('touch-open'));
+  }
+});
+</script>
+</body>
+</html>

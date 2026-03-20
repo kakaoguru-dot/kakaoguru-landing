@@ -144,6 +144,10 @@ nav{position:sticky;top:0;z-index:200;background:rgba(253,250,244,.96);backdrop-
 footer{background:var(--cacao);color:var(--cream);padding:3rem 3rem 2rem;}.footer-top{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(247,242,232,.1);}.footer-logo-text{font-family:'Outfit',sans-serif;font-size:1.3rem;font-weight:300;letter-spacing:-.02em;display:block;margin-bottom:1rem;}.footer-logo-text .dot{color:var(--amber);}.footer-tagline{font-size:.84rem;color:rgba(247,242,232,.5);line-height:1.6;}.footer-col-title{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(247,242,232,.4);margin-bottom:1rem;}.footer-col a{display:block;margin-bottom:.6rem;font-size:.84rem;color:rgba(247,242,232,.7);text-decoration:none;transition:color .2s;}.footer-col a:hover{color:var(--cream);}.footer-bottom{max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding-top:2rem;}.footer-copy{font-size:.78rem;color:rgba(247,242,232,.35);}.footer-socials{display:flex;gap:.5rem;}.social-btn{width:32px;height:32px;border-radius:50%;border:1px solid rgba(247,242,232,.2);display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:600;color:rgba(247,242,232,.5);text-decoration:none;transition:all .2s;text-transform:uppercase;}.social-btn:hover{border-color:var(--amber);color:var(--amber);}
 @media(max-width:1080px){.article-wrap{grid-template-columns:1fr}.article-sidebar{position:static}.benefit-grid{grid-template-columns:1fr 1fr}.footer-top{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.article-wrap,.breadcrumb{padding-left:1.5rem;padding-right:1.5rem}.benefit-grid{grid-template-columns:1fr}.llm-fact-grid{grid-template-columns:1fr}.trial-stats{grid-template-columns:1fr 1fr}.footer-top{grid-template-columns:1fr;gap:2rem}.nav-inner{padding:0 1.5rem}}
+
+.nav-item.touch-open .dropdown { opacity:1; visibility:visible; pointer-events:auto; transform:translateY(0); }
+.nav-item.touch-open .dropdown.mega-dropdown { opacity:1; visibility:visible; pointer-events:auto; transform:translateY(0); }
+
 </style>
 </head>
 <body>
@@ -154,7 +158,7 @@ footer{background:var(--cacao);color:var(--cream);padding:3rem 3rem 2rem;}.foote
   <div class="nav-inner">
     <a href="/" class="nav-logo">kakao<span class="logo-dot">.</span>guru</a>
     <ul class="nav-menu">
-      <li class="nav-item"><a href="/shop/">Products <span class="nav-chevron"></span></a><div class="dropdown"><div class="dd-label">Our Products</div><a href="/shop/">250g Ceremonial Cacao Block</a><a href="/shop/">500g Ceremonial Cacao Block</a><div class="sep"></div><a href="/shop/">→ View All Products</a></div></li>
+      <li class="nav-item"><a href="/shop/">Products <span class="nav-chevron"></span></a><div class="dropdown"><div class="dd-label">Our Products</div><a href="/shop/250g/">250g Ceremonial Cacao Block</a><a href="/shop/500g/">500g Ceremonial Cacao Block</a><div class="sep"></div><a href="/shop/">→ View All Products</a></div></li>
       <li class="nav-item"><a href="/origin/">Story <span class="nav-chevron"></span></a><div class="dropdown"><div class="dd-label">Our Story</div><a href="/origin/">About Us</a><a href="/origin/">Vietnam Cacao</a><div class="sep"></div><div class="dd-label">Sourcing</div><a href="/trace/">QR Traceability</a></div></li>
       <li class="nav-item"><a href="/#learn" class="active">Learn <span class="nav-chevron"></span></a><div class="dropdown"><a href="/learn/ceremonial-cacao-101/">Ceremonial Cacao 101</a><a href="/learn/ceremonial-cacao-101/">What is Ceremonial Cacao?</a><a href="/learn/superfood/" style="color:var(--tropical);font-weight:600">← Why Cacao is a Superfood</a><a href="/learn/cacao-vs-coffee/">Cacao vs Coffee</a><a href="/learn/cacao-vs-chocolate/">Cacao vs Chocolate</a><div class="sep"></div><a href="/#ritual">Recipes</a></div></li>
       <li class="nav-item"><a href="/#science">Health <span class="nav-chevron"></span></a><div class="dropdown mega-dropdown"><div class="mega-col"><div class="dd-label">Wellness</div><a href="/learn/cacao-vs-coffee/">Reduce or Replace Coffee</a><a href="/#science">Cacao &amp; Stress Regulation</a><a href="/#science">Magnesium &amp; Sleep</a><a href="/#science">Cacao &amp; Emotional Wellbeing</a><a href="/#science">High in Flavonoids</a></div><div class="mega-col"><div class="dd-label">Biohacking</div><a href="/#science">Theobromine Benefits</a><a href="/#science">Cacao &amp; Focus</a><a href="/#science">Antioxidant Power</a><a href="/#science">Longevity &amp; Anti-Ageing</a><a href="/#science">Gut Microbiome</a><a href="/#science">Stress &amp; Mood Support</a><a href="/#science">Heart Health</a><a href="/#science">Neuroplasticity</a><a href="/#science">Nitric Oxide &amp; Circulation</a><a href="/#science">Metabolic Health</a><a href="/#science">Cognitive Performance</a></div></div></li>
@@ -434,7 +438,7 @@ footer{background:var(--cacao);color:var(--cream);padding:3rem 3rem 2rem;}.foote
 <footer>
   <div class="footer-top">
     <div class="footer-brand"><span class="footer-logo-text">kakao<span class="dot">.</span>guru</span><p class="footer-tagline">Premium ceremonial cacao from the highlands of Vietnam. Pure, traceable, ethically sourced.</p></div>
-    <div class="footer-col"><div class="footer-col-title">Products</div><a href="/shop/">250g Cacao Block</a><a href="/shop/">500g Cacao Block</a></div>
+    <div class="footer-col"><div class="footer-col-title">Products</div><a href="/shop/250g/">250g Cacao Block</a><a href="/shop/500g/">500g Cacao Block</a></div>
     <div class="footer-col"><div class="footer-col-title">Learn</div><a href="/learn/ceremonial-cacao-101/">Ceremonial Cacao 101</a><a href="/learn/superfood/">Why Cacao is a Superfood</a><a href="/learn/cacao-vs-coffee/">Cacao vs Coffee</a></div>
     <div class="footer-col"><div class="footer-col-title">Health</div><a href="/#science">Theobromine Benefits</a><a href="/#science">Neurochemistry</a><a href="/#science">Magnesium &amp; Sleep</a></div>
     <div class="footer-col"><div class="footer-col-title">Help</div><a href="/#faq">FAQ</a><a href="/cdn-cgi/l/email-protection#4f3c2e232a3c0f242e242e2061283a3d3a">Contact</a><a href="/trace/">Traceability</a></div>
@@ -454,6 +458,25 @@ window.addEventListener('scroll',()=>{
     a.style.color=active?'var(--tropical)':'';
     a.style.fontWeight=active?'600':'';
   });
+});
+
+// Nav dropdown click/touch support
+document.querySelectorAll('.nav-item > a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const dropdown = this.parentElement.querySelector('.dropdown');
+    if (!dropdown) return;
+    const isOpen = this.parentElement.classList.contains('touch-open');
+    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('touch-open'));
+    if (!isOpen) {
+      e.preventDefault();
+      this.parentElement.classList.add('touch-open');
+    }
+  });
+});
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.nav-item')) {
+    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('touch-open'));
+  }
 });
 </script>
 </body>

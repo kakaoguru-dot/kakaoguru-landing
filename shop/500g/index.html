@@ -466,13 +466,17 @@ footer .footer-logo span { color: var(--trop-lt); }
   .reviews-section { padding: 3rem 1.5rem; }
   .breadcrumb { padding: 1rem 1.5rem 0; }
 }
+
+.nav-item.touch-open .dropdown { opacity:1; visibility:visible; pointer-events:auto; transform:translateY(0); }
+.nav-item.touch-open .dropdown.mega-dropdown { opacity:1; visibility:visible; pointer-events:auto; transform:translateY(0); }
+
 </style>
 </head>
 <body>
 
 <!-- Announce -->
 <div class="announce">
-  🌿 Fresh harvest from Vietnam — free shipping on orders over $60 &nbsp;<a href="#">Details →</a>
+  🌿 Fresh harvest from Vietnam — free shipping on orders over $60 &nbsp;<a href="/shop/500g/">Details →</a>
 </div>
 
 <!-- Nav -->
@@ -483,8 +487,8 @@ footer .footer-logo span { color: var(--trop-lt); }
       <li class="nav-item"><a href="/shop/">Products <span class="nav-chevron"></span></a>
         <div class="dropdown">
           <div class="dd-label">Our Products</div>
-          <a href="/shop/">250g Ceremonial Cacao Block</a>
-          <a href="/shop/">500g Ceremonial Cacao Block</a>
+          <a href="/shop/250g/">250g Ceremonial Cacao Block</a>
+          <a href="/shop/500g/">500g Ceremonial Cacao Block</a>
           <div class="sep"></div>
           <a href="/shop/">→ View All Products</a>
         </div>
@@ -558,11 +562,11 @@ footer .footer-logo span { color: var(--trop-lt); }
 
 <!-- Breadcrumb -->
 <div class="breadcrumb">
-  <a href="#">Home</a>
+  <a href="/">Home</a>
   <span>›</span>
-  <a href="#">Products</a>
+  <a href="/shop/">Products</a>
   <span>›</span>
-  <a href="#">Ceremonial Cacao</a>
+  <a href="/shop/500g/">Ceremonial Cacao</a>
   <span>›</span>
   500g
 </div>

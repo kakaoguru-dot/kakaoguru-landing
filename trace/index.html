@@ -681,6 +681,10 @@ footer {
   .steps-grid::before { display: none; }
   .footer-top { grid-template-columns: 1fr; gap: 2rem; }
 }
+
+.nav-item.touch-open .dropdown { opacity:1; visibility:visible; pointer-events:auto; transform:translateY(0); }
+.nav-item.touch-open .dropdown.mega-dropdown { opacity:1; visibility:visible; pointer-events:auto; transform:translateY(0); }
+
 </style>
 </head>
 <body>
@@ -699,8 +703,8 @@ footer {
       <li class="nav-item"><a href="/shop/">Products <span class="nav-chevron"></span></a>
         <div class="dropdown">
           <div class="dd-label">Our Products</div>
-          <a href="/shop/">250g Ceremonial Cacao Block</a>
-          <a href="/shop/">500g Ceremonial Cacao Block</a>
+          <a href="/shop/250g/">250g Ceremonial Cacao Block</a>
+          <a href="/shop/500g/">500g Ceremonial Cacao Block</a>
           <div class="sep"></div>
           <a href="/shop/">→ View All Products</a>
         </div>
@@ -798,7 +802,7 @@ footer {
 <div class="breadcrumb">
   <a href="/">Home</a>
   <span>›</span>
-  <a href="#">Story</a>
+  <a href="/origin/">Story</a>
   <span>›</span>
   QR Traceability
 </div>
@@ -1026,8 +1030,8 @@ footer {
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Products</div>
-      <a href="/shop/">250g Cacao Block</a>
-      <a href="/shop/">500g Cacao Block</a>
+      <a href="/shop/250g/">250g Cacao Block</a>
+      <a href="/shop/500g/">500g Cacao Block</a>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Story</div>
@@ -1046,8 +1050,8 @@ footer {
       <div class="footer-col-title">Help</div>
       <a href="/#faq">FAQ</a>
       <a href="/cdn-cgi/l/email-protection#4c3f2d20293f0c272d272d23622b393e39">Contact Us</a>
-      <a href="#">Shipping Policy</a>
-      <a href="#">Terms of Service</a>
+      <a href="/#faq">Shipping Policy</a>
+      <a href="/#faq">Terms of Service</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -1065,8 +1069,15 @@ footer {
 const reveals = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
 reveals.forEach(el => io.observe(el));
+// Show immediately if already in viewport
+window.addEventListener('load', () => {
+  reveals.forEach(el => {
+    const r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight) el.classList.add('visible');
+  });
+});
 
 // Nav scroll shadow
 window.addEventListener('scroll', () => {
@@ -1128,6 +1139,25 @@ function lookupBatch() {
 }
 document.getElementById('batchInput').addEventListener('keydown', e => {
   if (e.key === 'Enter') lookupBatch();
+});
+
+// Nav dropdown click/touch support
+document.querySelectorAll('.nav-item > a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const dropdown = this.parentElement.querySelector('.dropdown');
+    if (!dropdown) return;
+    const isOpen = this.parentElement.classList.contains('touch-open');
+    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('touch-open'));
+    if (!isOpen) {
+      e.preventDefault();
+      this.parentElement.classList.add('touch-open');
+    }
+  });
+});
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.nav-item')) {
+    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('touch-open'));
+  }
 });
 </script>
 </body>
