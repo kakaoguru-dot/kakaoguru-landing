@@ -762,11 +762,11 @@ footer {
           <a href="/ritual/mindful-practice/">Mindful Cacao Practice</a>
         </div>
       </li>
-      <li class="nav-item"><a href="/#faq">About <span class="nav-chevron"></span></a>
+      <li class="nav-item"><a href="/faq/">About <span class="nav-chevron"></span></a>
         <div class="dropdown">
           <a href="/origin/">About kakao.guru</a>
-          <a href="/#faq">FAQ</a>
-          <a href="/#faq">Contact</a>
+          <a href="/faq/">FAQ</a>
+          <a href="/faq/">Contact</a>
         </div>
       </li>
     </ul>
@@ -1050,10 +1050,10 @@ footer {
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Help</div>
-      <a href="/#faq">FAQ</a>
+      <a href="/faq/">FAQ</a>
       <a href="/cdn-cgi/l/email-protection#4c3f2d20293f0c272d272d23622b393e39">Contact Us</a>
-      <a href="/#faq">Shipping Policy</a>
-      <a href="/#faq">Terms of Service</a>
+      <a href="/faq/">Shipping Policy</a>
+      <a href="/faq/">Terms of Service</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -1149,17 +1149,15 @@ document.getElementById('batchInput').addEventListener('keydown', e => {
   if (e.key === 'Enter') lookupBatch();
 });
 
-// Nav dropdown click/touch support
-document.querySelectorAll('.nav-item > a').forEach(link => {
-  link.addEventListener('click', function(e) {
-    const dropdown = this.parentElement.querySelector('.dropdown');
-    if (!dropdown) return;
-    const isOpen = this.parentElement.classList.contains('touch-open');
+// Nav touch — chevron toggles dropdown, link navigates
+document.querySelectorAll('.nav-item > a .nav-chevron').forEach(chevron => {
+  chevron.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const navItem = this.closest('.nav-item');
+    const isOpen = navItem.classList.contains('touch-open');
     document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('touch-open'));
-    if (!isOpen) {
-      e.preventDefault();
-      this.parentElement.classList.add('touch-open');
-    }
+    if (!isOpen) navItem.classList.add('touch-open');
   });
 });
 document.addEventListener('click', function(e) {

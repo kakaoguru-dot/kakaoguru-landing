@@ -198,8 +198,8 @@ footer { background:var(--cacao); padding:4rem 3rem 2rem; }
         <a href="/faq/">About <span class="nav-chevron"></span></a>
         <div class="dropdown">
           <a href="/origin/">About kakao.guru</a>
-          <a href="/#faq">FAQ</a>
-          <a href="/#faq">Contact</a>
+          <a href="/faq/">FAQ</a>
+          <a href="/faq/">Contact</a>
         </div>
       </li>
     </ul>
@@ -369,8 +369,8 @@ footer { background:var(--cacao); padding:4rem 3rem 2rem; }
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Help</div>
-      <a href="/#faq">FAQ</a>
-      <a href="/#faq">Contact Us</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/faq/">Contact Us</a>
       <span style="color:rgba(235,243,237,0.4);cursor:default;">Shipping Policy</span>
       <span style="color:rgba(235,243,237,0.4);cursor:default;">Terms of Service</span>
     </div>
@@ -409,14 +409,15 @@ if (reveals.length && 'IntersectionObserver' in window) {
   });
 }
 
-// Nav touch
-document.querySelectorAll('.nav-item > a').forEach(link => {
-  link.addEventListener('click', function(e) {
-    const dropdown = this.parentElement.querySelector('.dropdown');
-    if (!dropdown) return;
-    const isOpen = this.parentElement.classList.contains('touch-open');
+// Nav touch — chevron toggles dropdown, link navigates
+document.querySelectorAll('.nav-item > a .nav-chevron').forEach(chevron => {
+  chevron.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const navItem = this.closest('.nav-item');
+    const isOpen = navItem.classList.contains('touch-open');
     document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('touch-open'));
-    if (!isOpen) { e.preventDefault(); this.parentElement.classList.add('touch-open'); }
+    if (!isOpen) navItem.classList.add('touch-open');
   });
 });
 document.addEventListener('click', function(e) {
