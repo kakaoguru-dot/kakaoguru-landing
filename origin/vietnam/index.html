@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vietnam Cacao — Single Origin Highland Cacao | kakao.guru</title>
+<link rel="canonical" href="https://kakao.guru/origin/vietnam/">
+<meta name="description" content="Why Vietnam produces exceptional ceremonial cacao — terroir, fermentation science, smallholder farming, and the post-harvest practices that make Đắk Lắk cacao extraordinary.">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:      #F7F2E8;
+  --paper:      #EDE6D6;
+  --warm:       #DDD4BF;
+  --cacao:      #3B1F0E;
+  --cacao-mid:  #6B3A1F;
+  --cacao-lt:   #9C6644;
+  --gold:       #B07D3A;
+  --amber:      #C8913A;
+  --tropical:   #2D5E3A;
+  --trop-lt:    #3D7A4E;
+  --trop-pale:  #EBF3ED;
+  --text:       #2A1A0E;
+  --muted:      #9C8878;
+  --border:     rgba(59,31,14,0.1);
+  --white:      #FDFAF4;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--white); color:var(--text); font-family:'DM Sans',sans-serif; overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+
+/* ANNOUNCE */
+.announce { background:var(--tropical); color:#fff; text-align:center; padding:0.55rem 1rem; font-size:0.78rem; letter-spacing:0.06em; }
+.announce a { color:#fff; text-decoration:underline; text-underline-offset:2px; }
+
+/* NAV */
+nav { position:sticky; top:0; z-index:200; background:rgba(253,250,244,0.96); backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--border); transition:box-shadow 0.3s; }
+.nav-inner { max-width:1300px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 3rem; height:68px; }
+.nav-logo { font-family:'Outfit',sans-serif; font-size:1.35rem; font-weight:300; letter-spacing:-0.02em; color:var(--cacao); text-decoration:none; flex-shrink:0; display:flex; align-items:center; }
+.nav-logo .logo-dot { color:var(--tropical); }
+.nav-menu { display:flex; gap:0; list-style:none; position:relative; }
+.nav-item { position:relative; }
+.nav-item > a { display:flex; align-items:center; gap:0.3rem; padding:0 1.1rem; height:68px; font-size:0.88rem; font-weight:400; color:var(--text); text-decoration:none; letter-spacing:0.01em; transition:color 0.2s; white-space:nowrap; }
+.nav-item > a:hover, .nav-item:hover > a { color:var(--tropical); }
+.nav-item > a.active { color:var(--tropical); font-weight:500; }
+.nav-chevron { display:inline-block; width:6px; height:6px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor; transform:rotate(45deg); margin-top:-2px; transition:transform 0.25s; }
+.nav-item:hover .nav-chevron { transform:rotate(-135deg); margin-top:3px; }
+.dropdown { position:absolute; top:calc(100% + 2px); left:50%; transform:translateX(-50%) translateY(8px); background:var(--white); border:1px solid var(--border); border-radius:14px; padding:0.6rem; min-width:220px; box-shadow:0 8px 40px rgba(59,31,14,0.1); opacity:0; visibility:hidden; pointer-events:none; transition:all 0.2s; z-index:300; }
+.nav-item:hover .dropdown { opacity:1; visibility:visible; pointer-events:auto; transform:translateX(-50%) translateY(0); }
+.nav-item.touch-open .dropdown { opacity:1; visibility:visible; pointer-events:auto; transform:translateX(-50%) translateY(0); }
+.dropdown a { display:block; padding:0.55rem 0.9rem; font-size:0.84rem; color:var(--text); text-decoration:none; border-radius:8px; transition:all 0.15s; white-space:nowrap; }
+.dropdown a:hover { background:var(--trop-pale); color:var(--tropical); padding-left:1.8rem; }
+.dropdown .sep { height:1px; background:var(--border); margin:0.4rem 0; }
+.dd-label { font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); padding:0.4rem 0.9rem 0.2rem; font-weight:500; }
+.dropdown.mega-dropdown { min-width:480px; display:flex; gap:0; padding:1rem; left:0; transform:translateY(8px); }
+.nav-item:hover .dropdown.mega-dropdown { transform:translateY(0); }
+.nav-item.touch-open .dropdown.mega-dropdown { opacity:1; visibility:visible; pointer-events:auto; transform:translateY(0); }
+.mega-col { flex:1; }
+.nav-actions { display:flex; align-items:center; gap:0.8rem; }
+.nav-icon-btn { background:none; border:none; cursor:pointer; color:var(--cacao); padding:0.4rem; border-radius:8px; transition:background 0.2s; display:flex; align-items:center; }
+.nav-icon-btn:hover { background:var(--paper); }
+.nav-shop-btn { background:var(--cacao); color:var(--cream); padding:0.5rem 1.2rem; border-radius:99px; font-size:0.82rem; font-weight:500; text-decoration:none; white-space:nowrap; transition:background 0.2s; }
+.nav-shop-btn:hover { background:var(--cacao-mid); }
+
+/* BREADCRUMB */
+.breadcrumb { max-width:1300px; margin:0 auto; padding:1.2rem 3rem 0; font-size:0.74rem; color:var(--muted); letter-spacing:0.04em; }
+.breadcrumb a { color:var(--muted); text-decoration:none; }
+.breadcrumb a:hover { color:var(--tropical); }
+.breadcrumb span { margin:0 0.5rem; }
+
+/* HERO */
+.hero { background:var(--cacao); padding:6rem 3rem 5rem; }
+.hero-inner { max-width:1300px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+.sec-label { display:inline-block; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--amber); font-weight:500; margin-bottom:1.2rem; }
+.hero-title { font-family:'Outfit',sans-serif; font-size:clamp(2.5rem,4vw,4.5rem); font-weight:200; line-height:1.05; letter-spacing:-0.03em; color:var(--cream); }
+.hero-title strong { font-weight:600; color:var(--amber); }
+.hero-sub { font-size:1.05rem; font-weight:300; color:rgba(247,242,232,0.65); line-height:1.8; margin-top:1.5rem; max-width:480px; }
+.hero-cta { margin-top:2.5rem; display:flex; gap:1rem; }
+.btn-primary { background:var(--amber); color:var(--cacao); padding:0.75rem 1.8rem; border-radius:99px; font-size:0.88rem; font-weight:600; text-decoration:none; transition:background 0.2s; }
+.btn-primary:hover { background:var(--gold); }
+.btn-outline-light { border:1px solid rgba(247,242,232,0.3); color:var(--cream); padding:0.75rem 1.8rem; border-radius:99px; font-size:0.88rem; font-weight:400; text-decoration:none; transition:all 0.2s; }
+.btn-outline-light:hover { border-color:var(--cream); }
+.hero-img { width:100%; aspect-ratio:4/3; border-radius:20px; overflow:hidden; background:var(--cacao-mid); }
+.hero-img img { width:100%; height:100%; object-fit:cover; display:block; }
+
+/* STATS BAR */
+.stats-bar { background:var(--paper); border-bottom:1px solid var(--warm); padding:2rem 3rem; }
+.stats-inner { max-width:1300px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:2rem; }
+.stat-item { text-align:center; }
+.stat-num { font-family:'Outfit',sans-serif; font-size:2rem; font-weight:300; color:var(--cacao); display:block; letter-spacing:-0.02em; }
+.stat-label { font-size:0.75rem; color:var(--muted); letter-spacing:0.06em; text-transform:uppercase; margin-top:0.3rem; }
+
+/* SECTIONS */
+.section { padding:6rem 3rem; }
+.section-inner { max-width:1300px; margin:0 auto; }
+.section-alt { background:var(--cream); }
+.section-dark { background:var(--cacao); }
+
+.section-header { margin-bottom:4rem; }
+.section-title { font-family:'Outfit',sans-serif; font-size:clamp(2rem,3vw,3rem); font-weight:200; line-height:1.1; letter-spacing:-0.03em; color:var(--cacao); }
+.section-title strong { font-weight:600; }
+.section-title-light { color:var(--cream); }
+.section-lead { font-size:1rem; font-weight:300; color:var(--muted); line-height:1.8; max-width:600px; margin-top:1rem; }
+.section-lead-light { color:rgba(247,242,232,0.6); }
+
+/* TWO COL */
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; }
+.two-col-center { align-items:center; }
+
+/* TERROIR */
+.terroir-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:3rem; }
+.terroir-card { background:var(--white); border:1px solid var(--warm); border-radius:20px; padding:2rem; }
+.terroir-icon { font-size:2rem; margin-bottom:1rem; }
+.terroir-title { font-family:'Outfit',sans-serif; font-size:1rem; font-weight:600; color:var(--cacao); margin-bottom:0.6rem; }
+.terroir-text { font-size:0.88rem; font-weight:300; color:var(--muted); line-height:1.7; }
+
+/* PROCESS */
+.process-steps { display:flex; flex-direction:column; gap:2rem; }
+.process-step { display:flex; gap:2rem; align-items:flex-start; padding:1.8rem; background:rgba(247,242,232,0.06); border:1px solid rgba(247,242,232,0.1); border-radius:16px; }
+.step-num { font-family:'Outfit',sans-serif; font-size:2rem; font-weight:200; color:var(--amber); flex-shrink:0; line-height:1; }
+.step-title { font-family:'Outfit',sans-serif; font-size:1rem; font-weight:600; color:var(--cream); margin-bottom:0.5rem; }
+.step-text { font-size:0.88rem; font-weight:300; color:rgba(247,242,232,0.6); line-height:1.75; }
+
+/* REGIONS */
+.regions-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; }
+.region-card { background:var(--white); border:1px solid var(--warm); border-radius:20px; overflow:hidden; }
+.region-img { width:100%; height:200px; background:var(--paper); display:flex; align-items:center; justify-content:center; font-size:3rem; }
+.region-img img { width:100%; height:100%; object-fit:cover; display:block; }
+.region-body { padding:1.5rem; }
+.region-name { font-family:'Outfit',sans-serif; font-size:1.1rem; font-weight:600; color:var(--cacao); margin-bottom:0.4rem; }
+.region-sub { font-size:0.78rem; color:var(--tropical); font-weight:500; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:0.8rem; }
+.region-text { font-size:0.88rem; font-weight:300; color:var(--muted); line-height:1.65; }
+
+/* FACTS */
+.facts-list { display:flex; flex-direction:column; gap:1.5rem; }
+.fact-item { display:flex; gap:1.2rem; align-items:flex-start; }
+.fact-icon { font-size:1.4rem; flex-shrink:0; }
+.fact-title { font-weight:600; color:var(--cream); display:block; margin-bottom:0.3rem; font-size:0.95rem; }
+.fact-text { font-size:0.88rem; font-weight:300; color:rgba(247,242,232,0.65); line-height:1.7; }
+
+/* MAP */
+.map-wrap { background:var(--paper); border-radius:20px; overflow:hidden; border:1px solid var(--warm); }
+.map-wrap img { width:100%; display:block; }
+.map-placeholder { width:100%; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:1rem; color:var(--muted); font-size:0.88rem; }
+.map-placeholder span { font-size:3rem; }
+
+/* CTA */
+.cta-sec { background:var(--cacao); padding:6rem 3rem; text-align:center; }
+.cta-inner { max-width:600px; margin:0 auto; }
+.cta-title { font-family:'Outfit',sans-serif; font-size:clamp(2rem,3vw,3rem); font-weight:200; color:var(--cream); line-height:1.1; letter-spacing:-0.03em; margin-bottom:1rem; }
+.cta-title em { font-style:italic; color:var(--amber); }
+.cta-sub { font-size:1rem; font-weight:300; color:rgba(247,242,232,0.6); line-height:1.7; margin-bottom:2.5rem; }
+.cta-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+
+/* FOOTER */
+footer { background:var(--cacao); padding:4rem 3rem 2rem; }
+.footer-top { max-width:1300px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1fr 1fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(253,250,244,0.1); }
+.footer-logo-text { font-family:'Outfit',sans-serif; font-size:1.4rem; font-weight:300; letter-spacing:-0.02em; color:var(--cream); margin-bottom:1rem; display:block; }
+.footer-logo-text .dot { color:var(--amber); }
+.footer-tagline { font-size:0.85rem; color:rgba(235,243,237,0.55); font-weight:300; line-height:1.7; max-width:240px; }
+.footer-col-title { font-size:0.68rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(235,243,237,0.45); font-weight:500; margin-bottom:1.2rem; }
+.footer-col a { display:block; font-size:0.85rem; color:rgba(235,243,237,0.7); text-decoration:none; margin-bottom:0.6rem; transition:color 0.2s; }
+.footer-col a:hover { color:var(--cream); }
+.footer-bottom { max-width:1300px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; padding-top:2rem; }
+.footer-copy { font-size:0.75rem; color:rgba(235,243,237,0.3); }
+.footer-socials { display:flex; gap:0.8rem; }
+.social-btn { width:36px; height:36px; border-radius:50%; border:1px solid rgba(235,243,237,0.2); display:flex; align-items:center; justify-content:center; color:rgba(235,243,237,0.45); font-size:0.8rem; text-decoration:none; transition:all 0.2s; }
+.social-btn:hover { border-color:var(--amber); color:var(--amber); }
+
+/* REVEAL */
+.reveal { opacity:0; transform:translateY(28px); transition:opacity 0.8s ease, transform 0.8s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.d1 { transition-delay:0.06s; } .d2 { transition-delay:0.12s; } .d3 { transition-delay:0.18s; }
+
+/* RESPONSIVE */
+@media (max-width:1024px) { .terroir-grid { grid-template-columns:1fr 1fr; } .footer-top { grid-template-columns:1fr 1fr; gap:2rem; } }
+@media (max-width:768px) { .hero-inner,.two-col { grid-template-columns:1fr; } .stats-inner { grid-template-columns:1fr 1fr; } .regions-grid { grid-template-columns:1fr; } .terroir-grid { grid-template-columns:1fr; } .section,.hero { padding:4rem 1.5rem; } .breadcrumb,.stats-bar { padding-left:1.5rem; padding-right:1.5rem; } .nav-inner { padding:0 1.5rem; } footer { padding:3rem 1.5rem 1.5rem; } .footer-top { grid-template-columns:1fr 1fr; } .cta-sec { padding:4rem 1.5rem; } }
+</style>
+</head>
+<body>
+
+<div class="announce">Free shipping on orders over €95 · Ceremonial Grade · Single Origin Vietnam</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">kakao<span class="logo-dot">.</span>guru</a>
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="/shop/">Products <span class="nav-chevron"></span></a>
+        <div class="dropdown">
+          <div class="dd-label">Our Products</div>
+          <a href="/shop/250g/">250g Ceremonial Cacao Block</a>
+          <a href="/shop/500g/">500g Ceremonial Cacao Block</a>
+          <div class="sep"></div>
+          <a href="/shop/">→ View All Products</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/origin/" class="active">Story <span class="nav-chevron"></span></a>
+        <div class="dropdown">
+          <div class="dd-label">Our Story</div>
+          <a href="/origin/">About Us</a>
+          <a href="/origin/vietnam/">Vietnam Cacao</a>
+          <div class="sep"></div>
+          <div class="dd-label">Sourcing</div>
+          <a href="/trace/">QR Traceability</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/learn/ceremonial-cacao-101/">Learn <span class="nav-chevron"></span></a>
+        <div class="dropdown">
+          <a href="/learn/ceremonial-cacao-101/">Ceremonial Cacao 101</a>
+          <a href="/learn/superfood/">Why Cacao is a Superfood</a>
+          <a href="/learn/cacao-vs-coffee/">Cacao vs Coffee</a>
+          <a href="/learn/cacao-vs-chocolate/">Cacao vs Chocolate</a>
+          <a href="/learn/ceremonial-vs-powder/">Ceremonial Cacao vs Cacao Powder</a>
+          <div class="sep"></div>
+          <a href="/#ritual">Recipes</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/health/theobromine/">Health <span class="nav-chevron"></span></a>
+        <div class="dropdown mega-dropdown">
+          <div class="mega-col">
+            <div class="dd-label">Wellness</div>
+            <a href="/health/theobromine/">Reduce or Replace Coffee</a>
+            <a href="/health/theobromine/">Cacao &amp; Stress Regulation</a>
+            <a href="/health/theobromine/">Magnesium &amp; Sleep</a>
+            <a href="/health/theobromine/">Cacao &amp; Emotional Wellbeing</a>
+            <a href="/health/theobromine/">High in Flavonoids</a>
+            <a href="/health/theobromine/">Emotional Wellbeing</a>
+          </div>
+          <div class="mega-col">
+            <div class="dd-label">Biohacking</div>
+            <a href="/health/theobromine/">Theobromine Benefits</a>
+            <a href="/health/focus/">Cacao &amp; Focus</a>
+            <a href="/health/theobromine/">Antioxidant Power</a>
+            <a href="/health/theobromine/">Longevity &amp; Anti-Ageing</a>
+            <a href="/health/theobromine/">Gut Microbiome</a>
+            <a href="/health/theobromine/">Stress &amp; Mood Support</a>
+            <a href="/health/theobromine/">Heart Health</a>
+            <a href="/health/theobromine/">Neuroplasticity</a>
+            <a href="/health/theobromine/">Nitric Oxide &amp; Circulation</a>
+            <a href="/health/theobromine/">Metabolic Health</a>
+            <a href="/health/theobromine/">Cognitive Performance</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/ritual/">Rituals <span class="nav-chevron"></span></a>
+        <div class="dropdown">
+          <a href="/ritual/morning/">Morning Ritual</a>
+          <a href="/ritual/evening/">Evening Ritual</a>
+          <a href="/ritual/latte-recipes/">Latte Recipes</a>
+          <a href="/ritual/mindful-practice/">Mindful Cacao Practice</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/faq/">About <span class="nav-chevron"></span></a>
+        <div class="dropdown">
+          <a href="/origin/">About kakao.guru</a>
+          <a href="/faq/">FAQ</a>
+          <a href="/faq/">Contact</a>
+        </div>
+      </li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" title="Search">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M12.5 12.5 L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <button class="nav-icon-btn" title="Cart">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M1 1 L3.5 1 L5.5 11 L14 11 L16 4 L4.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="7" cy="14.5" r="1.5" fill="currentColor"/>
+          <circle cx="13" cy="14.5" r="1.5" fill="currentColor"/>
+        </svg>
+      </button>
+      <a href="/shop/" class="nav-shop-btn">Shop Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="/">Home</a><span>→</span>
+  <a href="/origin/">Story</a><span>→</span>
+  Vietnam Cacao
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="sec-label">Single Origin · Vietnam</span>
+      <h1 class="hero-title">Extraordinary cacao grows in places the world<br>isn't <strong>looking at.</strong></h1>
+      <p class="hero-sub">Vietnam's Central Highlands produce some of the world's most complex ceremonial cacao — volcanic soil, agroforestry traditions, and smallholder fermentation craft that industrial supply chains cannot replicate.</p>
+      <div class="hero-cta">
+        <a href="/shop/" class="btn-primary">Shop Vietnam Cacao</a>
+        <a href="/trace/" class="btn-outline-light">View Traceability →</a>
+      </div>
+    </div>
+    <div class="hero-img reveal">
+      <img src="/images/dak-lak-landscape.png" alt="Đắk Lắk highlands cacao plantation, Vietnam" />
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item reveal">
+      <span class="stat-num">1,500m</span>
+      <span class="stat-label">Altitude range</span>
+    </div>
+    <div class="stat-item reveal d1">
+      <span class="stat-num">6–7</span>
+      <span class="stat-label">Days fermentation</span>
+    </div>
+    <div class="stat-item reveal d2">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">Smallholder farms</span>
+    </div>
+    <div class="stat-item reveal d3">
+      <span class="stat-num">2</span>
+      <span class="stat-label">Growing regions</span>
+    </div>
+  </div>
+</div>
+
+<!-- TERROIR -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="sec-label">Terroir</span>
+      <h2 class="section-title">Why Vietnamese soil produces<br><strong>exceptional cacao</strong></h2>
+      <p class="section-lead">The Central Highlands' unique combination of volcanic geology, altitude, and microclimate creates conditions that concentrate flavour and polyphenol compounds in ways lowland origins cannot match.</p>
+    </div>
+    <div class="terroir-grid">
+      <div class="terroir-card reveal">
+        <div class="terroir-icon">🌋</div>
+        <div class="terroir-title">Volcanic Basalt Soil</div>
+        <p class="terroir-text">The red basalt soils of Đắk Lắk and Lâm Đồng are mineral-rich and exceptionally well-drained. High iron, potassium, and magnesium content drives complex flavour precursor development in the bean cotyledon.</p>
+      </div>
+      <div class="terroir-card reveal d1">
+        <div class="terroir-icon">🌡️</div>
+        <div class="terroir-title">Diurnal Temperature Variation</div>
+        <p class="terroir-text">Altitude-driven day-to-night temperature swings of 12–15°C slow bean development and concentrate polyphenols. The same mechanism that produces complexity in high-altitude coffee applies equally to cacao.</p>
+      </div>
+      <div class="terroir-card reveal d2">
+        <div class="terroir-icon">💧</div>
+        <div class="terroir-title">Distinct Wet & Dry Seasons</div>
+        <p class="terroir-text">Vietnam's defined monsoon cycle creates natural crop timing — a concentrated harvest window that allows farmers to process beans at peak ripeness rather than staggering harvests across an extended season.</p>
+      </div>
+      <div class="terroir-card reveal">
+        <div class="terroir-icon">🌳</div>
+        <div class="terroir-title">Agroforestry Systems</div>
+        <p class="terroir-text">Vietnamese cacao is traditionally intercropped with fruit trees, pepper, and hardwoods. This multi-canopy system provides 30–50% shade cover — mimicking the cacao tree's natural rainforest understory habitat and reducing disease pressure.</p>
+      </div>
+      <div class="terroir-card reveal d1">
+        <div class="terroir-icon">🦠</div>
+        <div class="terroir-title">Native Microbial Diversity</div>
+        <p class="terroir-text">Vietnam's fermentation microflora — the specific yeast and bacterial populations that colonise fermentation boxes — are distinct from West African or South American origins, producing characteristic fruity-acidic flavour profiles unique to Vietnamese terroir.</p>
+      </div>
+      <div class="terroir-card reveal d2">
+        <div class="terroir-icon">🤲</div>
+        <div class="terroir-title">Smallholder Craft Scale</div>
+        <p class="terroir-text">Most Vietnamese cacao farms are under 2 hectares. This small scale forces attentive hand-harvesting and individual pod selection — practices that are economically impossible in large-scale commodity plantations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGIONS -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="sec-label">Our Sourcing Regions</span>
+      <h2 class="section-title">Two distinct origins,<br><strong>one supply chain</strong></h2>
+      <p class="section-lead">kakao.guru sources from two complementary growing regions in Vietnam's Central Highlands, each contributing distinct flavour characteristics to our ceremonial cacao.</p>
+    </div>
+    <div class="regions-grid">
+      <div class="region-card reveal">
+        <div class="region-img">
+          <img src="/images/Daklak.jpg" alt="Đắk Lắk cacao farm Vietnam" />
+        </div>
+        <div class="region-body">
+          <div class="region-sub">Central Highlands · 500–800m</div>
+          <div class="region-name">Đắk Lắk Province</div>
+          <p class="region-text">Vietnam's largest cacao-producing province. Red basalt soils, consistent humidity, and well-established smallholder cooperatives with 15+ years of fermentation experience. Produces cacao with pronounced fruit acidity, clean fermentation character, and deep mineral finish. Our primary sourcing region — the home of kakao.guru's signature profile.</p>
+        </div>
+      </div>
+      <div class="region-card reveal d1">
+        <div class="region-img">
+          <img src="/images/bentre.png" alt="Bến Tre cacao Mekong Delta Vietnam" />
+        </div>
+        <div class="region-body">
+          <div class="region-sub">Mekong Delta · Sea Level</div>
+          <div class="region-name">Bến Tre Province</div>
+          <p class="region-text">Vietnam's original cacao-growing region, introduced in the 1980s. The Mekong Delta's alluvial soils produce cacao with a softer, rounder flavour profile — less acidity, more chocolate-forward, with distinctive coconut and tropical fruit notes from intercropping with palm. A complementary counterpoint to the Highland's intensity.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POST-HARVEST PROCESS -->
+<section class="section section-dark">
+  <div class="section-inner">
+    <div class="two-col two-col-center">
+      <div class="reveal">
+        <span class="sec-label" style="color:var(--amber)">Post-Harvest Science</span>
+        <h2 class="section-title section-title-light">The fermentation craft that defines <strong style="color:var(--amber)">our cacao</strong></h2>
+        <p class="section-lead section-lead-light" style="margin-top:1.5rem;">Fermentation is not a passive process — it is the single greatest determinant of cacao quality. Our partner farmers in Đắk Lắk follow precision post-harvest protocols developed over decades of craft refinement.</p>
+      </div>
+      <div class="process-steps reveal d1">
+        <div class="process-step">
+          <div class="step-num">01</div>
+          <div>
+            <div class="step-title">Selective Pod Harvesting</div>
+            <p class="step-text">Pods are hand-harvested at precise colour and sound indicators of ripeness. Unripe or overripe pods are excluded — both compromise fermentation chemistry and final flavour. Harvest windows are typically 2–3 days per tree.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">02</div>
+          <div>
+            <div class="step-title">Box Fermentation · 6–7 Days</div>
+            <p class="step-text">Beans and pulp are loaded into tiered wooden fermentation boxes. A microbial succession — yeasts, then lactic acid bacteria, then acetic acid bacteria — transforms both pulp and bean chemistry over 6–7 days. Turning every 48 hours manages the aerobic/anaerobic gradient.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">03</div>
+          <div>
+            <div class="step-title">Sun Drying · 7–10 Days</div>
+            <p class="step-text">Fermented beans are spread on raised wooden drying beds under full sun. Slow drying (7–10 days) allows continued flavour development and gradual acetic acid volatilisation — preventing the vinegary off-notes of fast mechanical drying.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">04</div>
+          <div>
+            <div class="step-title">Grading & Quality Control</div>
+            <p class="step-text">Cut tests (slicing beans to assess fermentation index) are performed on each batch. Only beans with full fermentation — brown-to-purple cross-section, clean aroma, no slaty or mouldy defects — are accepted for ceremonial grade processing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY VIETNAM -->
+<section class="section">
+  <div class="section-inner">
+    <div class="two-col two-col-center">
+      <div class="map-wrap reveal">
+        <img src="/images/vietnam-origin-map.png" alt="Vietnam Cacao Origin Map — Đắk Lắk, Lâm Đồng, Bến Tre" />
+      </div>
+      <div class="reveal d1">
+        <span class="sec-label">The Opportunity</span>
+        <h2 class="section-title">Why Vietnam, and<br><strong>why now</strong></h2>
+        <p style="font-size:0.95rem;font-weight:300;color:var(--muted);line-height:1.8;margin-top:1.5rem;">While Guatemala, Ecuador, and Peru have established fine cacao reputations and complex market structures, Vietnam's specialty cacao sector is still forming — which means direct sourcing relationships can be built with smallholders who haven't yet been absorbed into commodity supply chains.</p>
+        <div class="facts-list" style="margin-top:2rem;">
+          <div class="fact-item">
+            <div class="fact-icon">🌱</div>
+            <div>
+              <span style="font-weight:600;color:var(--cacao);display:block;margin-bottom:0.3rem;">Emerging fine flavour recognition</span>
+              <span style="font-size:0.88rem;color:var(--muted);line-height:1.7;">Vietnam is increasingly recognised by ICCO and specialty chocolate makers as a partial fine flavour origin — a classification that reflects post-harvest quality standards, not just genetics.</span>
+            </div>
+          </div>
+          <div class="fact-item">
+            <div class="fact-icon">💚</div>
+            <div>
+              <span style="font-weight:600;color:var(--cacao);display:block;margin-bottom:0.3rem;">Ethical sourcing from the ground up</span>
+              <span style="font-size:0.88rem;color:var(--muted);line-height:1.7;">We pay fine flavour premiums (3–5× commodity rates) directly to farming cooperatives — not through intermediary traders who absorb the margin. This aligns economic incentive with quality production.</span>
+            </div>
+          </div>
+          <div class="fact-item">
+            <div class="fact-icon">🔬</div>
+            <div>
+              <span style="font-weight:600;color:var(--cacao);display:block;margin-bottom:0.3rem;">Documented, traceable supply chain</span>
+              <span style="font-size:0.88rem;color:var(--muted);line-height:1.7;">Every batch is linked to specific farms, fermentation records, and batch test results — accessible via our QR traceability system. Not marketing language. Actual documentation.</span>
+            </div>
+          </div>
+        </div>
+        <a href="/trace/" style="display:inline-block;margin-top:2rem;font-size:0.88rem;font-weight:500;color:var(--tropical);text-decoration:none;">View our traceability records →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <div class="cta-inner">
+    <span class="sec-label" style="color:var(--amber)">Ready to experience it</span>
+    <h2 class="cta-title reveal">Vietnamese cacao,<br><em>delivered to your door</em></h2>
+    <p class="cta-sub reveal">Single origin. Ethically sourced. Precision fermented. Every block traceable to the farm it came from.</p>
+    <div class="cta-btns reveal">
+      <a href="/shop/250g/" class="btn-primary">Shop 250g Block</a>
+      <a href="/shop/500g/" class="btn-outline-light">Shop 500g Block</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="footer-logo-text">kakao<span class="dot">.</span>guru</span>
+      <p class="footer-tagline">Premium ceremonial cacao from the highlands of Vietnam. Pure, traceable, ethically sourced.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Products</div>
+      <a href="/shop/250g/">250g Cacao Block</a>
+      <a href="/shop/500g/">500g Cacao Block</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Story</div>
+      <a href="/origin/">About Us</a>
+      <a href="/origin/vietnam/">Vietnam Cacao</a>
+      <a href="/trace/">Traceability</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Learn</div>
+      <a href="/learn/">All Articles</a>
+      <a href="/learn/ceremonial-cacao-101/">Ceremonial Cacao 101</a>
+      <a href="/learn/cacao-vs-coffee/">Cacao vs Coffee</a>
+      <a href="/learn/superfood/">Why Cacao is a Superfood</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Help</div>
+      <a href="/faq/">FAQ</a>
+      <a href="/faq/">Contact Us</a>
+      <span style="color:rgba(235,243,237,0.4);cursor:default;">Shipping Policy</span>
+      <span style="color:rgba(235,243,237,0.4);cursor:default;">Terms of Service</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 kakao.guru — Pure Ceremonial Cacao · Spain · Vietnam</div>
+    <div class="footer-socials">
+      <a href="#" class="social-btn">ig</a>
+      <a href="#" class="social-btn">tk</a>
+      <a href="#" class="social-btn">yt</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Reveal
+const reveals = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.05 });
+  reveals.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight + 50) {
+      el.classList.add('visible');
+    } else {
+      io.observe(el);
+    }
+  });
+}
+
+// Nav touch — chevron toggles dropdown, link navigates
+document.querySelectorAll('.nav-item > a .nav-chevron').forEach(chevron => {
+  chevron.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const navItem = this.closest('.nav-item');
+    const isOpen = navItem.classList.contains('touch-open');
+    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('touch-open'));
+    if (!isOpen) navItem.classList.add('touch-open');
+  });
+});
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.nav-item')) {
+    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('touch-open'));
+  }
+});
+</script>
+</body>
+</html>
