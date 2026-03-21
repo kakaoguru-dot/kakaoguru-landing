@@ -187,16 +187,15 @@ footer{background:var(--cacao);padding:4rem 3rem 2rem;}
         </div>
       </li>
       <li class="nav-item">
-        <a href="/health/theobromine/" class="active">Health <span class="nav-chevron"></span></a>
+        <a href="/health/theobromine/">Health <span class="nav-chevron"></span></a>
         <div class="dropdown mega-dropdown">
           <div class="mega-col">
             <div class="dd-label">Wellness</div>
             <a href="/health/replace-coffee/">Reduce or Replace Coffee</a>
             <a href="/health/stress-regulation/">Cacao &amp; Stress Regulation</a>
             <a href="/health/magnesium-sleep/">Magnesium &amp; Sleep</a>
-            <a href="/health/theobromine/">Cacao &amp; Emotional Wellbeing</a>
-            <a href="/health/theobromine/">High in Flavonoids</a>
-            <a href="/health/theobromine/">Emotional Wellbeing</a>
+            <a href="/health/emotional-wellbeing/">Cacao &amp; Emotional Wellbeing</a>
+            <a href="/health/flavonoids/">High in Flavonoids</a>
           </div>
           <div class="mega-col">
             <div class="dd-label">Biohacking</div>
@@ -227,17 +226,23 @@ footer{background:var(--cacao);padding:4rem 3rem 2rem;}
         <a href="/faq/">About <span class="nav-chevron"></span></a>
         <div class="dropdown">
           <a href="/origin/">About kakao.guru</a>
-          <a href="/origin/vietnam/">Vietnam Cacao</a>
-          <a href="/faq/">Contact</a>
+          <a href="/contact/">Contact</a>
         </div>
       </li>
     </ul>
     <div class="nav-actions">
       <button class="nav-icon-btn" title="Search">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"/><path d="M12.5 12.5 L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M12.5 12.5 L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
       </button>
       <button class="nav-icon-btn" title="Cart">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 1 L3.5 1 L5.5 11 L14 11 L16 4 L4.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="14.5" r="1.5" fill="currentColor"/><circle cx="13" cy="14.5" r="1.5" fill="currentColor"/></svg>
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M1 1 L3.5 1 L5.5 11 L14 11 L16 4 L4.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="7" cy="14.5" r="1.5" fill="currentColor"/>
+          <circle cx="13" cy="14.5" r="1.5" fill="currentColor"/>
+        </svg>
       </button>
       <a href="/shop/" class="nav-shop-btn">Shop Now</a>
     </div>
@@ -369,7 +374,8 @@ footer{background:var(--cacao);padding:4rem 3rem 2rem;}
     <div class="footer-col">
       <div class="footer-col-title">Help</div>
       <a href="/faq/">FAQ</a>
-      <a href="/faq/">Contact</a>
+      <a href="/contact/">Contact</a>
+      <a href="/privacy/">Privacy Policy</a>
       <a href="/trace/">Traceability</a>
     </div>
   </div>
@@ -421,6 +427,34 @@ document.addEventListener('click', function(e) {
     document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('touch-open'));
   }
 });
+</script>
+<!-- Cookie Banner -->
+<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--cacao);padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;box-shadow:0 -4px 30px rgba(0,0,0,0.2);">
+  <p style="font-size:.82rem;color:rgba(247,242,232,.8);font-weight:300;line-height:1.6;max-width:700px;margin:0;">We use cookies to understand how you use our site (Google Analytics) and to improve your experience. <a href="/privacy/" style="color:var(--amber);text-decoration:underline;">Privacy Policy</a></p>
+  <div style="display:flex;gap:.8rem;flex-shrink:0;">
+    <button onclick="acceptCookies()" style="background:var(--amber);color:var(--cacao);border:none;padding:.55rem 1.4rem;border-radius:99px;font-size:.82rem;font-weight:600;cursor:pointer;font-family:inherit;">Accept</button>
+    <button onclick="declineCookies()" style="background:transparent;color:rgba(247,242,232,.6);border:1px solid rgba(247,242,232,.2);padding:.55rem 1.4rem;border-radius:99px;font-size:.82rem;font-weight:400;cursor:pointer;font-family:inherit;">Decline</button>
+  </div>
+</div>
+<script>
+(function(){
+  var consent = localStorage.getItem('cookie_consent');
+  if (!consent) {
+    document.getElementById('cookieBanner').style.display = 'flex';
+  }
+  if (consent === 'declined') {
+    window['ga-disable-G-JHHG307613'] = true;
+  }
+})();
+function acceptCookies() {
+  localStorage.setItem('cookie_consent', 'accepted');
+  document.getElementById('cookieBanner').style.display = 'none';
+}
+function declineCookies() {
+  localStorage.setItem('cookie_consent', 'declined');
+  window['ga-disable-G-JHHG307613'] = true;
+  document.getElementById('cookieBanner').style.display = 'none';
+}
 </script>
 </body>
 </html>
