@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story — Ethical Ceremonial Cacao Sourcing | kakao.guru</title>
+<link rel="canonical" href="https://kakao.guru/origin/">
+<meta name="description" content="The story behind kakao.guru — how we source ceremonial cacao directly from smallholder farmers in Vietnam's Central Highlands. Transparent supply chain, precision fermentation, fair premiums.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Our Story — kakao.guru">
+<meta property="og:description" content="The story behind kakao.guru — how we source ceremonial cacao directly from smallholder farmers in Vietnam's Central Highlands. Transparent supply chain, precision fermentation, fair premiums.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kakao.guru/origin/">
+<meta property="og:site_name" content="kakao.guru">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Our Story — kakao.guru">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"About kakao.guru","url":"https://kakao.guru/origin/","description":"kakao.guru is a knowledge platform and ethical sourcing operation specialising in Vietnam-sourced, fermented ceremonial cacao.","mainEntity":{"@type":"Organization","name":"kakao.guru","url":"https://kakao.guru"}}</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:      #F7F2E8;
+  --paper:      #EDE6D6;
+  --warm:       #DDD4BF;
+  --cacao:      #3B1F0E;
+  --cacao-mid:  #6B3A1F;
+  --cacao-lt:   #9C6644;
+  --gold:       #B07D3A;
+  --amber:      #C8913A;
+  --tropical:   #2D5E3A;
+  --trop-lt:    #3D7A4E;
+  --trop-pale:  #EBF3ED;
+  --text:       #2A1A0E;
+  --muted:      #9C8878;
+  --border:     rgba(59,31,14,0.1);
+  --white:      #FDFAF4;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background: var(--white);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── ANNOUNCE BAR ─── */
+.announce {
+  background: var(--tropical);
+  color: #fff;
+  text-align: center;
+  padding: 0.55rem 1rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  font-weight: 400;
+}
+.announce a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+
+/* ─── NAV ─── */
+nav {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(253,250,244,0.96);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.3s;
+}
+.nav-inner {
+  max-width: 1300px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3rem; height: 68px;
+}
+.nav-logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.35rem; font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--cacao); text-decoration: none; flex-shrink: 0;
+  display: flex; align-items: center;
+}
+.nav-logo .logo-dot { color: var(--tropical); }
+.nav-menu { display: flex; gap: 0; list-style: none; position: relative; }
+.nav-item { position: relative; }
+.nav-item > a {
+  display: flex; align-items: center; gap: 0.3rem;
+  padding: 0 1.1rem; height: 68px;
+  font-size: 0.88rem; font-weight: 400; letter-spacing: 0.01em;
+  color: var(--text); text-decoration: none; white-space: nowrap;
+  transition: color 0.2s;
+}
+.nav-item > a:hover, .nav-item:hover > a { color: var(--tropical); }
+.nav-item > a.active { color: var(--tropical); font-weight: 500; }
+.nav-chevron {
+  display: inline-block; width: 6px; height: 6px;
+  border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg); margin-top: -2px; transition: transform 0.25s;
+}
+.nav-item:hover .nav-chevron { transform: rotate(-135deg); margin-top: 3px; }
+.dropdown {
+  position: absolute; top: calc(100% + 2px); left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 14px; padding: 0.6rem; min-width: 220px;
+  box-shadow: 0 8px 40px rgba(59,31,14,0.1);
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: all 0.2s; z-index: 300;
+}
+.nav-item:hover .dropdown { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+.nav-item.touch-open .dropdown { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+.dropdown a {
+  display: block; padding: 0.55rem 0.9rem;
+  font-size: 0.84rem; color: var(--text); text-decoration: none;
+  border-radius: 8px; transition: all 0.15s; white-space: nowrap;
+}
+.dropdown a:hover { background: var(--trop-pale); color: var(--tropical); padding-left: 1.8rem; }
+.dropdown .sep { height: 1px; background: var(--border); margin: 0.4rem 0; }
+.dd-label {
+  font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); padding: 0.4rem 0.9rem 0.2rem; font-weight: 500;
+}
+.dropdown.mega-dropdown { min-width: 480px; display: flex; gap: 0; padding: 1rem; left: 0; transform: translateY(8px); }
+.nav-item:hover .dropdown.mega-dropdown { transform: translateY(0); }
+.nav-item.touch-open .dropdown.mega-dropdown { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+.mega-col { flex: 1; }
+.nav-actions { display: flex; align-items: center; gap: 0.8rem; }
+.nav-icon-btn {
+  background: none; border: none; cursor: pointer;
+  color: var(--cacao); padding: 0.4rem; border-radius: 8px;
+  transition: background 0.2s; display: flex; align-items: center;
+}
+.nav-icon-btn:hover { background: var(--paper); }
+.nav-shop-btn {
+  background: var(--cacao); color: var(--cream);
+  padding: 0.5rem 1.2rem; border-radius: 99px;
+  font-size: 0.82rem; font-weight: 500; text-decoration: none;
+  white-space: nowrap; transition: background 0.2s;
+}
+.nav-shop-btn:hover { background: var(--cacao-mid); }
+
+/* ─── BREADCRUMB ─── */
+.breadcrumb {
+  max-width: 1300px; margin: 0 auto;
+  padding: 1.2rem 3rem 0;
+  font-size: 0.74rem; color: var(--muted); letter-spacing: 0.04em;
+}
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--tropical); }
+.breadcrumb span { margin: 0 0.5rem; }
+
+/* ─── HERO ─── */
+.about-hero {
+  max-width: 1300px; margin: 0 auto;
+  padding: 4rem 3rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: end;
+  min-height: 70vh;
+}
+.hero-left {
+  padding-bottom: 5rem;
+}
+.sec-label {
+  display: inline-block;
+  font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--tropical); font-weight: 500;
+  margin-bottom: 1.4rem;
+}
+.hero-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.4rem, 3.8vw, 5rem);
+  font-weight: 200;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--cacao);
+  opacity: 0;
+  animation: fadeUp 0.9s 0.1s forwards;
+}
+.hero-title em {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--tropical);
+}
+.hero-opening {
+  font-size: 1.12rem;
+  line-height: 1.8;
+  font-weight: 300;
+  color: var(--text);
+  margin-top: 2rem;
+  max-width: 460px;
+  opacity: 0;
+  animation: fadeUp 0.9s 0.3s forwards;
+}
+.hero-opening strong {
+  font-weight: 500;
+  color: var(--cacao);
+}
+.hero-cta-row {
+  display: flex; align-items: center; gap: 1.5rem;
+  margin-top: 2.5rem;
+  opacity: 0; animation: fadeUp 0.9s 0.5s forwards;
+}
+.btn-cacao {
+  font-size: 0.85rem; font-weight: 600;
+  background: var(--cacao); color: var(--cream);
+  padding: 0.9rem 2.2rem; border-radius: 100px;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(59,31,14,0.25);
+  transition: all 0.25s;
+}
+.btn-cacao:hover { background: var(--cacao-mid); transform: translateY(-2px); }
+.btn-outline {
+  font-size: 0.85rem; font-weight: 400;
+  color: var(--cacao); text-decoration: none;
+  border-bottom: 1.5px solid var(--border);
+  padding-bottom: 2px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-outline:hover { color: var(--tropical); border-color: var(--tropical); }
+
+/* Hero right — decorative visual */
+.hero-right {
+  position: relative;
+  height: 580px;
+  opacity: 0;
+  animation: fadeIn 1.2s 0.4s forwards;
+}
+.hero-img-card {
+  position: absolute;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(59,31,14,0.18);
+}
+.hero-img-main {
+  width: 100%; height: 580px;
+  top: 0; right: 0;
+  background: var(--paper);
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-img-main .cacao-illustration {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  background: linear-gradient(160deg, #6B3A1F 0%, #3B1F0E 60%, #2D5E3A 100%);
+  display: flex; align-items: center; justify-content: center;
+}
+.cacao-svg-wrap {
+  width: 100%; height: 100%;
+  background: linear-gradient(160deg, #6B3A1F 0%, #3B1F0E 55%, #2A4A30 100%);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.cacao-svg-wrap::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 70%, rgba(176,125,58,0.25) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(45,94,58,0.3) 0%, transparent 50%);
+}
+.origin-tag {
+  position: absolute;
+  bottom: 30px; left: 30px;
+  background: rgba(253,250,244,0.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(253,250,244,0.2);
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  color: #fff;
+}
+.origin-tag .ot-label {
+  font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.6); margin-bottom: 0.3rem;
+}
+.origin-tag .ot-val {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem; font-weight: 300;
+}
+
+.hero-img-small {
+  width: 180px; height: 220px;
+  top: 0; right: 300px;
+  background: var(--trop-pale);
+  display: flex; align-items: center; justify-content: center;
+  transform: rotate(-3deg);
+  box-shadow: 0 20px 50px rgba(59,31,14,0.12);
+}
+.small-card-inner {
+  width: 100%; height: 100%;
+  background: linear-gradient(145deg, #EBF3ED 0%, #d4e8d8 100%);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 0.5rem; padding: 1.5rem;
+  text-align: center;
+}
+.small-card-inner svg { opacity: 0.7; }
+.small-card-inner .sc-label {
+  font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--tropical); font-weight: 500;
+  line-height: 1.4;
+}
+
+/* ─── DIVIDER ─── */
+.divider {
+  max-width: 1300px; margin: 5rem auto 0;
+  padding: 0 3rem;
+  height: 1px; background: var(--border);
+}
+
+/* ─── PILLARS STRIP ─── */
+.pillars {
+  background: var(--cacao);
+  padding: 3rem 3rem;
+}
+.pillars-inner {
+  max-width: 1300px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+.pillar {
+  padding: 1.5rem 3rem;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+}
+.pillar:last-child { border-right: none; }
+.pillar-icon {
+  font-size: 1.6rem; margin-bottom: 0.8rem; display: block;
+}
+.pillar-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem; font-weight: 300;
+  color: var(--cream); letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+}
+.pillar-desc {
+  font-size: 0.78rem; line-height: 1.6;
+  color: rgba(247,242,232,0.55); font-weight: 300;
+}
+
+/* ─── STORY SECTION ─── */
+.story-sec {
+  max-width: 1300px; margin: 0 auto;
+  padding: 7rem 3rem;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 7rem;
+  align-items: start;
+}
+.story-sticky {
+  position: sticky; top: 100px;
+}
+.story-eyebrow {
+  font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--tropical); font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+.story-h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 200; line-height: 1.1;
+  letter-spacing: -0.03em; color: var(--cacao);
+}
+.story-h2 strong { font-weight: 600; }
+.story-map {
+  margin-top: 2.5rem;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #F5F0E6;
+  border: 1px solid var(--border);
+}
+.map-label {
+  font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); padding: 1rem 1.4rem 0; font-weight: 500;
+}
+.map-img-wrap {
+  width: 100%;
+  overflow: hidden;
+}
+.map-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.map-origin-tags {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  padding: 1rem 1.4rem 1.4rem;
+  background: #F5F0E6;
+}
+.mot {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.72rem; font-weight: 500;
+  background: rgba(45,94,58,0.08);
+  color: var(--tropical);
+  border: 1px solid rgba(45,94,58,0.2);
+  border-radius: 100px; padding: 0.28rem 0.75rem;
+}
+.mot-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--tropical); flex-shrink: 0;
+}
+
+/* Story content right */
+.story-content { display: flex; flex-direction: column; gap: 0; }
+.story-block {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.story-block:last-child { border-bottom: none; }
+.sb-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 3.5rem; font-weight: 200;
+  color: var(--border); line-height: 1;
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.04em;
+}
+.sb-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.3rem; font-weight: 400;
+  color: var(--cacao); margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+.sb-text {
+  font-size: 0.95rem; line-height: 1.85;
+  font-weight: 300; color: var(--text);
+  max-width: 520px;
+}
+.sb-text strong { font-weight: 500; color: var(--cacao); }
+.sb-quote {
+  margin-top: 1.5rem;
+  padding: 1.2rem 1.5rem;
+  border-left: 3px solid var(--tropical);
+  background: var(--trop-pale);
+  border-radius: 0 10px 10px 0;
+}
+.sb-quote p {
+  font-size: 0.9rem; line-height: 1.7;
+  font-style: italic; color: var(--cacao-mid); font-weight: 300;
+}
+
+/* ─── VALUES SECTION ─── */
+.values-sec {
+  background: var(--cream);
+  padding: 7rem 3rem;
+}
+.values-inner {
+  max-width: 1300px; margin: 0 auto;
+}
+.values-header {
+  text-align: center; margin-bottom: 4rem;
+}
+.values-header .sec-label { display: block; margin-bottom: 1rem; }
+.values-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-weight: 200; letter-spacing: -0.03em;
+  color: var(--cacao); line-height: 1.1;
+}
+.values-title strong { font-weight: 600; }
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.vcard {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.2rem 1.8rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.vcard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(59,31,14,0.1);
+}
+.vcard-icon {
+  width: 44px; height: 44px;
+  background: var(--trop-pale);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+}
+.vcard:nth-child(2) .vcard-icon { background: rgba(176,125,58,0.1); }
+.vcard:nth-child(3) .vcard-icon { background: rgba(59,31,14,0.06); }
+.vcard:nth-child(4) .vcard-icon { background: rgba(200,145,58,0.1); }
+.vcard-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem; font-weight: 400;
+  color: var(--cacao); margin-bottom: 0.6rem;
+  letter-spacing: -0.01em;
+}
+.vcard-text {
+  font-size: 0.82rem; line-height: 1.75;
+  font-weight: 300; color: var(--muted);
+}
+
+/* ─── MISSION BANNER ─── */
+.mission-sec {
+  background: var(--tropical);
+  padding: 6rem 3rem;
+  position: relative; overflow: hidden;
+}
+.mission-sec::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+}
+.mission-sec::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: 10%;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+}
+.mission-inner {
+  max-width: 900px; margin: 0 auto;
+  text-align: center; position: relative; z-index: 1;
+}
+.mission-label {
+  font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(235,243,237,0.65); font-weight: 500;
+  margin-bottom: 1.5rem; display: block;
+}
+.mission-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.6rem);
+  font-weight: 200; line-height: 1.45;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.mission-text strong { font-weight: 500; }
+.mission-divider {
+  width: 50px; height: 2px;
+  background: rgba(255,255,255,0.3);
+  margin: 2.5rem auto;
+  border-radius: 2px;
+}
+.mission-sub {
+  font-size: 0.92rem; line-height: 1.75;
+  font-weight: 300; color: rgba(235,243,237,0.75);
+  max-width: 560px; margin: 0 auto;
+}
+
+/* ─── SUPERFOODS MINI ─── */
+.superfood-sec {
+  max-width: 1300px; margin: 0 auto;
+  padding: 7rem 3rem;
+}
+.sf-header {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-bottom: 3.5rem;
+}
+.sf-header-left .sec-label { display: block; margin-bottom: 0.8rem; }
+.sf-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+  font-weight: 200; letter-spacing: -0.03em;
+  color: var(--cacao); line-height: 1.1;
+}
+.sf-title strong { font-weight: 600; }
+.sf-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.2rem;
+}
+.sf-item {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.6rem 1.2rem;
+  text-align: center;
+  transition: transform 0.3s, background 0.3s;
+}
+.sf-item:hover { transform: translateY(-3px); background: var(--cream); }
+.sf-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem; font-weight: 200;
+  color: var(--tropical); line-height: 1;
+  letter-spacing: -0.03em;
+}
+.sf-unit {
+  font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted); margin-top: 0.2rem; display: block;
+}
+.sf-name {
+  font-size: 0.78rem; font-weight: 500;
+  color: var(--cacao); margin-top: 0.6rem; display: block;
+  letter-spacing: 0.01em;
+}
+.sf-benefit {
+  font-size: 0.68rem; color: var(--muted);
+  margin-top: 0.3rem; line-height: 1.5;
+}
+
+/* ─── CTA SECTION ─── */
+.cta-sec {
+  background: var(--cacao);
+  padding: 6rem 3rem;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.cta-sec::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(176,125,58,0.2) 0%, transparent 65%);
+}
+.cta-inner { position: relative; z-index: 1; }
+.cta-label {
+  font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(247,242,232,0.5); font-weight: 500;
+  margin-bottom: 1.2rem; display: block;
+}
+.cta-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  font-weight: 200; line-height: 1.05;
+  letter-spacing: -0.03em; color: var(--cream);
+}
+.cta-title strong { font-weight: 600; color: var(--amber); }
+.cta-sub {
+  font-size: 0.95rem; line-height: 1.75;
+  font-weight: 300; color: rgba(247,242,232,0.6);
+  max-width: 440px; margin: 1.5rem auto;
+}
+.cta-btns {
+  display: flex; gap: 1rem; justify-content: center; margin-top: 2.5rem;
+}
+.btn-cream {
+  font-size: 0.85rem; font-weight: 600;
+  background: var(--cream); color: var(--cacao);
+  padding: 0.9rem 2.2rem; border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+.btn-cream:hover { background: #fff; transform: translateY(-2px); }
+.btn-ghost {
+  font-size: 0.85rem; font-weight: 400;
+  color: var(--cream); text-decoration: none;
+  border: 1px solid rgba(247,242,232,0.3);
+  padding: 0.9rem 2.2rem; border-radius: 100px;
+  transition: all 0.25s;
+}
+.btn-ghost:hover { border-color: rgba(247,242,232,0.7); }
+
+/* ─── SOFT INLINE CTA ─── */
+.sb-cta {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  margin-top: 1.2rem;
+  font-size: 0.82rem; font-weight: 500;
+  color: var(--tropical); text-decoration: none;
+  border-bottom: 1px solid rgba(45,94,58,0.3);
+  padding-bottom: 2px;
+  transition: border-color 0.2s, gap 0.2s;
+}
+.sb-cta:hover { border-color: var(--tropical); gap: 0.7rem; }
+
+/* ─── IMPACT STATEMENT ─── */
+.sf-impact {
+  display: block;
+  margin-top: 0.7rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.72rem;
+  line-height: 1.55;
+  color: var(--cacao-mid);
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* ─── TRACEABILITY COMPONENT ─── */
+.trace-sec {
+  background: var(--paper);
+  padding: 5rem 3rem;
+}
+.trace-inner {
+  max-width: 1300px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: center;
+}
+.trace-left .sec-label { display: block; margin-bottom: 1rem; }
+.trace-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 2.5vw, 2.8rem);
+  font-weight: 200; letter-spacing: -0.03em;
+  color: var(--cacao); line-height: 1.15;
+  margin-bottom: 1.2rem;
+}
+.trace-title strong { font-weight: 600; }
+.trace-desc {
+  font-size: 0.9rem; line-height: 1.8;
+  font-weight: 300; color: var(--muted);
+  margin-bottom: 2rem; max-width: 400px;
+}
+.trace-steps {
+  display: flex; flex-direction: column; gap: 0;
+}
+.trace-step {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.trace-step:last-child { border-bottom: none; }
+.ts-arrow {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem; color: var(--tropical);
+  font-weight: 300; margin-top: 2px; flex-shrink: 0;
+}
+.ts-text { font-size: 0.88rem; line-height: 1.5; color: var(--text); }
+.ts-text strong { font-weight: 500; display: block; color: var(--cacao); margin-bottom: 0.1rem; }
+
+.trace-visual {
+  background: var(--cacao);
+  border-radius: 20px;
+  padding: 2.5rem;
+  position: relative; overflow: hidden;
+}
+.trace-visual::before {
+  content: '';
+  position: absolute; top: -40px; right: -40px;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: rgba(176,125,58,0.12);
+}
+.qr-demo {
+  background: rgba(247,242,232,0.06);
+  border: 1px solid rgba(247,242,232,0.12);
+  border-radius: 14px;
+  padding: 1.8rem;
+  text-align: center;
+  position: relative; z-index: 1;
+}
+.qr-label {
+  font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(247,242,232,0.45); margin-bottom: 1.2rem; display: block;
+}
+.qr-box {
+  width: 80px; height: 80px; margin: 0 auto 1.2rem;
+  border: 1.5px solid rgba(247,242,232,0.3);
+  border-radius: 8px;
+  display: grid; grid-template-columns: repeat(7,1fr);
+  gap: 2px; padding: 6px;
+}
+.qr-cell { background: rgba(247,242,232,0.7); border-radius: 1px; }
+.qr-cell.off { background: transparent; }
+.qr-farm-chain {
+  display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1.2rem;
+}
+.qfc-row {
+  display: flex; align-items: center; gap: 0.6rem;
+  background: rgba(247,242,232,0.05);
+  border: 1px solid rgba(247,242,232,0.1);
+  border-radius: 8px; padding: 0.6rem 0.9rem;
+}
+.qfc-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--tropical); flex-shrink: 0;
+}
+.qfc-label {
+  font-size: 0.72rem; color: rgba(247,242,232,0.7); font-weight: 300;
+}
+.qfc-val {
+  margin-left: auto;
+  font-size: 0.68rem; color: rgba(247,242,232,0.45);
+  font-style: italic;
+}
+
+/* ─── FOUNDER SECTION ─── */
+.founder-sec {
+  max-width: 1300px; margin: 0 auto;
+  padding: 6rem 3rem;
+  display: grid; grid-template-columns: 1fr 2fr;
+  gap: 5rem; align-items: center;
+  border-top: 1px solid var(--border);
+}
+.founder-label {
+  font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--tropical); font-weight: 500; margin-bottom: 1rem;
+}
+.founder-avatar {
+  width: 80px; height: 80px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--cacao) 0%, var(--tropical) 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem; font-weight: 200; color: rgba(247,242,232,0.7);
+  margin-bottom: 1.5rem;
+}
+.founder-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.5rem, 2vw, 2.2rem);
+  font-weight: 200; letter-spacing: -0.03em;
+  color: var(--cacao); line-height: 1.2;
+}
+.founder-title strong { font-weight: 600; }
+.founder-right { display: flex; flex-direction: column; gap: 1.2rem; }
+.founder-text {
+  font-size: 0.95rem; line-height: 1.85;
+  font-weight: 300; color: var(--text);
+}
+.founder-text strong { font-weight: 500; color: var(--cacao); }
+.founder-credentials {
+  display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.5rem;
+}
+.fcred {
+  font-size: 0.72rem; font-weight: 500;
+  background: var(--trop-pale);
+  color: var(--tropical);
+  border: 1px solid rgba(45,94,58,0.2);
+  border-radius: 100px; padding: 0.3rem 0.9rem;
+}
+
+@media (max-width: 1024px) {
+  .trace-inner { grid-template-columns: 1fr; }
+  .founder-sec { grid-template-columns: 1fr; gap: 2rem; }
+}
+@media (max-width: 640px) {
+  .trace-sec, .founder-sec { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+
+/* ─── WHY VIETNAM ─── */
+.vietnam-sec {
+  background: var(--cacao);
+  padding: 7rem 3rem;
+}
+.vietnam-inner {
+  max-width: 1300px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1.4fr;
+  gap: 6rem; align-items: start;
+}
+.vietnam-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 200; line-height: 1.1;
+  letter-spacing: -0.03em; color: var(--cream);
+  margin-top: 1rem;
+}
+.vietnam-title strong { font-weight: 600; color: var(--amber); }
+.vietnam-lead {
+  font-size: 1.05rem; line-height: 1.8;
+  font-weight: 300; color: rgba(247,242,232,0.75);
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(247,242,232,0.1);
+}
+.vietnam-facts { display: flex; flex-direction: column; gap: 1.5rem; }
+.vf-item { display: flex; gap: 1.2rem; align-items: flex-start; }
+.vf-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 1px; }
+.vf-text { font-size: 0.88rem; line-height: 1.7; color: rgba(247,242,232,0.6); font-weight: 300; }
+.vf-text strong { display: block; font-weight: 500; color: var(--cream); margin-bottom: 0.15rem; }
+.vietnam-closing {
+  margin-top: 2.5rem; padding-top: 2rem;
+  border-top: 1px solid rgba(247,242,232,0.1);
+  font-size: 0.95rem; line-height: 1.75;
+  font-style: italic; font-weight: 300; color: rgba(247,242,232,0.5);
+}
+
+/* ─── TRANSPARENCY ─── */
+.transparency-sec { background: var(--cream); padding: 7rem 3rem; }
+.transparency-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+.trans-header .sec-label { display: block; margin-bottom: 0.8rem; }
+.trans-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 2.8vw, 3rem);
+  font-weight: 200; line-height: 1.15;
+  letter-spacing: -0.03em; color: var(--cacao);
+}
+.trans-title strong { font-weight: 600; }
+.trans-text {
+  margin-top: 2rem;
+  font-size: 1rem; line-height: 1.8;
+  font-weight: 300; color: var(--muted);
+  max-width: 560px; margin-left: auto; margin-right: auto;
+}
+.trans-chain {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; flex-wrap: wrap;
+  margin: 3rem auto 2.5rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px; padding: 2rem 2.5rem;
+  max-width: 640px;
+}
+.tc-step { display: flex; align-items: center; gap: 0.8rem; }
+.tc-icon { font-size: 1.5rem; }
+.tc-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.88rem; font-weight: 400;
+  color: var(--cacao);
+}
+.tc-arrow { font-size: 1rem; color: var(--tropical); padding: 0 0.8rem; font-weight: 300; }
+.tc-final {
+  font-size: 0.82rem; font-weight: 600;
+  color: var(--tropical);
+  padding: 0.4rem 1rem;
+  background: var(--trop-pale);
+  border-radius: 100px;
+  border: 1px solid rgba(45,94,58,0.2);
+  white-space: nowrap;
+}
+.trans-closing {
+  font-size: 1.05rem; line-height: 1.85;
+  font-weight: 300; color: var(--text);
+}
+.trans-closing strong { font-weight: 500; color: var(--cacao); }
+
+@media (max-width: 1024px) {
+  .vietnam-inner { grid-template-columns: 1fr; gap: 3rem; }
+}
+@media (max-width: 640px) {
+  .vietnam-sec, .transparency-sec { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .trans-chain { flex-direction: column; gap: 0.5rem; }
+  .tc-arrow { padding: 0 0.3rem; }
+}
+
+footer {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+}
+.footer-top {
+  max-width: 1300px; margin: 0 auto;
+  padding: 4rem 3rem 3rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 3rem;
+}
+.footer-logo-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem; font-weight: 300;
+  letter-spacing: -0.02em; color: var(--cacao);
+}
+.footer-logo-text .dot { color: var(--tropical); }
+.footer-tagline {
+  font-size: 0.8rem; line-height: 1.7;
+  color: var(--muted); font-weight: 300;
+  margin-top: 0.8rem; max-width: 220px;
+}
+.footer-col-title {
+  font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); font-weight: 500;
+  margin-bottom: 1rem;
+}
+.footer-col a {
+  display: block;
+  font-size: 0.82rem; color: var(--text); text-decoration: none;
+  padding: 0.3rem 0;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--tropical); }
+.footer-bottom {
+  max-width: 1300px; margin: 0 auto;
+  padding: 1.5rem 3rem;
+  border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.footer-copy {
+  font-size: 0.74rem; color: var(--muted); font-weight: 300;
+}
+.footer-socials { display: flex; gap: 0.5rem; }
+.social-btn {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.68rem; color: var(--muted); text-decoration: none;
+  transition: all 0.2s; font-weight: 500; text-transform: uppercase;
+}
+.social-btn:hover { border-color: var(--tropical); color: var(--tropical); }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.reveal {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1; transform: none;
+}
+.d1 { transition-delay: 0.05s; }
+.d2 { transition-delay: 0.12s; }
+.d3 { transition-delay: 0.19s; }
+.d4 { transition-delay: 0.26s; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .about-hero { grid-template-columns: 1fr; gap: 3rem; min-height: auto; }
+  .hero-right { height: 340px; }
+  .hero-img-main { width: 100%; height: 340px; top: 0; right: 0; }
+  .hero-img-small { display: none; }
+  .pillars-inner { grid-template-columns: 1fr; }
+  .pillar { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .story-sec { grid-template-columns: 1fr; gap: 3rem; }
+  .story-sticky { position: static; }
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
+  .sf-grid { grid-template-columns: repeat(3, 1fr); }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .nav-inner { padding: 0 1.5rem; }
+  .nav-menu { display: none; }
+  .about-hero { padding: 3rem 1.5rem 0; }
+  .breadcrumb { padding: 1rem 1.5rem 0; }
+  .values-grid { grid-template-columns: 1fr; }
+  .sf-grid { grid-template-columns: repeat(2, 1fr); }
+  .cta-btns { flex-direction: column; align-items: center; }
+  .footer-top { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+  .footer-bottom { padding: 1.2rem 1.5rem; flex-direction: column; gap: 1rem; }
+  .divider, .story-sec, .superfood-sec { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .values-sec, .pillars { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .mission-sec, .cta-sec { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JHHG307613"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-JHHG307613');
+</script>
+</head>
+<body>
+
+<!-- ANNOUNCE BAR -->
+<div class="announce">
+  Free shipping on orders over €60 &nbsp;·&nbsp; Direct from Vietnam &nbsp;·&nbsp; <a href="#contact">Contact Sales →</a>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">kakao<span class="logo-dot">.</span>guru</a>
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="/shop/">Products <span class="nav-chevron"></span></a>
+        <div class="dropdown">
+          <div class="dd-label">Our Products</div>
+          <a href="/shop/250g/">250g Ceremonial Cacao Block</a>
+          <a href="/shop/500g/">500g Ceremonial Cacao Block</a>
+          <div class="sep"></div>
+          <a href="/shop/">→ View All Products</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/origin/">Story <span class="nav-chevron"></span></a>
+        <div class="dropdown">
+          <div class="dd-label">Our Story</div>
+          <a href="/origin/">About Us</a>
+          <a href="/origin/vietnam/">Vietnam Cacao</a>
+          <div class="sep"></div>
+          <div class="dd-label">Sourcing</div>
+          <a href="/trace/">QR Traceability</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/learn/ceremonial-cacao-101/">Learn <span class="nav-chevron"></span></a>
+        <div class="dropdown">
+          <a href="/learn/ceremonial-cacao-101/">Ceremonial Cacao 101</a>
+          <a href="/learn/superfood/">Why Cacao is a Superfood</a>
+          <a href="/learn/cacao-vs-coffee/">Cacao vs Coffee</a>
+          <a href="/learn/cacao-vs-chocolate/">Cacao vs Chocolate</a>
+          <a href="/learn/ceremonial-vs-powder/">Ceremonial Cacao vs Cacao Powder</a>
+          <div class="sep"></div>
+          <a href="/faq/">FAQ</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/health/theobromine/">Health <span class="nav-chevron"></span></a>
+        <div class="dropdown mega-dropdown">
+          <div class="mega-col">
+            <div class="dd-label">Wellness</div>
+            <a href="/health/replace-coffee/">Reduce or Replace Coffee</a>
+            <a href="/health/stress-regulation/">Cacao &amp; Stress Regulation</a>
+            <a href="/health/magnesium-sleep/">Magnesium &amp; Sleep</a>
+            <a href="/health/emotional-wellbeing/">Cacao &amp; Emotional Wellbeing</a>
+            <a href="/health/flavonoids/">High in Flavonoids</a>
+          </div>
+          <div class="mega-col">
+            <div class="dd-label">Biohacking</div>
+            <a href="/health/theobromine/">Theobromine Benefits</a>
+            <a href="/health/focus/">Cacao &amp; Focus</a>
+            <a href="/health/antioxidant/">Antioxidant Power</a>
+            <a href="/health/longevity/">Longevity &amp; Anti-Ageing</a>
+            <a href="/health/gut-microbiome/">Gut Microbiome</a>
+            <a href="/health/stress-mood/">Stress &amp; Mood Support</a>
+            <a href="/health/heart-health/">Heart Health</a>
+            <a href="/health/neuroplasticity/">Neuroplasticity</a>
+            <a href="/health/nitric-oxide/">Nitric Oxide &amp; Circulation</a>
+            <a href="/health/metabolic-health/">Metabolic Health</a>
+            <a href="/health/cognitive-performance/">Cognitive Performance</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/ritual/">Rituals <span class="nav-chevron"></span></a>
+        <div class="dropdown">
+          <a href="/ritual/morning/">Morning Ritual</a>
+          <a href="/ritual/evening/">Evening Ritual</a>
+          <a href="/ritual/latte-recipes/">Latte Recipes</a>
+          <a href="/ritual/mindful-practice/">Mindful Cacao Practice</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="/faq/">About <span class="nav-chevron"></span></a>
+        <div class="dropdown">
+          <a href="/origin/">About kakao.guru</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" title="Search">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M12.5 12.5 L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <button class="nav-icon-btn" title="Cart">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M1 1 L3.5 1 L5.5 11 L14 11 L16 4 L4.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="7" cy="14.5" r="1.5" fill="currentColor"/>
+          <circle cx="13" cy="14.5" r="1.5" fill="currentColor"/>
+        </svg>
+      </button>
+      <a href="/shop/" class="nav-shop-btn">Shop Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span>›</span>
+  About Us
+</div>
+
+<!-- ─── HERO ─── -->
+<section>
+  <div class="about-hero">
+    <!-- Left -->
+    <div class="hero-left">
+      <span class="sec-label">Our Story</span>
+      <h1 class="hero-title">
+        Every cacao block begins<br>with a <em>farmer,</em> not a factory.
+      </h1>
+      <p class="hero-opening">
+        At kakao.guru, we believe cacao is more than an ingredient.
+        Our journey began with a simple question: <strong>what happens when you
+        follow cacao back to its true roots?</strong> We spent years in Vietnam's
+        highlands learning the answer directly from the people who grow it.
+      </p>
+      <div class="hero-cta-row">
+        <a href="#contact" class="btn-cacao">Contact Sales</a>
+        <a href="#story" class="btn-outline">Read our story →</a>
+      </div>
+    </div>
+
+    <!-- Right — decorative visual -->
+    <div class="hero-right">
+      <div class="hero-img-card hero-img-main">
+        <div class="cacao-svg-wrap" style="background:none;padding:0;">
+          <img src="/images/dak-lak-landscape.png" alt="Dak Lak highlands, Vietnam" style="width:100%;height:100%;object-fit:cover;display:block;" />
+          <div class="origin-tag">
+            <div class="ot-label">Origin</div>
+            <div class="ot-val">Vietnam · Dak Lak</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider reveal"></div>
+
+<!-- ─── PILLARS STRIP ─── -->
+<div class="pillars">
+  <div class="pillars-inner">
+    <div class="pillar reveal d1">
+      <span class="pillar-icon">🌱</span>
+      <div class="pillar-title">Direct from Farmers</div>
+      <p class="pillar-desc">Sourced from micro-farms in Dak Lak, where cacao grows alongside pepper and coffee under traditional agroforestry — not monoculture plantations. No middlemen, ever.</p>
+    </div>
+    <div class="pillar reveal d2">
+      <span class="pillar-icon">🔍</span>
+      <div class="pillar-title">Full Traceability</div>
+      <p class="pillar-desc">Scan → see the farmer → see the fermenter → see the batch. Every block traces to a specific family and harvest. 95% of cacao brands can't say this.</p>
+    </div>
+    <div class="pillar reveal d3">
+      <span class="pillar-icon">💚</span>
+      <div class="pillar-title">Grown Without Chemicals</div>
+      <p class="pillar-desc">Vietnam's highland farming families have never relied on synthetic inputs — it's not how they work. We don't need a certification label. We show you the farm directly.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── STORY SECTION ─── -->
+<section id="story">
+  <div class="story-sec">
+    <!-- Sticky left -->
+    <div class="story-sticky reveal">
+      <div class="story-eyebrow">Our Journey</div>
+      <h2 class="story-h2">Where every<br>cacao block begins<br>with a <strong>face.</strong></h2>
+      <div class="story-map">
+        <div class="map-img-wrap">
+          <img src="/images/vietnam-origin-map.png" alt="Vietnam Cacao Origin Map — Đák Lák, Lâm Đóng, Tiến Giang, Bèn Tre" class="map-img" />
+        </div>
+        <div class="map-origin-tags">
+          <span class="mot">
+            <span class="mot-dot"></span>Đák Lák
+          </span>
+          <span class="mot">
+            <span class="mot-dot"></span>Lâm Đóng
+          </span>
+          <span class="mot">
+            <span class="mot-dot"></span>Tiến Giang
+          </span>
+          <span class="mot">
+            <span class="mot-dot"></span>Bèn Tre
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content right -->
+    <div class="story-content">
+      <div class="story-block reveal d1">
+        <div class="sb-num">01</div>
+        <div class="sb-title">A journey shaped by curiosity and generosity.</div>
+        <p class="sb-text">
+          Vietnam isn't famous for cacao — and maybe that's the magic. There are no giant estates, no monoculture plantations, no industrial shortcuts. Just <strong>micro-farms, family fermenters,</strong> and an agricultural culture built on patience and respect.
+        </p>
+        <p class="sb-text" style="margin-top:1rem;">
+          Farmers welcomed us into their homes, showed us their trees, and taught us cacao the way they live it — <strong>as a relationship, not a commodity.</strong>
+          Those conversations shaped kakao.guru more than anything else. This platform exists because of them.
+        </p>
+        <a href="#contact" class="sb-cta">Contact us about this origin →</a>
+      </div>
+
+      <div class="story-block reveal d2">
+        <div class="sb-num">02</div>
+        <div class="sb-title">Pure cacao is one of nature's most powerful, misunderstood foods.</div>
+        <p class="sb-text">
+          Cacao is one of the world's most underrated superfoods: <strong>nutrient-dense, heart-supportive, and deeply grounding.</strong> But in the modern world, cacao lost its identity. Industrial processing stripped away its nutrients, its flavor, and its meaning.
+        </p>
+        <p class="sb-text" style="margin-top:1rem;">
+          We want to bring its origins, benefits, and authenticity back into the light — exactly as nature intended it.
+        </p>
+        <a href="#contact" class="sb-cta">Explore the science of cacao →</a>
+      </div>
+
+      <div class="story-block reveal d3">
+        <div class="sb-num">03</div>
+        <div class="sb-title">Our mission is simple: To reconnect cacao to its roots — ethically, transparently, and honestly.</div>
+        <p class="sb-text">
+          To offer <strong>clear, honest knowledge about cacao</strong>, support ethical and sustainable practices, and help you connect with cacao in a meaningful, conscious way. kakao.guru is a space to learn, slow down, and appreciate the craft behind every bean.
+        </p>
+        <a href="#contact" class="sb-cta">Contact us to taste the difference →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY VIETNAM ─── -->
+<section class="vietnam-sec" id="vietnam">
+  <div class="vietnam-inner">
+    <div class="vietnam-left reveal">
+      <span class="sec-label">Why Vietnam?</span>
+      <h2 class="vietnam-title">Extraordinary cacao grows<br>in places the world<br>isn't <strong>looking at.</strong></h2>
+      <a href="#" class="btn-outline" style="margin-top:2rem;display:inline-block;">Explore the origin →</a>
+    </div>
+    <div class="vietnam-right reveal d2">
+      <p class="vietnam-lead">
+        Vietnam is a rare origin: diverse terroirs, agroforestry traditions, and farmers who experiment, adapt, and innovate.
+      </p>
+      <div class="vietnam-facts">
+        <div class="vf-item">
+          <div class="vf-icon">🤲</div>
+          <div class="vf-text">
+            <strong>Picked by hand.</strong>
+            No machinery, no shortcuts. Every pod is selected individually at peak ripeness.
+          </div>
+        </div>
+        <div class="vf-item">
+          <div class="vf-icon">🏠</div>
+          <div class="vf-text">
+            <strong>Fermented in backyards.</strong>
+            Family-run fermentation boxes, not industrial tanks. The craft lives in households.
+          </div>
+        </div>
+        <div class="vf-item">
+          <div class="vf-icon">☀️</div>
+          <div class="vf-text">
+            <strong>Sun-dried on wooden racks.</strong>
+            Slow, natural drying that preserves flavor complexity no oven can replicate.
+          </div>
+        </div>
+        <div class="vf-item">
+          <div class="vf-icon">👨‍👩‍👧</div>
+          <div class="vf-text">
+            <strong>Made by families, not factories.</strong>
+            Most importantly — the cacao here is still human.
+          </div>
+        </div>
+      </div>
+      <div class="vietnam-closing reveal">
+        That's why kakao.guru began here. Because this cacao deserves to be seen for what it truly is.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TRANSPARENCY ─── -->
+<section class="transparency-sec">
+  <div class="transparency-inner">
+    <div class="trans-header reveal">
+      <span class="sec-label">Full Transparency, Always</span>
+      <h2 class="trans-title">Trace cacao from<br><strong>tree → farmer → fermenter → block.</strong></h2>
+    </div>
+    <div class="trans-body">
+      <div class="trans-text reveal d1">
+        <p>Transparency isn't an add-on. It's our accountability. Knowing who grew your cacao changes how you value it — and honors the people behind it.</p>
+      </div>
+      <div class="trans-chain reveal d2">
+        <div class="tc-step">
+          <div class="tc-icon">🌳</div>
+          <div class="tc-label">Tree</div>
+          <div class="tc-arrow">→</div>
+        </div>
+        <div class="tc-step">
+          <div class="tc-icon">👤</div>
+          <div class="tc-label">Farmer</div>
+          <div class="tc-arrow">→</div>
+        </div>
+        <div class="tc-step">
+          <div class="tc-icon">🫙</div>
+          <div class="tc-label">Fermenter</div>
+          <div class="tc-arrow">→</div>
+        </div>
+        <div class="tc-step">
+          <div class="tc-icon">📦</div>
+          <div class="tc-label">Block</div>
+          <div class="tc-arrow tc-final">→ You</div>
+        </div>
+      </div>
+      <div class="trans-closing reveal d3">
+        Whether you're here for energy, ritual, flavor, or simple curiosity —<br>
+        <strong>we're grateful you're here.</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MISSION BANNER ─── -->
+<section class="mission-sec">
+  <div class="mission-inner">
+    <span class="mission-label">Our Mission</span>
+    <p class="mission-text reveal">
+      "A space to learn, slow down, and appreciate<br>
+      the <strong>craft behind every bean.</strong>"
+    </p>
+    <div class="mission-divider reveal"></div>
+    <p class="mission-sub reveal">
+      kakao.guru is more than a brand. It's a commitment to cacao as it was meant to be
+      experienced — traceable, honest, and deeply connected to the land and people who grow it.
+    </p>
+  </div>
+</section>
+
+<!-- ─── SUPERFOOD NUTRIENTS ─── -->
+<section class="superfood-sec">
+  <div class="sf-header reveal">
+    <div class="sf-header-left">
+      <span class="sec-label">Why Cacao</span>
+      <h2 class="sf-title">Nature's most<br><strong>powerful superfood</strong></h2>
+    </div>
+  </div>
+  <div class="sf-grid">
+    <div class="sf-item reveal d1">
+      <span class="sf-num">40%</span>
+      <span class="sf-unit">Daily Value per serving</span>
+      <span class="sf-name">Magnesium</span>
+      <p class="sf-benefit">Muscle recovery & deep sleep</p>
+      <p class="sf-impact">This is why a cacao ritual before bed leaves you waking up rested, not wired.</p>
+    </div>
+    <div class="sf-item reveal d2">
+      <span class="sf-num">PEA</span>
+      <span class="sf-unit">Compound</span>
+      <span class="sf-name">Phenylethylamine</span>
+      <p class="sf-benefit">Natural mood elevation</p>
+      <p class="sf-impact">This is why cacao has been called "the food of the gods" — it literally triggers feelings of joy.</p>
+    </div>
+    <div class="sf-item reveal d3">
+      <span class="sf-num">↑</span>
+      <span class="sf-unit">Antioxidant density</span>
+      <span class="sf-name">Flavonoids</span>
+      <p class="sf-benefit">Heart health & anti-inflammatory</p>
+      <p class="sf-impact">This is why ancient cultures protected cacao like medicine — because it was.</p>
+    </div>
+    <div class="sf-item reveal d4">
+      <span class="sf-num">4h</span>
+      <span class="sf-unit">Sustained effect</span>
+      <span class="sf-name">Theobromine</span>
+      <p class="sf-benefit">Calm energy, no crash</p>
+      <p class="sf-impact">This is why cacao helps you feel energized without anxiety — no spike, no jitters, no regret.</p>
+    </div>
+    <div class="sf-item reveal">
+      <span class="sf-num">☀️</span>
+      <span class="sf-unit">Endocannabinoid</span>
+      <span class="sf-name">Anandamide</span>
+      <p class="sf-benefit">"Bliss molecule"</p>
+      <p class="sf-impact">This is why cacao was used in ceremonies for centuries — it opens something in you that caffeine never could.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TRACEABILITY ─── -->
+<section class="trace-sec">
+  <div class="trace-inner">
+    <div class="trace-left reveal">
+      <span class="sec-label">Our Biggest USP</span>
+      <h2 class="trace-title">You can trace every block<br>to a <strong>single farmer.</strong></h2>
+      <p class="trace-desc">
+        95% of cacao brands talk about sourcing. We show you the source. Scan the QR on your block and follow it all the way back.
+      </p>
+      <div class="trace-steps">
+        <div class="trace-step">
+          <span class="ts-arrow">→</span>
+          <div class="ts-text"><strong>Scan your block</strong>Every block ships with a unique QR code.</div>
+        </div>
+        <div class="trace-step">
+          <span class="ts-arrow">→</span>
+          <div class="ts-text"><strong>Meet your farmer</strong>See the family in Dak Lak or Ben Tre who grew your cacao.</div>
+        </div>
+        <div class="trace-step">
+          <span class="ts-arrow">→</span>
+          <div class="ts-text"><strong>See the fermenter</strong>Fermentation defines flavor. You'll see exactly who did it and how.</div>
+        </div>
+        <div class="trace-step">
+          <span class="ts-arrow">→</span>
+          <div class="ts-text"><strong>Know your batch</strong>Harvest date, drying method, processing notes — all visible.</div>
+        </div>
+      </div>
+    </div>
+    <div class="trace-visual reveal d2">
+      <div class="qr-demo">
+        <span class="qr-label">Scan your block</span>
+        <div class="qr-box" id="qrGrid"></div>
+        <div class="qr-farm-chain">
+          <div class="qfc-row">
+            <div class="qfc-dot"></div>
+            <span class="qfc-label">Farmer</span>
+            <span class="qfc-val">Nguyen Van Thanh · Dak Lak</span>
+          </div>
+          <div class="qfc-row">
+            <div class="qfc-dot" style="background:var(--amber)"></div>
+            <span class="qfc-label">Fermenter</span>
+            <span class="qfc-val">Cooperative Box #3 · 6 days</span>
+          </div>
+          <div class="qfc-row">
+            <div class="qfc-dot" style="background:var(--gold)"></div>
+            <span class="qfc-label">Batch</span>
+            <span class="qfc-val">Nov 2024 · Sun-dried · Trinitario</span>
+          </div>
+          <div class="qfc-row">
+            <div class="qfc-dot" style="background:rgba(247,242,232,0.4)"></div>
+            <span class="qfc-label">Harvest</span>
+            <span class="qfc-val">Main season · Highland origin</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOUNDER ─── -->
+<section class="founder-sec">
+  <div class="reveal">
+    <div class="founder-label">Who We Are</div>
+    <div class="founder-avatar">k</div>
+    <h3 class="founder-title">Founded by someone who<br><strong>went to Vietnam first.</strong></h3>
+  </div>
+  <div class="founder-right reveal d2">
+    <p class="founder-text">
+      kakao.guru wasn't built in a boardroom. It was built over years of direct fieldwork — learning fermentation from the people who do it, understanding terroir from farmers who've worked the same land for generations, and asking questions that most buyers never think to ask.
+    </p>
+    <p class="founder-text">
+      <strong>Our founder spent years embedded in Vietnam's cacao supply chain</strong> — not as a tourist, but as a student of the craft. That knowledge is now the foundation of every sourcing decision, every product we make, and every piece of content we publish.
+    </p>
+    <p class="founder-text">
+      This is what makes kakao.guru different from every other brand using the words "ethical" and "traceable." We don't just claim it. We lived it.
+    </p>
+    <div class="founder-credentials">
+      <span class="fcred">Vietnam Field Knowledge</span>
+      <span class="fcred">Fermentation & Terroir</span>
+      <span class="fcred">Direct Farmer Relationships</span>
+      <span class="fcred">Ben Tre · Dak Lak</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section class="cta-sec">
+  <div class="cta-inner">
+    <span class="cta-label">Begin Your Journey</span>
+    <h2 class="cta-title reveal">
+      Start your<br>
+      <strong>cacao ritual today.</strong>
+    </h2>
+    <p class="cta-sub reveal">
+      Pure ceremonial cacao blocks from the highlands of Vietnam. Traceable, ethically sourced, shipped to your door.
+    </p>
+    <div class="cta-btns reveal">
+      <a href="#contact" class="btn-cream">Contact Sales</a>
+      <a href="#learn" class="btn-ghost">Discover the ritual →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="footer-logo-text">kakao<span class="dot">.</span>guru</span>
+      <p class="brand-grounding" style="font-size:0.82rem;color:var(--muted);line-height:1.6;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);">kakao.guru is a knowledge platform specialising in ethically sourced, fermented ceremonial cacao from Vietnam — combining post-harvest science, transparent supply chain documentation, and evidence-based content to establish cacao's full bioactive potential.</p>
+  <p class="footer-tagline">Premium ceremonial cacao from the highlands of Vietnam. Pure, traceable, ethically sourced.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Products</div>
+      <a href="/shop/250g/">250g Cacao Block</a>
+      <a href="/shop/500g/">500g Cacao Block</a>
+      <a href="/faq/">Artisan Sales</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Story</div>
+      <a href="/origin/">About Us</a>
+      <a href="/origin/vietnam/">Vietnam Cacao</a>
+      <a href="/trace/">Traceability</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Learn</div>
+      <a href="/learn/ceremonial-cacao-101/">Ceremonial Cacao 101</a>
+      <a href="/learn/cacao-vs-coffee/">Cacao vs Coffee</a>
+      <a href="/learn/superfood/">Why Cacao is a Superfood</a>
+      <a href="/ritual/latte-recipes/">Cacao Recipes</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Help</div>
+      <a href="/faq/">FAQ</a>
+      <a href="/contact/">Contact Us</a>
+      <span style="color:rgba(235,243,237,0.4);cursor:default;">Shipping Policy</span>
+      <span style="color:rgba(235,243,237,0.4);cursor:default;">Terms of Service</span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 kakao.guru — Pure Ceremonial Cacao · Spain · Vietnam</div>
+    <div class="footer-socials">
+      <a href="#" class="social-btn">ig</a>
+      <a href="#" class="social-btn">tk</a>
+      <a href="#" class="social-btn">yt</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => io.observe(el));
+
+// QR grid animation
+const grid = document.getElementById('qrGrid');
+if (grid) {
+  const pattern = [
+    1,1,1,0,1,1,1,
+    1,0,1,0,1,0,1,
+    1,1,1,1,0,1,1,
+    0,1,0,1,0,0,1,
+    1,1,1,0,1,1,1,
+    1,0,0,1,1,0,1,
+    1,1,1,0,1,1,1,
+  ];
+  pattern.forEach((on, i) => {
+    const cell = document.createElement('div');
+    cell.className = 'qr-cell' + (on ? '' : ' off');
+    grid.appendChild(cell);
+  });
+}
+
+// Nav touch — chevron toggles dropdown, link navigates
+document.querySelectorAll('.nav-item > a .nav-chevron').forEach(chevron => {
+  chevron.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const navItem = this.closest('.nav-item');
+    const isOpen = navItem.classList.contains('touch-open');
+    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('touch-open'));
+    if (!isOpen) navItem.classList.add('touch-open');
+  });
+});
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.nav-item')) {
+    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('touch-open'));
+  }
+});
+
+// Nav scroll shadow
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').style.boxShadow =
+    window.scrollY > 10 ? '0 4px 30px rgba(59,31,14,0.08)' : 'none';
+});
+</script>
+</body>
+</html>

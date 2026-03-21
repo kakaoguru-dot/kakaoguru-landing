@@ -1,0 +1,22 @@
+# Cloudflare Pages _redirects
+# Old .html filenames → clean URLs (in case anyone bookmarked them)
+/kakao-guru-v4-8.html          /                301
+/kakao-guru-v4.html            /                301
+/kakao-guru-shop.html          /shop/           301
+/kakao-guru-product-250g.html  /shop/250g/      301
+/kakao-guru-product-250g-2-2.html /shop/250g/   301
+/kakao-guru-product-500g.html  /shop/500g/      301
+/kakao-guru-traceability-3.html /trace/         301
+/kakao-guru-traceability.html  /trace/          301
+/kakao-guru-result-01.html     /trace/batch-01/ 301
+/kakao-guru-result-02.html     /trace/batch-02/ 301
+/kakao-guru-result-03.html     /trace/batch-03/ 301
+/kakao-guru-vietnam-cacao-v2.html /origin/      301
+/learn-ceremonial-cacao-101.html /learn/ceremonial-cacao-101/ 301
+/learn-superfood.html          /learn/superfood/           301
+/learn-cacao-vs-coffee.html    /learn/cacao-vs-coffee/     301
+/learn-cacao-vs-chocolate.html /learn/cacao-vs-chocolate/  301
+/learn-ceremonial-vs-powder.html /learn/ceremonial-vs-powder/ 301
+
+# SPA fallback (must be last)
+/*  /index.html  200
