@@ -2,21 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Batch VN-GL-2601-01 — Traceability Record | kakao.guru</title>
-<link rel="canonical" href="https://kakao.guru/trace/batch-01/">
-<meta name="description" content="Full traceability record for kakao.guru batch VN-GL-2601-01 — farm origin, fermentation dates, drying method, quality test results.">
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="Batch VN-GL-2601-01 — Traceability Record">
-<meta property="og:description" content="Full traceability record for kakao.guru batch VN-GL-2601-01 — farm origin, fermentation dates, drying method, quality test results.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://kakao.guru/trace/batch-01/">
-<meta property="og:site_name" content="kakao.guru">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Batch VN-GL-2601-01 — Traceability Record">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemPage","name":"Batch VN-GL-2601-01 Traceability Record","url":"https://kakao.guru/trace/batch-01/","publisher":{"@type":"Organization","name":"kakao.guru"}}</script>
-
+<title>Batch VN-GL-2601-01 — kakao.guru</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -27,7 +14,7 @@
   --text: #2A1A0E; --muted: #9C8878; --border: rgba(59,31,14,0.1); --white: #FDFAF4;
 }
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+html { scroll-behavior:smooth; overflow-x:hidden;}
 body { background:var(--white); color:var(--text); font-family:'DM Sans',sans-serif; overflow-x:hidden; -webkit-font-smoothing:antialiased; }
 
 /* ANNOUNCE */
@@ -67,6 +54,21 @@ nav { position:sticky; top:0; z-index:200; background:rgba(253,250,244,.96); bac
 .nav-icon-btn { width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:none; border:none; cursor:pointer; color:var(--text); transition:background .2s,color .2s; font-size:1rem; }
 .nav-icon-btn:hover { background:var(--paper); color:var(--tropical); }
 .nav-shop-btn { font-size:.8rem; font-weight:600; background:var(--tropical); color:#fff; padding:.6rem 1.4rem; border-radius:100px; text-decoration:none; letter-spacing:.01em; transition:background .2s,transform .2s; }
+
+  /* ── LAYOUT ── */
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: 2fr 1fr"],
+  [style*="grid-template-columns: repeat(2"],
+  [style*="grid-template-columns: repeat(3"] {
+    grid-template-columns: 1fr !important;
+  }
+  [style*="padding: 7rem"],[style*="padding:7rem"],
+  [style*="padding: 6rem"],[style*="padding:6rem"],
+  [style*="padding: 5rem"],[style*="padding:5rem"] { padding: 2.5rem 1.5rem !important; }
+  [style*="gap: 8rem"],[style*="gap:8rem"],
+  [style*="gap: 6rem"],[style*="gap:6rem"],
+  [style*="gap: 5rem"],[style*="gap:5rem"] { gap: 2rem !important; }
 .nav-shop-btn:hover { background:var(--trop-lt); transform:translateY(-1px); }
 
 /* BREADCRUMB */
@@ -210,15 +212,261 @@ footer { background:var(--cacao); color:var(--cream); padding:3rem 3rem 2rem; }
 .nav-item.touch-open .dropdown { opacity:1; visibility:visible; pointer-events:auto; transform:translateY(0); }
 .nav-item.touch-open .dropdown.mega-dropdown { opacity:1; visibility:visible; pointer-events:auto; transform:translateY(0); }
 
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — TABLET 768px
+═══════════════════════════════════════════════════════ */
+.hamburger { display: none; }
+@media (max-width: 768px) {
+  html, body { overflow-x: hidden; }
+  * { max-width: 100%; }
+  img, svg, video { max-width: 100%; height: auto; }
+  /* NAV — hamburger */
+  .nav-menu { display: none; flex-direction: column; position: fixed; top: 60px; left: 0; right: 0; bottom: 0; background: var(--white); padding: 1.5rem 1.2rem; overflow-y: auto; z-index: 199; gap: 0; }
+  .nav-menu.open { display: flex; }
+  .nav-item > a { height: auto; padding: 0.9rem 0; font-size: 1.05rem; border-bottom: 1px solid var(--border); }
+  .nav-chevron { display: none; }
+  .dropdown { position: static; opacity: 1; visibility: visible; pointer-events: auto; transform: none; box-shadow: none; border: none; border-radius: 0; padding: 0 0 0 1rem; background: transparent; min-width: unset; display: none; flex-direction: column; }
+  .dropdown.mega-dropdown { min-width: unset; flex-direction: column; }
+  .nav-item.touch-open > .dropdown { display: flex; }
+  .dropdown a { padding: 0.5rem 0; font-size: 0.9rem; border-radius: 0; }
+  .dropdown a:hover { padding-left: 0.5rem; background: none; }
+  .dd-label { padding: 0.6rem 0 0.2rem; }
+  .mega-col { flex: unset; }
+  .nav-actions { gap: 0.5rem; }
+  .nav-shop-btn { padding: 0.45rem 1rem; font-size: 0.78rem; }
+  
+  .nav-icon-btn { display: none; }
+  .hamburger { display: flex !important; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; cursor: pointer; background: none; border: none; padding: 4px; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--cacao); border-radius: 2px; transition: all 0.25s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  section, .steps-sec, .dosage-sec, .ritual-hero, .page-hero,
+  .ritual-cta, .other-rituals, .recipes-sec, .tips-sec, .intention-sec,
+  .practice-sec, .context-sec, .base-sec, .science-sec, .routine-sec,
+  .what-sec, .articles-sec, .learn-hero { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+  .photo-grid { grid-template-columns: 1fr !important; }
+
+  /* NAV — hamburger */
+  .nav-inner { padding: 0 1.2rem; height: 60px; }
+  .nav-menu { 
+    display: none; flex-direction: column; 
+    position: fixed; top: 60px; left: 0; right: 0; bottom: 0;
+    background: var(--white); padding: 1.5rem 1.2rem;
+    overflow-y: auto; z-index: 199; gap: 0;
+  }
+  .nav-menu.open { display: flex; }
+  .nav-item > a { 
+    height: auto; padding: 0.9rem 0; 
+    font-size: 1.05rem; border-bottom: 1px solid var(--border);
+  }
+  .nav-chevron { display: none; }
+  .dropdown { 
+    position: static; opacity: 1; visibility: visible; 
+    pointer-events: auto; transform: none; box-shadow: none;
+    border: none; border-radius: 0; padding: 0 0 0 1rem;
+    background: transparent; min-width: unset;
+    display: none; flex-direction: column;
+  }
+  .dropdown.mega-dropdown { 
+    min-width: unset; flex-direction: column; 
+  }
+  .nav-item.touch-open > .dropdown { display: flex; }
+  .dropdown a { padding: 0.5rem 0; font-size: 0.9rem; border-radius: 0; }
+  .dropdown a:hover { padding-left: 0.5rem; background: none; }
+  .dd-label { padding: 0.6rem 0 0.2rem; }
+  .mega-col { flex: unset; }
+  .nav-actions { gap: 0.5rem; }
+  .nav-shop-btn { padding: 0.4rem 0.9rem; font-size: 0.78rem; }
+
+  /* HAMBURGER BUTTON */
+  .hamburger { 
+    display: flex !important; flex-direction: column; justify-content: center;
+    gap: 5px; width: 36px; height: 36px; cursor: pointer;
+    background: none; border: none; padding: 4px;
+  }
+  .hamburger span { 
+    display: block; width: 22px; height: 2px; 
+    background: var(--cacao); border-radius: 2px;
+    transition: all 0.25s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* SECTIONS — vertical padding */
+  .shop-sec, .why-sec, .science-sec, .origin-sec,
+  .trace-sec, .ritual-sec, .test-sec, .learn-sec,
+  .faq-sec, .articles-sec, .steps-sec, .dosage-sec,
+  .routine-sec, .context-sec, .rituals-sec, .recipes-sec,
+  .tips-sec, .base-sec, .intention-sec, .what-sec,
+  .science-sec, .practice-sec, .other-rituals,
+  .ceremonial-intro, .learn-hero, .filter-bar,
+  .ritual-hero, .page-hero { padding-left: 1.2rem; padding-right: 1.2rem; }
+  
+  .shop-sec, .why-sec, .science-sec, .origin-sec,
+  .trace-sec, .ritual-sec, .test-sec, .learn-sec,
+  .faq-sec { padding-top: 4rem; padding-bottom: 4rem; }
+
+  .final-sec { padding: 5rem 1.2rem; }
+
+  /* HERO */
+  .hero-sec { min-height: 75vh; }
+  .hero-inner { padding: 3.5rem 1.2rem 2rem; }
+  .hero-title { font-size: clamp(2.2rem, 8vw, 3.5rem); }
+  .hero-sub { font-size: 0.95rem; max-width: 100%; }
+  .hero-photo-placeholder { display: none; }
+  .hero-photo-overlay { display: none; }
+  .trust-scroll { flex-wrap: wrap; gap: 0.5rem; }
+
+  /* GRIDS → single column */
+  .origin-inner,
+  .trace-inner,
+  .dosage-inner,
+  .ritual-inner,
+  .ci-inner,
+  .context-grid,
+  .hero-stat-grid { 
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .ritual-inner { display: block !important; }
+  
+  /* PRODUCT CARDS */
+  .prod-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .articles-grid, .other-grid, .rituals-grid,
+  .recipes-grid, .science-grid, .tips-grid { 
+    grid-template-columns: 1fr; gap: 1.2rem; 
+  }
+  .hero-stat-grid { grid-template-columns: 1fr 1fr !important; }
+
+  /* ORIGIN MAP */
+  .vietnam-map { display: none; }
+
+  /* TRACE visual */
+  .trace-visual { height: 280px; }
+
+  /* RITUAL steps */
+  .ritual-steps { grid-template-columns: 1fr 1fr !important; }
+
+  /* TEST grid */
+  .test-grid-wrap { grid-template-columns: 1fr !important; }
+  .test-lifestyle-photo { min-height: 280px !important; }
+  .test-grid { grid-template-columns: 1fr !important; }
+
+  /* LEARN grid */
+  .learn-grid { grid-template-columns: 1fr; }
+  .learn-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+
+  /* SCI grid */
+  .sci-grid { grid-template-columns: 1fr; }
+
+  /* WHY CACAO section */
+  .wc-inner { grid-template-columns: 1fr !important; }
+  .wc-comparison { overflow-x: auto; }
+
+  /* FOOTER */
+  footer { padding: 3rem 1.2rem 2rem; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+  /* ANNOUNCE */
+  .announce { font-size: 0.7rem; padding: 0.5rem 0.8rem; }
+
+  /* HERO float cards — hide on mobile */
+  .hero-float { display: none; }
+
+  /* INTENTION prompts */
+  .intention-prompts { grid-template-columns: 1fr; }
+  .intention-grid { grid-template-columns: 1fr 1fr; }
+
+  /* DOSAGE cards */
+  .dosage-cards { grid-template-columns: 1fr 1fr; }
+
+  /* STEP items */
+  .step-item { grid-template-columns: 60px 1fr; gap: 1rem; }
+
+  /* PHASE header */
+  .phase-header { grid-template-columns: 60px 1fr; }
+  .phase-num { font-size: 2rem; }
+
+  /* RITUAL HERO */
+  .ritual-hero-inner { grid-template-columns: 1fr !important; gap: 2.5rem; }
+  .ritual-hero-title { font-size: clamp(2rem, 7vw, 3rem); }
+  .hero-visual { padding: 1.5rem; }
+
+  /* BASE STEPS */
+  .base-steps { grid-template-columns: 1fr 1fr; }
+
+  /* INLINE GRID OVERRIDES */
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr"] { 
+    grid-template-columns: 1fr !important; 
+  }
+  [style*="grid-template-columns: 1fr 1.6fr"],
+  [style*="grid-template-columns:1fr 1.6fr"] { 
+    grid-template-columns: 1fr !important; 
+  }
+  [style*="grid-template-columns: 2fr 1fr 1fr 1fr 1fr"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  [style*="grid-template-columns: repeat(3"] {
+    grid-template-columns: 1fr !important;
+  }
+  [style*="grid-template-columns: repeat(4"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — MOBILE 480px
+═══════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .hero-left { padding: 2rem 1.2rem 1.5rem !important; }
+  .hero-title { font-size: clamp(1.8rem, 9vw, 2.5rem) !important; }
+  .sec-label { font-size: 0.65rem; }
+  h2 { font-size: clamp(1.6rem, 7vw, 2.2rem) !important; }
+  .origin-stats { grid-template-columns: 1fr 1fr !important; }
+  .footer-top { grid-template-columns: 1fr !important; }
+  .footer-col:nth-child(n+3) { display: none; }
+  .nav-shop-btn { display: none; }
+  .ritual-hero-inner { grid-template-columns: 1fr !important; }
+  .dosage-inner { grid-template-columns: 1fr !important; }
+  .context-grid { grid-template-columns: 1fr !important; }
+  .scan-grid { grid-template-columns: 1fr !important; }
+  .photo-grid { grid-template-columns: 1fr !important; }
+  .recipes-grid { grid-template-columns: 1fr !important; }
+  .articles-grid { grid-template-columns: 1fr !important; }
+  .other-grid { grid-template-columns: 1fr !important; }
+  .hero-visual { padding: 1.5rem; }
+  .step-item { grid-template-columns: 50px 1fr; gap: 1rem; }
+  .phase-header { grid-template-columns: 48px 1fr; gap: 1rem; }
+  .contact-wrap { padding: 2.5rem 1.5rem 3rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero-title { font-size: clamp(1.8rem, 9vw, 2.8rem); }
+  .origin-quote { font-size: clamp(2rem, 9vw, 3rem); }
+  .footer-top { grid-template-columns: 1fr; gap: 1.5rem; }
+  .rituals-grid { grid-template-columns: 1fr; }
+  .hero-stat-grid { grid-template-columns: 1fr 1fr; }
+  .dosage-cards { grid-template-columns: 1fr 1fr; }
+  .base-steps { grid-template-columns: 1fr; }
+  .intention-grid { grid-template-columns: 1fr; }
+  .science-grid, .tips-grid { grid-template-columns: 1fr; }
+  .ritual-steps { grid-template-columns: 1fr !important; }
+  .hero-cta-row { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+  .cta-btns { flex-direction: column; }
+  .phase-header { grid-template-columns: 48px 1fr; gap: 1rem; }
+  .step-item { grid-template-columns: 50px 1fr; }
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr"] { 
+    grid-template-columns: 1fr !important; 
+  }
+  [style*="grid-template-columns: repeat(2"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JHHG307613"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-JHHG307613');
-</script>
 </head>
 <body>
 
@@ -247,8 +495,7 @@ footer { background:var(--cacao); color:var(--cream); padding:3rem 3rem 2rem; }
   <div class="nav-inner">
     <a href="/" class="nav-logo">kakao<span class="logo-dot">.</span>guru</a>
     <ul class="nav-menu">
-      <li class="nav-item">
-        <a href="/shop/">Products <span class="nav-chevron"></span></a>
+      <li class="nav-item"><a href="/shop/">Products <span class="nav-chevron"></span></a>
         <div class="dropdown">
           <div class="dd-label">Our Products</div>
           <a href="/shop/250g/">250g Ceremonial Cacao Block</a>
@@ -257,58 +504,49 @@ footer { background:var(--cacao); color:var(--cream); padding:3rem 3rem 2rem; }
           <a href="/shop/">→ View All Products</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a href="/origin/">Story <span class="nav-chevron"></span></a>
+      <li class="nav-item"><a href="/origin/">Story <span class="nav-chevron"></span></a>
         <div class="dropdown">
           <div class="dd-label">Our Story</div>
           <a href="/origin/">About Us</a>
-          <a href="/origin/vietnam/">Vietnam Cacao</a>
+          <a href="/origin/">Vietnam Cacao</a>
           <div class="sep"></div>
           <div class="dd-label">Sourcing</div>
           <a href="/trace/">QR Traceability</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a href="/learn/ceremonial-cacao-101/">Learn <span class="nav-chevron"></span></a>
+      <li class="nav-item"><a href="/learn/ceremonial-cacao-101/">Learn <span class="nav-chevron"></span></a>
         <div class="dropdown">
           <a href="/learn/ceremonial-cacao-101/">Ceremonial Cacao 101</a>
-          <a href="/learn/superfood/">Why Cacao is a Superfood</a>
+                    <a href="/learn/superfood/">Why Cacao is a Superfood</a>
           <a href="/learn/cacao-vs-coffee/">Cacao vs Coffee</a>
           <a href="/learn/cacao-vs-chocolate/">Cacao vs Chocolate</a>
           <a href="/learn/ceremonial-vs-powder/">Ceremonial Cacao vs Cacao Powder</a>
           <div class="sep"></div>
-          <a href="/faq/">FAQ</a>
+          <a href="/#ritual">Recipes</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a href="/health/theobromine/">Health <span class="nav-chevron"></span></a>
+      <li class="nav-item"><a href="/#science">Health <span class="nav-chevron"></span></a>
         <div class="dropdown mega-dropdown">
           <div class="mega-col">
             <div class="dd-label">Wellness</div>
-            <a href="/health/replace-coffee/">Reduce or Replace Coffee</a>
-            <a href="/health/stress-regulation/">Cacao &amp; Stress Regulation</a>
-            <a href="/health/magnesium-sleep/">Magnesium &amp; Sleep</a>
-            <a href="/health/emotional-wellbeing/">Cacao &amp; Emotional Wellbeing</a>
-            <a href="/health/flavonoids/">High in Flavonoids</a>
+            <a href="/#science">Reduce or Replace Coffee</a>
+            <a href="/#science">Cacao &amp; Stress Regulation</a>
+            <a href="/#science">Magnesium &amp; Sleep</a>
+            <a href="/#science">High in Flavonoids</a>
+            <a href="/#science">Emotional Wellbeing</a>
           </div>
           <div class="mega-col">
             <div class="dd-label">Biohacking</div>
-            <a href="/health/theobromine/">Theobromine Benefits</a>
-            <a href="/health/focus/">Cacao &amp; Focus</a>
-            <a href="/health/antioxidant/">Antioxidant Power</a>
-            <a href="/health/longevity/">Longevity &amp; Anti-Ageing</a>
-            <a href="/health/gut-microbiome/">Gut Microbiome</a>
-            <a href="/health/stress-mood/">Stress &amp; Mood Support</a>
-            <a href="/health/heart-health/">Heart Health</a>
-            <a href="/health/neuroplasticity/">Neuroplasticity</a>
-            <a href="/health/nitric-oxide/">Nitric Oxide &amp; Circulation</a>
-            <a href="/health/metabolic-health/">Metabolic Health</a>
-            <a href="/health/cognitive-performance/">Cognitive Performance</a>
+            <a href="/#science">Theobromine Benefits</a>
+            <a href="/#science">Cacao &amp; Focus</a>
+            <a href="/#science">Antioxidant Power</a>
+            <a href="/#science">Longevity &amp; Anti-Ageing</a>
+            <a href="/#science">Heart Health</a>
+            <a href="/#science">Cognitive Performance</a>
           </div>
         </div>
       </li>
-      <li class="nav-item">
-        <a href="/ritual/">Rituals <span class="nav-chevron"></span></a>
+      <li class="nav-item"><a href="/ritual/">Rituals <span class="nav-chevron"></span></a>
         <div class="dropdown">
           <a href="/ritual/morning/">Morning Ritual</a>
           <a href="/ritual/evening/">Evening Ritual</a>
@@ -316,29 +554,20 @@ footer { background:var(--cacao); color:var(--cream); padding:3rem 3rem 2rem; }
           <a href="/ritual/mindful-practice/">Mindful Cacao Practice</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a href="/faq/">About <span class="nav-chevron"></span></a>
+      <li class="nav-item"><a href="/#faq">About <span class="nav-chevron"></span></a>
         <div class="dropdown">
           <a href="/origin/">About kakao.guru</a>
+          <a href="/#faq">FAQ</a>
           <a href="/contact/">Contact</a>
         </div>
       </li>
     </ul>
     <div class="nav-actions">
-      <button class="nav-icon-btn" title="Search">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-          <circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M12.5 12.5 L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </button>
-      <button class="nav-icon-btn" title="Cart">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-          <path d="M1 1 L3.5 1 L5.5 11 L14 11 L16 4 L4.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="7" cy="14.5" r="1.5" fill="currentColor"/>
-          <circle cx="13" cy="14.5" r="1.5" fill="currentColor"/>
-        </svg>
-      </button>
-      <a href="/shop/" class="nav-shop-btn">Shop Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      
+      
+      <button class="nav-icon-btn" title="Cart"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 1 L3.5 1 L5.5 11 L14 11 L16 4 L4.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="14.5" r="1.5" fill="currentColor"/><circle cx="13" cy="14.5" r="1.5" fill="currentColor"/></svg></button>
+      <a href="/contact/" class="nav-shop-btn">Contact Sales</a>
     </div>
   </div>
 </nav>
@@ -529,12 +758,11 @@ footer { background:var(--cacao); color:var(--cream); padding:3rem 3rem 2rem; }
 
 <footer>
   <div class="footer-top">
-    <div class="footer-brand"><span class="footer-logo-text">kakao<span class="dot">.</span>guru</span><p class="brand-grounding" style="font-size:0.82rem;color:var(--muted);line-height:1.6;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);">kakao.guru is a knowledge platform specialising in ethically sourced, fermented ceremonial cacao from Vietnam — combining post-harvest science, transparent supply chain documentation, and evidence-based content to establish cacao's full bioactive potential.</p>
-  <p class="footer-tagline">Premium ceremonial cacao from the highlands of Vietnam. Pure, traceable, ethically sourced.</p></div>
+    <div class="footer-brand"><span class="footer-logo-text">kakao<span class="dot">.</span>guru</span><p class="footer-tagline">Premium ceremonial cacao from the highlands of Vietnam. Pure, traceable, ethically sourced.</p></div>
     <div class="footer-col"><div class="footer-col-title">Products</div><a href="/shop/250g/">250g Cacao Block</a><a href="/shop/500g/">500g Cacao Block</a></div>
-    <div class="footer-col"><div class="footer-col-title">Story</div><a href="/origin/">About Us</a><a href="/origin/vietnam/">Vietnam Cacao</a><a href="/trace/">Traceability</a></div>
-    <div class="footer-col"><div class="footer-col-title">Learn</div><a href="/#learn">Ceremonial Cacao 101</a><a href="/#learn">Cacao vs Coffee</a><a href="/ritual/latte-recipes/">Cacao Recipes</a></div>
-    <div class="footer-col"><div class="footer-col-title">Help</div><a href="/faq/">FAQ</a><a href="/contact/">Contact Us</a><a href="/faq/">Shipping Policy</a></div>
+    <div class="footer-col"><div class="footer-col-title">Story</div><a href="/origin/">About Us</a><a href="/origin/">Vietnam Cacao</a><a href="/trace/">Traceability</a></div>
+    <div class="footer-col"><div class="footer-col-title">Learn</div><a href="/#learn">Ceremonial Cacao 101</a><a href="/#learn">Cacao vs Coffee</a><a href="/#ritual">Cacao Recipes</a></div>
+    <div class="footer-col"><div class="footer-col-title">Help</div><a href="/#faq">FAQ</a><a href="/contact/">Contact Us</a><a href="/#faq">Shipping Policy</a></div>
   </div>
   <div class="footer-bottom">
     <div class="footer-copy">© 2025 kakao.guru — Pure Ceremonial Cacao · Spain · Vietnam</div>
@@ -542,21 +770,35 @@ footer { background:var(--cacao); color:var(--cream); padding:3rem 3rem 2rem; }
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold:0.08, rootMargin:'0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// Nav touch — chevron toggles dropdown, link navigates
-document.querySelectorAll('.nav-item > a .nav-chevron').forEach(chevron => {
-  chevron.addEventListener('click', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    const navItem = this.closest('.nav-item');
-    const isOpen = navItem.classList.contains('touch-open');
+// Nav dropdown click/touch support
+
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.querySelector('.nav-menu');
+if (hamburger && navMenu) {
+  hamburger.addEventListener('click', function() {
+    this.classList.toggle('open');
+    navMenu.classList.toggle('open');
+    document.body.style.overflow = navMenu.classList.contains('open') ? 'hidden' : '';
+  });
+}
+
+document.querySelectorAll('.nav-item > a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const dropdown = this.parentElement.querySelector('.dropdown');
+    if (!dropdown) return;
+    const isOpen = this.parentElement.classList.contains('touch-open');
     document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('touch-open'));
-    if (!isOpen) navItem.classList.add('touch-open');
+    if (!isOpen) {
+      e.preventDefault();
+      this.parentElement.classList.add('touch-open');
+    }
   });
 });
 document.addEventListener('click', function(e) {
@@ -564,34 +806,6 @@ document.addEventListener('click', function(e) {
     document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('touch-open'));
   }
 });
-</script>
-<!-- Cookie Banner -->
-<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--cacao);padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;box-shadow:0 -4px 30px rgba(0,0,0,0.2);">
-  <p style="font-size:.82rem;color:rgba(247,242,232,.8);font-weight:300;line-height:1.6;max-width:700px;margin:0;">We use cookies to understand how you use our site (Google Analytics) and to improve your experience. <a href="/privacy/" style="color:var(--amber);text-decoration:underline;">Privacy Policy</a></p>
-  <div style="display:flex;gap:.8rem;flex-shrink:0;">
-    <button onclick="acceptCookies()" style="background:var(--amber);color:var(--cacao);border:none;padding:.55rem 1.4rem;border-radius:99px;font-size:.82rem;font-weight:600;cursor:pointer;font-family:inherit;">Accept</button>
-    <button onclick="declineCookies()" style="background:transparent;color:rgba(247,242,232,.6);border:1px solid rgba(247,242,232,.2);padding:.55rem 1.4rem;border-radius:99px;font-size:.82rem;font-weight:400;cursor:pointer;font-family:inherit;">Decline</button>
-  </div>
-</div>
-<script>
-(function(){
-  var consent = localStorage.getItem('cookie_consent');
-  if (!consent) {
-    document.getElementById('cookieBanner').style.display = 'flex';
-  }
-  if (consent === 'declined') {
-    window['ga-disable-G-JHHG307613'] = true;
-  }
-})();
-function acceptCookies() {
-  localStorage.setItem('cookie_consent', 'accepted');
-  document.getElementById('cookieBanner').style.display = 'none';
-}
-function declineCookies() {
-  localStorage.setItem('cookie_consent', 'declined');
-  window['ga-disable-G-JHHG307613'] = true;
-  document.getElementById('cookieBanner').style.display = 'none';
-}
 </script>
 </body>
 </html>
