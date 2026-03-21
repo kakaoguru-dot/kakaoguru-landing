@@ -1,0 +1,48 @@
+# Cloudflare Pages _redirects
+# Old .html filenames → clean URLs (in case anyone bookmarked them)
+/kakao-guru-v4-8.html                /                        301
+/kakao-guru-v4.html                  /                        301
+/kakao-guru-shop.html                /shop/                   301
+/kakao-guru-product-250g.html        /shop/250g/              301
+/kakao-guru-product-250g-2-2.html    /shop/250g/              301
+/kakao-guru-product-500g.html        /shop/500g/              301
+/kakao-guru-traceability-3.html      /trace/                  301
+/kakao-guru-traceability.html        /trace/                  301
+/kakao-guru-result-01.html           /trace/batch-01/         301
+/kakao-guru-result-02.html           /trace/batch-02/         301
+/kakao-guru-result-03.html           /trace/batch-03/         301
+/kakao-guru-vietnam-cacao-v2.html    /origin/vietnam/         301
+/kakao-guru-about-5.html             /origin/                 301
+/learn-ceremonial-cacao-101.html     /learn/ceremonial-cacao-101/ 301
+/learn-superfood.html                /learn/superfood/        301
+/learn-cacao-vs-coffee.html          /learn/cacao-vs-coffee/  301
+/learn-cacao-vs-chocolate.html       /learn/cacao-vs-chocolate/ 301
+/learn-ceremonial-vs-powder.html     /learn/ceremonial-vs-powder/ 301
+
+# Health pages — new URLs
+/health/                             /health/theobromine/     301
+/health/replace-coffee               /health/replace-coffee/  301
+/health/stress-regulation            /health/stress-regulation/ 301
+/health/magnesium-sleep              /health/magnesium-sleep/ 301
+/health/emotional-wellbeing          /health/emotional-wellbeing/ 301
+/health/flavonoids                   /health/flavonoids/      301
+/health/antioxidant                  /health/antioxidant/     301
+/health/longevity                    /health/longevity/       301
+/health/gut-microbiome               /health/gut-microbiome/  301
+/health/stress-mood                  /health/stress-mood/     301
+/health/heart-health                 /health/heart-health/    301
+/health/neuroplasticity              /health/neuroplasticity/ 301
+/health/nitric-oxide                 /health/nitric-oxide/    301
+/health/metabolic-health             /health/metabolic-health/ 301
+/health/cognitive-performance        /health/cognitive-performance/ 301
+
+# Common variations
+/about/                              /origin/                 301
+/about                               /origin/                 301
+/vietnam/                            /origin/vietnam/         301
+/faq.html                            /faq/                    301
+/contact/                            /contact/                200
+/contact                             /contact/                200
+
+# SPA fallback (must be last)
+/*  /index.html  200
