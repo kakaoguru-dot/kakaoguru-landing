@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Batch VN-GL-2601-03 — kakao.guru</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F7F2E8; --paper: #EDE6D6; --warm: #DDD4BF;
+  --cacao: #3B1F0E; --cacao-mid: #6B3A1F; --cacao-lt: #9C6644;
+  --gold: #B07D3A; --amber: #C8913A;
+  --tropical: #2D5E3A; --trop-lt: #3D7A4E; --trop-pale: #EBF3ED;
+  --text: #2A1A0E; --muted: #9C8878; --border: rgba(59,31,14,0.1); --white: #FDFAF4;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; overflow-x:hidden;}
+body { background:var(--white); color:var(--text); font-family:'DM Sans',sans-serif; overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+
+/* ANNOUNCE */
+.announce { background:var(--tropical); color:#fff; text-align:center; padding:.55rem 1rem; font-size:.78rem; letter-spacing:.06em; }
+.announce a { color:#fff; text-decoration:underline; text-underline-offset:2px; }
+
+/* TRUST BAR */
+.trust-bar { background:var(--tropical); padding:.75rem 3rem; overflow:hidden; }
+.trust-track { display:flex; gap:3rem; align-items:center; animation:marquee 30s linear infinite; width:max-content; }
+.trust-item { display:flex; align-items:center; gap:.5rem; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(235,243,237,.9); white-space:nowrap; }
+.trust-dot { width:4px; height:4px; border-radius:50%; background:rgba(255,255,255,.5); }
+@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* NAV */
+nav { position:sticky; top:0; z-index:200; background:rgba(253,250,244,.96); backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid var(--border); transition:box-shadow .3s; }
+.nav-inner { max-width:1300px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 3rem; height:68px; }
+.nav-logo { font-family:'Outfit',sans-serif; font-size:1.35rem; font-weight:300; letter-spacing:-.02em; color:var(--cacao); text-decoration:none; flex-shrink:0; }
+.nav-logo .logo-dot { color:var(--tropical); }
+.nav-menu { display:flex; gap:0; list-style:none; }
+.nav-item { position:relative; }
+.nav-item > a { display:flex; align-items:center; gap:.3rem; padding:0 1.1rem; height:68px; font-size:.82rem; font-weight:500; letter-spacing:.01em; color:var(--text); text-decoration:none; transition:color .2s; }
+.nav-item > a:hover, .nav-item > a.active { color:var(--tropical); }
+.nav-item > a.active { border-bottom:2px solid var(--tropical); }
+.nav-chevron { width:10px; height:10px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor; transform:rotate(45deg); margin-top:-3px; transition:transform .2s; }
+.nav-item:hover .nav-chevron { transform:rotate(-135deg); margin-top:3px; }
+.dropdown { position:absolute; top:100%; left:0; background:var(--white); border:1px solid var(--border); border-top:2px solid var(--tropical); min-width:220px; padding:1rem 0; box-shadow:0 20px 60px rgba(59,31,14,.1); opacity:0; visibility:hidden; transform:translateY(8px); transition:all .25s ease; pointer-events:none; }
+.nav-item:hover .dropdown { opacity:1; visibility:visible; transform:translateY(0); pointer-events:all; }
+.dropdown a { display:block; padding:.6rem 1.5rem; font-size:.82rem; color:var(--text); text-decoration:none; transition:all .15s; }
+.dropdown a:hover { background:var(--trop-pale); color:var(--tropical); padding-left:1.8rem; }
+.dropdown .sep { height:1px; background:var(--border); margin:.5rem 1.5rem; }
+.dropdown .dd-label { padding:.4rem 1.5rem; font-size:.65rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-weight:500; }
+.dropdown.mega-dropdown { display:flex; gap:0; min-width:520px; padding:0; left:50%; transform:translateX(-50%) translateY(8px); }
+.nav-item:hover .dropdown.mega-dropdown { transform:translateX(-50%) translateY(0); }
+.mega-col { flex:1; padding:1rem 0; border-right:1px solid var(--border); }
+.mega-col:last-child { border-right:none; }
+.nav-actions { display:flex; align-items:center; gap:.8rem; }
+.nav-icon-btn { width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:none; border:none; cursor:pointer; color:var(--text); transition:background .2s,color .2s; font-size:1rem; }
+.nav-icon-btn:hover { background:var(--paper); color:var(--tropical); }
+.nav-shop-btn { font-size:.8rem; font-weight:600; background:var(--tropical); color:#fff; padding:.6rem 1.4rem; border-radius:100px; text-decoration:none; letter-spacing:.01em; transition:background .2s,transform .2s; }
+
+  /* ── LAYOUT ── */
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: 2fr 1fr"],
+  [style*="grid-template-columns: repeat(2"],
+  [style*="grid-template-columns: repeat(3"] {
+    grid-template-columns: 1fr !important;
+  }
+  [style*="padding: 7rem"],[style*="padding:7rem"],
+  [style*="padding: 6rem"],[style*="padding:6rem"],
+  [style*="padding: 5rem"],[style*="padding:5rem"] { padding: 2.5rem 1.5rem !important; }
+  [style*="gap: 8rem"],[style*="gap:8rem"],
+  [style*="gap: 6rem"],[style*="gap:6rem"],
+  [style*="gap: 5rem"],[style*="gap:5rem"] { gap: 2rem !important; }
+.nav-shop-btn:hover { background:var(--trop-lt); transform:translateY(-1px); }
+
+/* BREADCRUMB */
+.breadcrumb { max-width:1300px; margin:0 auto; padding:1.2rem 3rem; font-size:.78rem; color:var(--muted); display:flex; align-items:center; gap:.5rem; }
+.breadcrumb a { color:var(--muted); text-decoration:none; }
+.breadcrumb a:hover { color:var(--tropical); }
+.breadcrumb span { opacity:.5; }
+
+/* HERO */
+.result-hero { background:var(--cacao); padding:4rem 3rem 3.5rem; position:relative; overflow:hidden; }
+.result-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 50% 100% at 90% 50%, rgba(45,94,58,.3) 0%, transparent 70%); }
+.rh-inner { max-width:1300px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; position:relative; z-index:1; }
+.rh-left { flex:1; min-width:280px; }
+.verified-badge { display:inline-flex; align-items:center; gap:.5rem; background:rgba(110,231,160,.15); border:1px solid rgba(110,231,160,.3); color:#6EE7A0; font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:.35rem .9rem; border-radius:100px; margin-bottom:1.2rem; }
+.verified-badge::before { content:'✓'; width:16px; height:16px; background:#6EE7A0; color:var(--cacao); border-radius:50%; text-align:center; font-size:.65rem; line-height:16px; font-weight:900; display:inline-block; }
+.batch-code { font-family:'Outfit',sans-serif; font-size:clamp(1.8rem,3vw,2.8rem); font-weight:300; color:var(--cream); line-height:1.1; letter-spacing:-.02em; margin-bottom:.4rem; }
+.batch-code strong { font-weight:700; color:var(--amber); }
+.batch-sub { font-size:1rem; color:rgba(247,242,232,.6); margin-bottom:1.8rem; }
+.meta-pills { display:flex; flex-wrap:wrap; gap:.5rem; }
+.pill { background:rgba(247,242,232,.08); border:1px solid rgba(247,242,232,.15); color:rgba(247,242,232,.75); font-size:.75rem; padding:.3rem .8rem; border-radius:100px; }
+.pill.green { background:rgba(45,94,58,.3); border-color:rgba(45,94,58,.5); color:#6EE7A0; }
+
+/* MAIN LAYOUT */
+.result-body { max-width:1300px; margin:0 auto; padding:3rem; display:grid; grid-template-columns:1fr 400px; gap:3rem; align-items:start; }
+
+/* DATA CARD */
+.card { border:1px solid var(--border); border-radius:16px; overflow:hidden; margin-bottom:1.5rem; }
+.card-header { padding:1rem 1.4rem; background:var(--paper); border-bottom:1px solid var(--border); font-family:'Outfit',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); display:flex; align-items:center; justify-content:space-between; }
+.card-verified { font-size:.65rem; font-weight:700; letter-spacing:.06em; background:var(--trop-pale); color:var(--tropical); padding:.2rem .55rem; border-radius:100px; }
+.data-row { display:flex; border-bottom:1px solid var(--border); }
+.data-row:last-child { border-bottom:none; }
+.dk { padding:.85rem 1.1rem; font-size:.72rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); min-width:150px; border-right:1px solid var(--border); display:flex; align-items:center; background:rgba(237,230,214,.3); }
+.dv { padding:.85rem 1.2rem; font-size:.9rem; color:var(--text); display:flex; align-items:center; gap:.5rem; flex:1; line-height:1.4; }
+.dv .chip { font-size:.62rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; background:var(--trop-pale); color:var(--tropical); padding:.15rem .45rem; border-radius:100px; flex-shrink:0; }
+
+/* PHOTO GRID */
+.photo-section { margin-bottom:1.5rem; }
+.photo-title { font-family:'Outfit',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-bottom:.8rem; padding-left:.1rem; }
+.photo-grid { display:grid; grid-template-columns:1fr 1fr; gap:.6rem; }
+.photo-placeholder { border-radius:12px; overflow:hidden; position:relative; background:var(--paper); border:1px solid var(--border); }
+.photo-placeholder.tall { grid-column:1/-1; height:220px; }
+.photo-placeholder.short { height:140px; }
+.photo-inner { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.6rem; padding:1rem; }
+.photo-icon { font-size:2rem; opacity:.4; }
+.photo-label { font-size:.72rem; color:var(--muted); text-align:center; letter-spacing:.04em; }
+/* Real photo slots — swap src when photos are available */
+.photo-placeholder img { width:100%; height:100%; object-fit:cover; display:block; }
+
+/* MAP */
+.map-card { border-radius:16px; overflow:hidden; margin-bottom:1.5rem; border:1px solid var(--border); }
+.map-visual { height:200px; position:relative; background:linear-gradient(135deg,#1a3d2a 0%,#2D5E3A 50%,#1a3020 100%); overflow:hidden; }
+.map-grid-bg { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px); background-size:28px 28px; }
+.map-contour { position:absolute; border-radius:50%; border:1px solid rgba(255,255,255,.06); }
+.map-label-vn { position:absolute; top:16px; left:18px; font-size:.62rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:rgba(247,242,232,.3); }
+.pin-wrap { position:absolute; top:50%; left:52%; transform:translate(-50%,-50%); display:flex; flex-direction:column; align-items:center; }
+.pin-outer { width:38px; height:38px; background:var(--amber); border-radius:50% 50% 50% 0; transform:rotate(-45deg); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(0,0,0,.4); animation:pinBounce 2.5s ease-in-out infinite; }
+@keyframes pinBounce { 0%,100%{transform:rotate(-45deg) translateY(0)} 50%{transform:rotate(-45deg) translateY(-5px)} }
+.pin-inner { width:13px; height:13px; background:#fff; border-radius:50%; transform:rotate(45deg); }
+.pin-shadow { width:10px; height:3px; background:rgba(0,0,0,.3); border-radius:50%; margin-top:3px; animation:shadowP 2.5s ease-in-out infinite; }
+@keyframes shadowP { 0%,100%{transform:scaleX(1)} 50%{transform:scaleX(.7)} }
+.map-info-strip { padding:1.1rem 1.4rem; background:var(--cacao); }
+.map-farm { font-family:'Outfit',sans-serif; font-size:.95rem; font-weight:600; color:var(--cream); margin-bottom:.2rem; }
+.map-coords-line { font-size:.75rem; color:rgba(247,242,232,.5); letter-spacing:.04em; margin-bottom:.6rem; }
+.elev-row { display:flex; align-items:center; gap:.6rem; }
+.elev-text { font-size:.75rem; color:rgba(247,242,232,.6); white-space:nowrap; }
+.elev-bar { flex:1; height:4px; background:rgba(255,255,255,.1); border-radius:2px; overflow:hidden; }
+.elev-fill { height:100%; background:linear-gradient(90deg,var(--tropical),var(--amber)); border-radius:2px; }
+
+/* FARMER STORY */
+.story-card { border:1px solid var(--border); border-radius:16px; overflow:hidden; margin-bottom:1.5rem; }
+.story-body { padding:1.6rem; }
+.story-farmer-name { font-family:'Outfit',sans-serif; font-size:1.15rem; font-weight:600; color:var(--cacao); margin-bottom:.25rem; }
+.story-farmer-sub { font-size:.8rem; color:var(--muted); margin-bottom:1.2rem; display:flex; align-items:center; gap:.4rem; }
+.story-farmer-sub span { color:var(--tropical); font-weight:600; }
+.story-text { font-size:.9rem; line-height:1.75; color:var(--text); }
+.story-text p { margin-bottom:.9rem; }
+.story-text p:last-child { margin-bottom:0; }
+
+/* THANK YOU */
+.thankyou-card { background:linear-gradient(135deg, var(--cacao) 0%, #5a2e14 100%); border-radius:16px; padding:1.8rem; position:relative; overflow:hidden; margin-bottom:1.5rem; }
+.thankyou-card::before { content:''; position:absolute; top:-20px; right:-20px; width:120px; height:120px; background:radial-gradient(circle,rgba(45,94,58,.4) 0%,transparent 70%); }
+.ty-icon { font-size:1.8rem; margin-bottom:.8rem; display:block; }
+.ty-title { font-family:'Outfit',sans-serif; font-size:1.1rem; font-weight:600; color:var(--cream); margin-bottom:.6rem; }
+.ty-text { font-size:.86rem; line-height:1.65; color:rgba(247,242,232,.7); }
+
+/* TIMELINE */
+.timeline-title { font-family:'Outfit',sans-serif; font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--tropical); margin-bottom:1.8rem; }
+.timeline { position:relative; }
+.timeline::before { content:''; position:absolute; top:0; bottom:0; left:20px; width:2px; background:var(--warm); }
+.tl-item { display:flex; gap:1.5rem; margin-bottom:2rem; }
+.tl-dot { width:42px; height:42px; flex-shrink:0; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.1rem; position:relative; z-index:1; box-shadow:0 0 0 4px var(--white); }
+.tl-dot.farm    { background:var(--trop-pale); }
+.tl-dot.process { background:#FFF4E6; }
+.tl-dot.lab     { background:#EFF6FF; }
+.tl-dot.ship    { background:var(--paper); }
+.tl-dot.grind   { background:#FDF4FF; }
+.tl-content { flex:1; padding-top:.4rem; }
+.tl-date { font-size:.7rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:.25rem; }
+.tl-event { font-family:'Outfit',sans-serif; font-size:1.02rem; font-weight:600; color:var(--cacao); margin-bottom:.3rem; }
+.tl-detail { font-size:.86rem; color:var(--muted); line-height:1.6; }
+.tl-tags { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.6rem; }
+.tl-tag { font-size:.68rem; font-weight:600; letter-spacing:.04em; background:var(--paper); color:var(--cacao-lt); padding:.2rem .55rem; border-radius:100px; }
+.tl-tag.ok { background:var(--trop-pale); color:var(--tropical); }
+
+/* ACTIONS */
+.result-actions { max-width:1300px; margin:0 auto; padding:0 3rem 3rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
+.btn-back { display:inline-flex; align-items:center; gap:.5rem; border:1.5px solid var(--border); color:var(--muted); padding:.7rem 1.4rem; border-radius:100px; font-size:.84rem; text-decoration:none; transition:all .2s; }
+.btn-back:hover { border-color:var(--cacao); color:var(--cacao); }
+.btn-cacao { display:inline-block; background:var(--cacao); color:var(--cream); padding:.75rem 1.8rem; border-radius:100px; font-size:.88rem; font-weight:600; text-decoration:none; transition:all .2s; }
+.btn-cacao:hover { background:var(--cacao-mid); transform:translateY(-1px); }
+
+/* FOOTER */
+footer { background:var(--cacao); color:var(--cream); padding:3rem 3rem 2rem; }
+.footer-top { max-width:1300px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1fr 1fr; gap:3rem; padding-bottom:3rem; border-bottom:1px solid rgba(247,242,232,.1); }
+.footer-logo-text { font-family:'Outfit',sans-serif; font-size:1.3rem; font-weight:300; letter-spacing:-.02em; display:block; margin-bottom:1rem; }
+.footer-logo-text .dot { color:var(--amber); }
+.footer-tagline { font-size:.84rem; color:rgba(247,242,232,.5); line-height:1.6; }
+.footer-col-title { font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:rgba(247,242,232,.4); margin-bottom:1rem; }
+.footer-col a { display:block; margin-bottom:.6rem; font-size:.84rem; color:rgba(247,242,232,.7); text-decoration:none; transition:color .2s; }
+.footer-col a:hover { color:var(--cream); }
+.footer-bottom { max-width:1300px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding-top:2rem; }
+.footer-copy { font-size:.78rem; color:rgba(247,242,232,.35); }
+.footer-socials { display:flex; gap:.5rem; }
+.social-btn { width:32px; height:32px; border-radius:50%; border:1px solid rgba(247,242,232,.2); display:flex; align-items:center; justify-content:center; font-size:.65rem; font-weight:600; color:rgba(247,242,232,.5); text-decoration:none; transition:all .2s; text-transform:uppercase; }
+.social-btn:hover { border-color:var(--amber); color:var(--amber); }
+
+/* REVEAL */
+.reveal {
+  opacity: 1; transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.js-loaded .reveal {
+  opacity: 0; transform: translateY(32px);
+}
+.js-loaded .reveal.visible { opacity: 1; transform: translateY(0); }
+.d1{transition-delay:.08s} .d2{transition-delay:.16s} .d3{transition-delay:.24s} .d4{transition-delay:.32s}
+
+@media(max-width:1000px){.result-body{grid-template-columns:1fr}.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.result-hero,.result-body,.result-actions,.breadcrumb{padding-left:1.5rem;padding-right:1.5rem}.footer-top{grid-template-columns:1fr;gap:2rem}.nav-inner{padding:0 1.5rem}}
+
+.nav-item.touch-open .dropdown { opacity:1; visibility:visible; pointer-events:auto; transform:translateY(0); }
+.nav-item.touch-open .dropdown.mega-dropdown { opacity:1; visibility:visible; pointer-events:auto; transform:translateY(0); }
+
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — TABLET 768px
+═══════════════════════════════════════════════════════ */
+.hamburger { display: none; }
+@media (max-width: 768px) {
+  html, body { overflow-x: hidden; }
+  * { max-width: 100%; }
+  img, svg, video { max-width: 100%; height: auto; }
+  /* NAV — hamburger */
+  .nav-menu { display: none; flex-direction: column; position: fixed; top: 60px; left: 0; right: 0; bottom: 0; background: var(--white); padding: 1.5rem 1.2rem; overflow-y: auto; z-index: 199; gap: 0; }
+  .nav-menu.open { display: flex; }
+  .nav-item > a { height: auto; padding: 0.9rem 0; font-size: 1.05rem; border-bottom: 1px solid var(--border); }
+  .nav-chevron { display: none; }
+  .dropdown { position: static; opacity: 1; visibility: visible; pointer-events: auto; transform: none; box-shadow: none; border: none; border-radius: 0; padding: 0 0 0 1rem; background: transparent; min-width: unset; display: none; flex-direction: column; }
+  .dropdown.mega-dropdown { min-width: unset; flex-direction: column; }
+  .nav-item.touch-open > .dropdown { display: flex; }
+  .dropdown a { padding: 0.5rem 0; font-size: 0.9rem; border-radius: 0; }
+  .dropdown a:hover { padding-left: 0.5rem; background: none; }
+  .dd-label { padding: 0.6rem 0 0.2rem; }
+  .mega-col { flex: unset; }
+  .nav-actions { gap: 0.5rem; }
+  .nav-shop-btn { padding: 0.45rem 1rem; font-size: 0.78rem; }
+  
+  .nav-icon-btn { display: none; }
+  .hamburger { display: flex !important; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; cursor: pointer; background: none; border: none; padding: 4px; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--cacao); border-radius: 2px; transition: all 0.25s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  section, .steps-sec, .dosage-sec, .ritual-hero, .page-hero,
+  .ritual-cta, .other-rituals, .recipes-sec, .tips-sec, .intention-sec,
+  .practice-sec, .context-sec, .base-sec, .science-sec, .routine-sec,
+  .what-sec, .articles-sec, .learn-hero { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+  .photo-grid { grid-template-columns: 1fr !important; }
+
+  /* NAV — hamburger */
+  .nav-inner { padding: 0 1.2rem; height: 60px; }
+  .nav-menu { 
+    display: none; flex-direction: column; 
+    position: fixed; top: 60px; left: 0; right: 0; bottom: 0;
+    background: var(--white); padding: 1.5rem 1.2rem;
+    overflow-y: auto; z-index: 199; gap: 0;
+  }
+  .nav-menu.open { display: flex; }
+  .nav-item > a { 
+    height: auto; padding: 0.9rem 0; 
+    font-size: 1.05rem; border-bottom: 1px solid var(--border);
+  }
+  .nav-chevron { display: none; }
+  .dropdown { 
+    position: static; opacity: 1; visibility: visible; 
+    pointer-events: auto; transform: none; box-shadow: none;
+    border: none; border-radius: 0; padding: 0 0 0 1rem;
+    background: transparent; min-width: unset;
+    display: none; flex-direction: column;
+  }
+  .dropdown.mega-dropdown { 
+    min-width: unset; flex-direction: column; 
+  }
+  .nav-item.touch-open > .dropdown { display: flex; }
+  .dropdown a { padding: 0.5rem 0; font-size: 0.9rem; border-radius: 0; }
+  .dropdown a:hover { padding-left: 0.5rem; background: none; }
+  .dd-label { padding: 0.6rem 0 0.2rem; }
+  .mega-col { flex: unset; }
+  .nav-actions { gap: 0.5rem; }
+  .nav-shop-btn { padding: 0.4rem 0.9rem; font-size: 0.78rem; }
+
+  /* HAMBURGER BUTTON */
+  .hamburger { 
+    display: flex !important; flex-direction: column; justify-content: center;
+    gap: 5px; width: 36px; height: 36px; cursor: pointer;
+    background: none; border: none; padding: 4px;
+  }
+  .hamburger span { 
+    display: block; width: 22px; height: 2px; 
+    background: var(--cacao); border-radius: 2px;
+    transition: all 0.25s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* SECTIONS — vertical padding */
+  .shop-sec, .why-sec, .science-sec, .origin-sec,
+  .trace-sec, .ritual-sec, .test-sec, .learn-sec,
+  .faq-sec, .articles-sec, .steps-sec, .dosage-sec,
+  .routine-sec, .context-sec, .rituals-sec, .recipes-sec,
+  .tips-sec, .base-sec, .intention-sec, .what-sec,
+  .science-sec, .practice-sec, .other-rituals,
+  .ceremonial-intro, .learn-hero, .filter-bar,
+  .ritual-hero, .page-hero { padding-left: 1.2rem; padding-right: 1.2rem; }
+  
+  .shop-sec, .why-sec, .science-sec, .origin-sec,
+  .trace-sec, .ritual-sec, .test-sec, .learn-sec,
+  .faq-sec { padding-top: 4rem; padding-bottom: 4rem; }
+
+  .final-sec { padding: 5rem 1.2rem; }
+
+  /* HERO */
+  .hero-sec { min-height: 75vh; }
+  .hero-inner { padding: 3.5rem 1.2rem 2rem; }
+  .hero-title { font-size: clamp(2.2rem, 8vw, 3.5rem); }
+  .hero-sub { font-size: 0.95rem; max-width: 100%; }
+  .hero-photo-placeholder { display: none; }
+  .hero-photo-overlay { display: none; }
+  .trust-scroll { flex-wrap: wrap; gap: 0.5rem; }
+
+  /* GRIDS → single column */
+  .origin-inner,
+  .trace-inner,
+  .dosage-inner,
+  .ritual-inner,
+  .ci-inner,
+  .context-grid,
+  .hero-stat-grid { 
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .ritual-inner { display: block !important; }
+  
+  /* PRODUCT CARDS */
+  .prod-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .articles-grid, .other-grid, .rituals-grid,
+  .recipes-grid, .science-grid, .tips-grid { 
+    grid-template-columns: 1fr; gap: 1.2rem; 
+  }
+  .hero-stat-grid { grid-template-columns: 1fr 1fr !important; }
+
+  /* ORIGIN MAP */
+  .vietnam-map { display: none; }
+
+  /* TRACE visual */
+  .trace-visual { height: 280px; }
+
+  /* RITUAL steps */
+  .ritual-steps { grid-template-columns: 1fr 1fr !important; }
+
+  /* TEST grid */
+  .test-grid-wrap { grid-template-columns: 1fr !important; }
+  .test-lifestyle-photo { min-height: 280px !important; }
+  .test-grid { grid-template-columns: 1fr !important; }
+
+  /* LEARN grid */
+  .learn-grid { grid-template-columns: 1fr; }
+  .learn-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+
+  /* SCI grid */
+  .sci-grid { grid-template-columns: 1fr; }
+
+  /* WHY CACAO section */
+  .wc-inner { grid-template-columns: 1fr !important; }
+  .wc-comparison { overflow-x: auto; }
+
+  /* FOOTER */
+  footer { padding: 3rem 1.2rem 2rem; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+
+  /* ANNOUNCE */
+  .announce { font-size: 0.7rem; padding: 0.5rem 0.8rem; }
+
+  /* HERO float cards — hide on mobile */
+  .hero-float { display: none; }
+
+  /* INTENTION prompts */
+  .intention-prompts { grid-template-columns: 1fr; }
+  .intention-grid { grid-template-columns: 1fr 1fr; }
+
+  /* DOSAGE cards */
+  .dosage-cards { grid-template-columns: 1fr 1fr; }
+
+  /* STEP items */
+  .step-item { grid-template-columns: 60px 1fr; gap: 1rem; }
+
+  /* PHASE header */
+  .phase-header { grid-template-columns: 60px 1fr; }
+  .phase-num { font-size: 2rem; }
+
+  /* RITUAL HERO */
+  .ritual-hero-inner { grid-template-columns: 1fr !important; gap: 2.5rem; }
+  .ritual-hero-title { font-size: clamp(2rem, 7vw, 3rem); }
+  .hero-visual { padding: 1.5rem; }
+
+  /* BASE STEPS */
+  .base-steps { grid-template-columns: 1fr 1fr; }
+
+  /* INLINE GRID OVERRIDES */
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr"] { 
+    grid-template-columns: 1fr !important; 
+  }
+  [style*="grid-template-columns: 1fr 1.6fr"],
+  [style*="grid-template-columns:1fr 1.6fr"] { 
+    grid-template-columns: 1fr !important; 
+  }
+  [style*="grid-template-columns: 2fr 1fr 1fr 1fr 1fr"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  [style*="grid-template-columns: repeat(3"] {
+    grid-template-columns: 1fr !important;
+  }
+  [style*="grid-template-columns: repeat(4"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — MOBILE 480px
+═══════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .hero-left { padding: 2rem 1.2rem 1.5rem !important; }
+  .hero-title { font-size: clamp(1.8rem, 9vw, 2.5rem) !important; }
+  .sec-label { font-size: 0.65rem; }
+  h2 { font-size: clamp(1.6rem, 7vw, 2.2rem) !important; }
+  .origin-stats { grid-template-columns: 1fr 1fr !important; }
+  .footer-top { grid-template-columns: 1fr !important; }
+  .footer-col:nth-child(n+3) { display: none; }
+  .nav-shop-btn { display: none; }
+  .ritual-hero-inner { grid-template-columns: 1fr !important; }
+  .dosage-inner { grid-template-columns: 1fr !important; }
+  .context-grid { grid-template-columns: 1fr !important; }
+  .scan-grid { grid-template-columns: 1fr !important; }
+  .photo-grid { grid-template-columns: 1fr !important; }
+  .recipes-grid { grid-template-columns: 1fr !important; }
+  .articles-grid { grid-template-columns: 1fr !important; }
+  .other-grid { grid-template-columns: 1fr !important; }
+  .hero-visual { padding: 1.5rem; }
+  .step-item { grid-template-columns: 50px 1fr; gap: 1rem; }
+  .phase-header { grid-template-columns: 48px 1fr; gap: 1rem; }
+  .contact-wrap { padding: 2.5rem 1.5rem 3rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero-title { font-size: clamp(1.8rem, 9vw, 2.8rem); }
+  .origin-quote { font-size: clamp(2rem, 9vw, 3rem); }
+  .footer-top { grid-template-columns: 1fr; gap: 1.5rem; }
+  .rituals-grid { grid-template-columns: 1fr; }
+  .hero-stat-grid { grid-template-columns: 1fr 1fr; }
+  .dosage-cards { grid-template-columns: 1fr 1fr; }
+  .base-steps { grid-template-columns: 1fr; }
+  .intention-grid { grid-template-columns: 1fr; }
+  .science-grid, .tips-grid { grid-template-columns: 1fr; }
+  .ritual-steps { grid-template-columns: 1fr !important; }
+  .hero-cta-row { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+  .cta-btns { flex-direction: column; }
+  .phase-header { grid-template-columns: 48px 1fr; gap: 1rem; }
+  .step-item { grid-template-columns: 50px 1fr; }
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr"] { 
+    grid-template-columns: 1fr !important; 
+  }
+  [style*="grid-template-columns: repeat(2"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<div class="announce">Free shipping on orders over €95 · Ceremonial Grade · Single Origin Vietnam · <a href="/contact/">Contact Sales →</a></div>
+
+<div class="trust-bar"><div class="trust-track">
+  <div class="trust-item"><span class="trust-dot"></span>Ceremonial Grade</div>
+  <div class="trust-item"><span class="trust-dot"></span>Single Origin Vietnam</div>
+  <div class="trust-item"><span class="trust-dot"></span>100% Pure Cacao</div>
+  <div class="trust-item"><span class="trust-dot"></span>Stone Ground</div>
+  <div class="trust-item"><span class="trust-dot"></span>No Sugar · No Additives</div>
+  <div class="trust-item"><span class="trust-dot"></span>Direct Trade Farmers</div>
+  <div class="trust-item"><span class="trust-dot"></span>Ethical Sourcing</div>
+  <div class="trust-item"><span class="trust-dot"></span>Vegan · Keto</div>
+  <div class="trust-item"><span class="trust-dot"></span>Ceremonial Grade</div>
+  <div class="trust-item"><span class="trust-dot"></span>Single Origin Vietnam</div>
+  <div class="trust-item"><span class="trust-dot"></span>100% Pure Cacao</div>
+  <div class="trust-item"><span class="trust-dot"></span>Stone Ground</div>
+  <div class="trust-item"><span class="trust-dot"></span>No Sugar · No Additives</div>
+  <div class="trust-item"><span class="trust-dot"></span>Direct Trade Farmers</div>
+  <div class="trust-item"><span class="trust-dot"></span>Ethical Sourcing</div>
+  <div class="trust-item"><span class="trust-dot"></span>Vegan · Keto</div>
+</div></div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">kakao<span class="logo-dot">.</span>guru</a>
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="/shop/">Products <span class="nav-chevron"></span></a>
+        <div class="dropdown">
+          <div class="dd-label">Our Products</div>
+          <a href="/shop/250g/">250g Ceremonial Cacao Block</a>
+          <a href="/shop/500g/">500g Ceremonial Cacao Block</a>
+          <div class="sep"></div>
+          <a href="/shop/">→ View All Products</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="/origin/">Story <span class="nav-chevron"></span></a>
+        <div class="dropdown">
+          <div class="dd-label">Our Story</div>
+          <a href="/origin/">About Us</a>
+          <a href="/origin/">Vietnam Cacao</a>
+          <div class="sep"></div>
+          <div class="dd-label">Sourcing</div>
+          <a href="/trace/">QR Traceability</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="/learn/ceremonial-cacao-101/">Learn <span class="nav-chevron"></span></a>
+        <div class="dropdown">
+          <a href="/learn/ceremonial-cacao-101/">Ceremonial Cacao 101</a>
+                    <a href="/learn/superfood/">Why Cacao is a Superfood</a>
+          <a href="/learn/cacao-vs-coffee/">Cacao vs Coffee</a>
+          <a href="/learn/cacao-vs-chocolate/">Cacao vs Chocolate</a>
+          <a href="/learn/ceremonial-vs-powder/">Ceremonial Cacao vs Cacao Powder</a>
+          <div class="sep"></div>
+          <a href="/#ritual">Recipes</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="/#science">Health <span class="nav-chevron"></span></a>
+        <div class="dropdown mega-dropdown">
+          <div class="mega-col">
+            <div class="dd-label">Wellness</div>
+            <a href="/#science">Reduce or Replace Coffee</a>
+            <a href="/#science">Cacao &amp; Stress Regulation</a>
+            <a href="/#science">Magnesium &amp; Sleep</a>
+            <a href="/#science">High in Flavonoids</a>
+            <a href="/#science">Emotional Wellbeing</a>
+          </div>
+          <div class="mega-col">
+            <div class="dd-label">Biohacking</div>
+            <a href="/#science">Theobromine Benefits</a>
+            <a href="/#science">Cacao &amp; Focus</a>
+            <a href="/#science">Antioxidant Power</a>
+            <a href="/#science">Longevity &amp; Anti-Ageing</a>
+            <a href="/#science">Heart Health</a>
+            <a href="/#science">Cognitive Performance</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item"><a href="/ritual/">Rituals <span class="nav-chevron"></span></a>
+        <div class="dropdown">
+          <a href="/ritual/morning/">Morning Ritual</a>
+          <a href="/ritual/evening/">Evening Ritual</a>
+          <a href="/ritual/latte-recipes/">Latte Recipes</a>
+          <a href="/ritual/mindful-practice/">Mindful Cacao Practice</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="/#faq">About <span class="nav-chevron"></span></a>
+        <div class="dropdown">
+          <a href="/origin/">About kakao.guru</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </li>
+    </ul>
+    <div class="nav-actions">
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      
+      
+      <button class="nav-icon-btn" title="Cart"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 1 L3.5 1 L5.5 11 L14 11 L16 4 L4.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="14.5" r="1.5" fill="currentColor"/><circle cx="13" cy="14.5" r="1.5" fill="currentColor"/></svg></button>
+      <a href="/contact/" class="nav-shop-btn">Contact Sales</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="/">Home</a><span>›</span>
+  <a href="/trace/">QR Traceability</a><span>›</span>
+  <span>VN-GL-2601-03</span>
+</div>
+
+<!-- HERO -->
+<section class="result-hero">
+  <div class="rh-inner">
+    <div class="rh-left">
+      <div class="verified-badge">Origin Verified</div>
+      <div class="batch-code">Batch <strong>VN-GL-2601-03</strong></div>
+      <div class="batch-sub">Ceremonial Cacao Block · Gia Lai, Vietnam · January 2026</div>
+      <div class="meta-pills">
+        <span class="pill">Vietnam</span>
+        <span class="pill">Gia Lai</span>
+        <span class="pill">January 2026</span>
+        <span class="pill">Import #03</span>
+        <span class="pill green">✓ Lab Tested</span>
+        <span class="pill green">✓ Pesticide Free</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BODY -->
+<div class="result-body">
+
+  <!-- LEFT: TIMELINE -->
+  <div>
+    <div class="timeline-title reveal">Full Journey — Farm to Block</div>
+    <div class="timeline">
+      <div class="tl-item reveal d1">
+        <div class="tl-dot farm">🌱</div>
+        <div class="tl-content">
+          <div class="tl-date">January 15, 2026</div>
+          <div class="tl-event">Harvest — Phuong Mountain Cacao</div>
+          <div class="tl-detail">Cacao pods hand-picked by Le Thi Phuong and family across 2.8 hectares at 780m elevation in Gia Lai. Full ripeness verified by colour and resonance before harvesting each pod.</div>
+          <div class="tl-tags"><span class="tl-tag">Trinitario</span><span class="tl-tag">Gia Lai · 780m</span><span class="tl-tag ok">✓ Direct Trade</span><span class="tl-tag">2.8 ha farm</span></div>
+        </div>
+      </div>
+      <div class="tl-item reveal d2">
+        <div class="tl-dot process">⚗️</div>
+        <div class="tl-content">
+          <div class="tl-date">January 15–22, 2026</div>
+          <div class="tl-event">Fermentation — 6 Days</div>
+          <div class="tl-detail">Full 7-day fermentation in double-layer wooden boxes covered with jute sacks — the longest protocol in our January 2026 batches. Extended fermentation chosen to fully develop Trinitario's complex aromatic compounds. Temperature peaked at 47°C on day 4.</div>
+          <div class="tl-tags"><span class="tl-tag">7 days</span><span class="tl-tag">Double-layer box</span><span class="tl-tag">47°C peak</span><span class="tl-tag ok">✓ Protocol followed</span></div>
+        </div>
+      </div>
+      <div class="tl-item reveal d3">
+        <div class="tl-dot process">☀️</div>
+        <div class="tl-content">
+          <div class="tl-date">January 22 – February 2, 2026</div>
+          <div class="tl-event">Sun Drying — 12 Days</div>
+          <div class="tl-detail">Dried on raised bamboo beds under direct sun, turned every 3 hours during daylight. Final moisture 6.1% — well within the 7.5% specification.</div>
+          <div class="tl-tags"><span class="tl-tag">12 days</span><span class="tl-tag">Bamboo beds</span><span class="tl-tag ok">✓ 6.1% moisture</span><span class="tl-tag ok">✓ Grade A</span></div>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot grind">⚙️</div>
+        <div class="tl-content">
+          <div class="tl-date">February 5, 2026</div>
+          <div class="tl-event">Stone Ground — Ho Chi Minh City</div>
+          <div class="tl-detail">Dedicated stone-grinding run in Ho Chi Minh City to preserve single-batch identity. Phuong's Trinitario releases a distinctly aromatic paste during grinding — noticeable even on the production floor. Temperature held below 45°C. Highest fat content batch of the season.</div>
+          <div class="tl-tags"><span class="tl-tag">Ho Chi Minh City</span><span class="tl-tag">&lt;45°C</span><span class="tl-tag ok">✓ 100% Pure</span><span class="tl-tag ok">✓ No Additives</span></div>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot lab">🧪</div>
+        <div class="tl-content">
+          <div class="tl-date">February 10, 2026</div>
+          <div class="tl-event">Third-Party Lab Testing — All Passed</div>
+          <div class="tl-detail">Best heavy metal readings of the January 2026 batches — cadmium at 0.14 mg/kg, well below the EU 0.30 limit. All other parameters confirmed within EU food safety limits by SGS Vietnam.</div>
+          <div class="tl-tags"><span class="tl-tag ok">✓ Pesticide Free</span><span class="tl-tag ok">✓ Heavy Metals OK</span><span class="tl-tag ok">✓ Aflatoxin OK</span><span class="tl-tag">SGS Vietnam</span></div>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot ship">🚢</div>
+        <div class="tl-content">
+          <div class="tl-date">February 22, 2026</div>
+          <div class="tl-event">Shipped — Ho Chi Minh City → Mersin, Türkiye</div>
+          <div class="tl-detail">Separate sea freight shipment from Ho Chi Minh City to Mersin, Türkiye to maintain small-batch traceability. Temperature-controlled container, 30-day transit.</div>
+          <div class="tl-tags"><span class="tl-tag">HCM → Mersin</span><span class="tl-tag ok">✓ Cold Chain</span><span class="tl-tag">Import #03</span><span class="tl-tag">30-day transit</span></div>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot lab">🏛️</div>
+        <div class="tl-content">
+          <div class="tl-date">March 24, 2026</div>
+          <div class="tl-event">Türkiye Food Import Compliance — Passed</div>
+          <div class="tl-detail">Full Türkiye food import compliance inspection by TAGEM at Mersin. Cadmium, lead, pesticides, aflatoxin, microbiological safety and labelling all verified. Certificate of conformity issued — fastest clearance of the three January batches.</div>
+          <div class="tl-tags"><span class="tl-tag ok">✓ TAGEM Approved</span><span class="tl-tag ok">✓ Mersin Port Cleared</span><span class="tl-tag ok">✓ Certificate Issued</span><span class="tl-tag">TR Import Compliant</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- RIGHT: SIDEBAR -->
+  <div>
+
+    <!-- Origin Data -->
+    <div class="card reveal d1">
+      <div class="card-header">🌍 Origin Data <span class="card-verified">Verified</span></div>
+      <div class="data-row"><div class="dk">Farm</div><div class="dv">Le Thi Phuong — Gia Lai Province</div></div>
+      <div class="data-row"><div class="dk">Coordinates</div><div class="dv">14.0° N, 108.5° E — Highland Vietnam</div></div>
+      <div class="data-row"><div class="dk">Harvest Date</div><div class="dv">January 15, 2026 — Main harvest</div></div>
+      <div class="data-row"><div class="dk">Variety</div><div class="dv">Trinitario</div></div>
+      <div class="data-row"><div class="dk">Farm Size</div><div class="dv">2.8 hectares</div></div>
+      <div class="data-row"><div class="dk">Elevation</div><div class="dv">780m above sea level</div></div>
+      <div class="data-row"><div class="dk">Fermentation</div><div class="dv">7 days — double-layer wooden box, jute-covered</div></div>
+      <div class="data-row"><div class="dk">Drying</div><div class="dv">Greenhouse solar drying · 11 days · humidity-controlled</div></div>
+      <div class="data-row"><div class="dk">Pesticides</div><div class="dv">None detected <span class="chip">Lab Tested</span></div></div>
+      <div class="data-row"><div class="dk">Heavy Metals</div><div class="dv">Below EU limits <span class="chip">Lab Tested</span></div></div>
+      <div class="data-row"><div class="dk">Fat Content</div><div class="dv">51.8%</div></div>
+      <div class="data-row"><div class="dk">Moisture</div><div class="dv">6.1%</div></div>
+      <div class="data-row"><div class="dk">Farmer Premium</div><div class="dv">+51% above commodity price</div></div>
+    </div>
+
+    <!-- Farm Photos -->
+    <div class="photo-section reveal d2">
+      <div class="photo-title">📷 Farm Photos</div>
+      <div class="photo-grid">
+        <div class="photo-placeholder tall">
+          <!-- Replace with: <img src="photos/vn-gl-2601-01-farm.jpg" alt="Phuong Mountain Cacao"> -->
+          <div class="photo-inner"><div class="photo-icon">🌿</div><div class="photo-label">Phuong Mountain Cacao<br>Gia Lai · 780m</div></div>
+        </div>
+        <div class="photo-placeholder short">
+          <!-- Replace with: <img src="photos/vn-gl-2601-01-harvest.jpg" alt="Harvest"> -->
+          <div class="photo-inner"><div class="photo-icon">🍫</div><div class="photo-label">Cacao pods<br>at harvest</div></div>
+        </div>
+        <div class="photo-placeholder short">
+          <!-- Replace with: <img src="photos/vn-gl-2601-01-drying.jpg" alt="Drying"> -->
+          <div class="photo-inner"><div class="photo-icon">☀️</div><div class="photo-label">Sun drying<br>bamboo beds</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map -->
+    <div class="map-card reveal d3">
+      <div class="map-visual">
+        <div class="map-grid-bg"></div>
+        <div class="map-contour" style="width:220px;height:140px;top:30px;left:50px;"></div>
+        <div class="map-contour" style="width:140px;height:90px;top:55px;left:90px;"></div>
+        <div class="map-label-vn">Vietnam — Gia Lai Province</div>
+        <div class="pin-wrap"><div class="pin-outer"><div class="pin-inner"></div></div><div class="pin-shadow"></div></div>
+      </div>
+      <div class="map-info-strip">
+        <div class="map-farm">Phuong Mountain Cacao · Gia Lai</div>
+        <div class="map-coords-line">14.0125° N, 108.4511° E</div>
+        <div class="elev-row"><span class="elev-text">780m elevation</span><div class="elev-bar"><div class="elev-fill" style="width:60%"></div></div></div>
+      </div>
+    </div>
+
+    <!-- Farmer Story -->
+    <div class="story-card reveal">
+      <div class="card-header">🧑‍🌾 Farmer Story</div>
+      <div class="story-body">
+        <div class="story-farmer-name">Le Thi Phuong</div>
+        <div class="story-farmer-sub">Phuong Mountain Cacao · <span>Gia Lai Province</span> · 2.8 hectares</div>
+        <div class="story-text">
+          <p>Le Thi Phuong has grown cacao on the same hillside plot in Gia Lai for over fifteen years. He inherited the land from his father, who originally planted coffee and pepper before Hoa converted the slopes to cacao in 2009 — a gamble that has since defined his family's livelihood.</p>
+          <p>Hoa is known among our partners for his patience during fermentation. He refuses to cut the process short even when market conditions favour faster throughput, believing that six full days in the wooden box is the only way to unlock the complexity the Trinitario hybrid grown at this altitude can deliver.</p>
+          <p>His farm sits at 850 metres — high enough for cooler nights that slow the cacao's growth and concentrate its flavour, but sheltered enough from the highland winds to allow consistent yields through the January harvest season.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thank You -->
+    <div class="thankyou-card reveal">
+      <span class="ty-icon">🙏</span>
+      <div class="ty-title">Thank you for choosing traceable cacao.</div>
+      <div class="ty-text">By scanning this code, you've connected directly with the person who grew your cacao. Le Thi Phuong and his family spent weeks carefully harvesting, fermenting and drying these beans so you could experience something real. We hope every cup reminds you of the hands behind it.</div>
+    </div>
+
+  </div>
+</div>
+
+<div class="result-actions">
+  <a href="/trace/" class="btn-back">← Trace Another Batch</a>
+  <a href="/contact/" class="btn-cacao">Contact Sales</a>
+</div>
+
+<footer>
+ >guru</span><p class="footer-tagline">Premium ceremonial cacao from the highlands of Vietnam. Pure, traceable, ethically sourced.</p></div>
+    <div class="footer-col"><div class="footer-col-title">Products</div><a href="/shop/250g/">250g Cacao Block</a><a href="/shop/500g/">500g Cacao Block</a></div>
+    <div class="footer-col"><div class="footer-col-title">Story</div><a href="/origin/">About Us</a><a href="/origin/">Vietnam Cacao</a><a href="/trace/">Traceability</a></div>
+    <div class="footer-col"><div class="footer-col-title">Learn</div><a href="/#learn">Ceremonial Cacao 101</a><a href="/#learn">Cacao vs Coffee</a><a href="/#ritual">Cacao Recipes</a></div>
+    <div class="footer-col"><div class="footer-col-title">Help</div><a href="/#faq">FAQ</a><a href="/contact/">Contact Us</a><a href="/#faq">Shipping Policy</a></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 kakao.guru — Pure Ceremonial Cacao · Spain · Vietnam</div>
+    <div class="footer-socials"><a href="#" class="social-btn">ig</a><a href="#" class="social-btn">tk</a><a href="#" class="social-btn">yt</a></div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold:0.08, rootMargin:'0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+window.addEventListener('scroll', () =>
+
+const _hbg = document.getElementById('hamburger');
+const _nav = document.querySelector('.nav-menu');
+if (_hbg && _nav) {
+  _hbg.addEventListener('click', function() {
+    this.classList.toggle('open');
+    _nav.classList.toggle('open');
+    document.body.style.overflow = _nav.classList.contains('open') ? 'hidden' : '';
+  });
+}
+</script>
+</body>
+</html>
