@@ -1,0 +1,14 @@
+# kakao.guru — robots.txt
+# Generated: 2026-03-21
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private paths (none currently)
+Disallow: /cdn-cgi/
+
+# Sitemap location
+Sitemap: https://kakao.guru/sitemap.xml
+
+# Crawl-delay for polite bots
+Crawl-delay: 1
