@@ -115,7 +115,7 @@ footer{background:var(--cacao);padding:4rem 3rem 2rem;}
 @media(max-width:1024px){.contact-wrap{grid-template-columns:1fr;gap:3rem;}}
 @media(max-width:768px){.page-hero{padding:3rem 1.5rem;}.contact-wrap{padding:3rem 1.5rem 4rem;}.form-row{grid-template-columns:1fr;}.nav-inner{padding:0 1.5rem;}.footer-top{grid-template-columns:1fr 1fr;gap:2rem;}footer{padding:3rem 1.5rem 1.5rem;}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"Contact — kakao.guru","url":"https://kakao.guru/contact/","description":"Contact kakao.guru — questions about ceremonial cacao, wholesale and artisan sales, sourcing, traceability, or press enquiries.","publisher":{"@type":"Organization","name":"kakao.guru","url":"https://kakao.guru","contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"contact@kakao.guru","availableLanguage":["English","Turkish"]}}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"Contact — kakao.guru","url":"https://kakao.guru/contact/","description":"Contact kakao.guru — questions about ceremonial cacao, wholesale and artisan sales, sourcing, traceability, or press enquiries.","publisher":{"@type":"Organization","name":"kakao.guru","url":"https://kakao.guru","contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"hello@kakao.guru","availableLanguage":["English","Turkish"]}}}</script>
 </head>
 <body>
 
@@ -198,7 +198,7 @@ footer{background:var(--cacao);padding:4rem 3rem 2rem;}
         <a href="/faq/">About <span class="nav-chevron"></span></a>
         <div class="dropdown">
           <a href="/origin/">About kakao.guru</a>
-          <a href="mailto:contact@kakao.guru">Contact</a>
+          <a href="/contact/">Contact</a>
         </div>
       </li>
     </ul>
@@ -239,7 +239,7 @@ footer{background:var(--cacao);padding:4rem 3rem 2rem;}
     <div class="contact-block">
       <div class="contact-block-label">General Enquiries</div>
       <div class="contact-block-title">Product & Order Questions</div>
-      <p class="contact-block-text">Questions about our ceremonial cacao, preparation, sourcing, or your order — use the form or email us directly at <a href="mailto:contact@kakao.guru">contact@kakao.guru</a></p>
+      <p class="contact-block-text">Questions about our ceremonial cacao, preparation, sourcing, or your order — use the form or email us directly at <a href="mailto:hello@kakao.guru">hello@kakao.guru</a></p>
     </div>
 
     <div class="contact-divider"></div>
@@ -348,7 +348,7 @@ footer{background:var(--cacao);padding:4rem 3rem 2rem;}
     <div class="footer-col">
       <div class="footer-col-title">Help</div>
       <a href="/faq/">FAQ</a>
-      <a href="mailto:contact@kakao.guru">Contact</a>
+      <a href="/contact/">Contact</a>
       <a href="/privacy/">Privacy Policy</a>
       <span style="color:rgba(235,243,237,0.4);cursor:default;">Shipping Policy</span>
       <span style="color:rgba(235,243,237,0.4);cursor:default;">Terms of Service</span>
@@ -387,7 +387,7 @@ function handleSubmit(e) {
   const lastName = document.getElementById('lastName').value.trim();
   const mailSubject = encodeURIComponent(`[kakao.guru] ${subjectMap[subject] || subject}`);
   const mailBody = encodeURIComponent(`Name: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`);
-  window.location.href = `mailto:contact@kakao.guru?subject=${mailSubject}&body=${mailBody}`;
+  window.location.href = `mailto:hello@kakao.guru?subject=${mailSubject}&body=${mailBody}`;
   document.getElementById('contactForm').style.display = 'none';
   document.getElementById('formSuccess').classList.add('visible');
 }
