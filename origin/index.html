@@ -1488,6 +1488,29 @@ footer {
 
 
   .vietnam-inner { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+
+  /* ── COOKIE BANNER MOBILE COMPACT ─────────────────── */
+  #cookieBanner {
+    padding: 0.7rem 1rem !important;
+    gap: 0.6rem !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  #cookieBanner p {
+    font-size: 0.72rem !important;
+    line-height: 1.4 !important;
+    max-width: 100% !important;
+  }
+  #cookieBanner > div {
+    width: 100% !important;
+    gap: 0.5rem !important;
+  }
+  #cookieBanner button {
+    flex: 1 !important;
+    padding: 0.45rem 0.8rem !important;
+    font-size: 0.75rem !important;
+    text-align: center !important;
+  }
 }
 /* ── END MOBILE CSS ──────────────────────────────────────── */
 
@@ -2206,7 +2229,7 @@ window.addEventListener('scroll', () => {
 </div>
 <script>
 (function(){
-  var consent = localStorage.getItem('cookie_consent');
+  var consent = localStorage.getItem('kakao_cookie_consent');
   if (!consent) {
     document.getElementById('cookieBanner').style.display = 'flex';
   }
@@ -2215,11 +2238,11 @@ window.addEventListener('scroll', () => {
   }
 })();
 function acceptCookies() {
-  localStorage.setItem('cookie_consent', 'accepted');
+  localStorage.setItem('kakao_cookie_consent', 'accepted');
   document.getElementById('cookieBanner').style.display = 'none';
 }
 function declineCookies() {
-  localStorage.setItem('cookie_consent', 'declined');
+  localStorage.setItem('kakao_cookie_consent', 'declined');
   window['ga-disable-G-JHHG307613'] = true;
   document.getElementById('cookieBanner').style.display = 'none';
 }

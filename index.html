@@ -1498,6 +1498,503 @@ footer {
   .ritual-steps { grid-template-columns: 1fr !important; gap: 1rem !important; }
   .trust-bar { display: none !important; }
   .hero-left { padding: 2.5rem 1.1rem 2rem !important; }
+
+
+  /* ════════════════════════════════════════════════════
+     MOBILE LANDING PAGE REDESIGN
+     All rules apply ONLY at max-width:767px
+     Desktop layout untouched.
+     ════════════════════════════════════════════════════ */
+
+  /* ── COOKIE BANNER MOBILE COMPACT ─────────────────── */
+  #cookieBanner {
+    padding: 0.7rem 1rem !important;
+    gap: 0.6rem !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  #cookieBanner p {
+    font-size: 0.72rem !important;
+    line-height: 1.4 !important;
+    max-width: 100% !important;
+  }
+  #cookieBanner > div {
+    width: 100% !important;
+    gap: 0.5rem !important;
+  }
+  #cookieBanner button {
+    flex: 1 !important;
+    padding: 0.45rem 0.8rem !important;
+    font-size: 0.75rem !important;
+    text-align: center !important;
+  }
+
+  /* ── HERO: compact, image-forward ─────────────────── */
+  .hero {
+    min-height: unset !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    background: var(--cream) !important;
+  }
+  .hero-left {
+    padding: 2rem 1.25rem 1.5rem !important;
+    order: 2;
+    background: var(--cream) !important;
+  }
+  /* Show a mobile hero visual strip at top */
+  .hero::before {
+    content: '';
+    display: block;
+    order: 1;
+    height: 200px;
+    background: linear-gradient(135deg, var(--cacao) 0%, var(--cacao-mid) 60%, var(--tropical) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-tag {
+    font-size: 0.65rem !important;
+    letter-spacing: 0.06em !important;
+    margin-bottom: 0.8rem !important;
+  }
+  .hero-h1 {
+    font-size: clamp(2rem, 9vw, 2.6rem) !important;
+    line-height: 1.08 !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .hero-sub {
+    font-size: 0.88rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1.1rem !important;
+    color: var(--muted) !important;
+  }
+  .hero-badges {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.35rem !important;
+    margin-bottom: 1.2rem !important;
+  }
+  .hbadge {
+    font-size: 0.68rem !important;
+    padding: 0.25rem 0.6rem !important;
+    background: var(--trop-pale) !important;
+    color: var(--tropical) !important;
+    border-radius: 99px !important;
+    border: 1px solid rgba(45,94,58,0.2) !important;
+    font-weight: 500 !important;
+  }
+  .hero-ctas {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.6rem !important;
+    margin-top: 0 !important;
+  }
+  .hero-ctas .btn-cacao,
+  .hero-ctas .btn-outline {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 0.85rem 1rem !important;
+    font-size: 0.82rem !important;
+    min-height: 48px !important;
+  }
+  .hero-float,
+  .hero-right { display: none !important; }
+
+  /* ── TRUST BAR: completely hidden mobile ───────────── */
+  .trust-bar { display: none !important; }
+
+  /* ── CEREMONIAL INTRO: collapsed, card style ────────── */
+  .ceremonial-intro {
+    padding: 2rem 1.25rem !important;
+    background: var(--cream) !important;
+  }
+  .ceremonial-intro-inner {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem !important;
+  }
+  .ci-left { order: 1; }
+  .ci-right { display: none !important; }
+  .ci-question-label {
+    font-size: 0.65rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+  .ci-question {
+    font-size: clamp(1.5rem, 6vw, 2rem) !important;
+    margin-bottom: 0.7rem !important;
+  }
+  .ci-answer {
+    font-size: 0.88rem !important;
+    line-height: 1.65 !important;
+    /* Show only first sentence on mobile via line clamp */
+    display: -webkit-box !important;
+    -webkit-line-clamp: 4 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+  /* Expand button for ci-answer */
+  .ci-answer.expanded {
+    display: block !important;
+    -webkit-line-clamp: unset !important;
+  }
+  .ci-read-more {
+    display: inline-block !important;
+    margin-top: 0.5rem !important;
+    font-size: 0.8rem !important;
+    color: var(--tropical) !important;
+    cursor: pointer !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    font-family: inherit !important;
+  }
+  .ci-pillars { display: none !important; }
+
+  /* ── WHAT IS CACAO: horizontal scroll chips ─────────── */
+  .what-cacao {
+    padding: 1.8rem 1.25rem !important;
+  }
+  .what-inner {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 0.75rem !important;
+    scrollbar-width: none !important;
+    padding-bottom: 0.5rem !important;
+  }
+  .what-inner::-webkit-scrollbar { display: none !important; }
+  .wc-item {
+    flex: 0 0 140px !important;
+    min-width: 0 !important;
+    background: rgba(255,255,255,0.08) !important;
+    border-radius: 14px !important;
+    padding: 1rem !important;
+    text-align: center !important;
+  }
+  .wc-icon {
+    margin: 0 auto 0.5rem !important;
+  }
+  .wc-title {
+    font-size: 0.78rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.3rem !important;
+  }
+  .wc-desc {
+    font-size: 0.72rem !important;
+    line-height: 1.45 !important;
+    opacity: 0.75 !important;
+    display: none !important;
+  }
+
+  /* ── SHOP: single card, horizontal scroll ────────────── */
+  .shop-sec {
+    padding: 2rem 0 2rem 1.25rem !important;
+  }
+  .shop-header {
+    padding-right: 1.25rem !important;
+    margin-bottom: 1.2rem !important;
+  }
+  .shop-header h2 { font-size: clamp(1.5rem, 6vw, 2rem) !important; }
+  .shop-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 0.85rem !important;
+    scrollbar-width: none !important;
+    padding-right: 1.25rem !important;
+    padding-bottom: 0.5rem !important;
+    grid-template-columns: unset !important;
+  }
+  .shop-grid::-webkit-scrollbar { display: none !important; }
+  .product-card {
+    flex: 0 0 260px !important;
+    min-width: 0 !important;
+    max-width: 260px !important;
+  }
+  .pc-img {
+    height: 180px !important;
+    min-height: unset !important;
+  }
+  .pc-body { padding: 1rem !important; }
+  .pc-name { font-size: 0.9rem !important; }
+  .pc-sub { font-size: 0.75rem !important; }
+  .pc-btn {
+    display: block !important;
+    text-align: center !important;
+    min-height: 44px !important;
+    line-height: 44px !important;
+    padding: 0 !important;
+    font-size: 0.82rem !important;
+  }
+
+  /* ── WHY CACAO: simplified, no table ────────────────── */
+  .why-sec {
+    padding: 2rem 1.25rem !important;
+  }
+  .why-inner {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .why-title { font-size: clamp(1.6rem, 6vw, 2.2rem) !important; }
+  .why-text { font-size: 0.88rem !important; line-height: 1.65 !important; }
+  .compare-table { display: none !important; }
+  /* Mobile comparison strips */
+  .mob-compare { display: flex !important; }
+  
+  /* ── SCIENCE: 2×3 icon grid ──────────────────────────── */
+  .science-sec {
+    padding: 2rem 1.25rem !important;
+  }
+  .science-header {
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .sci-title { font-size: clamp(1.5rem, 6vw, 2rem) !important; }
+  .sci-intro { font-size: 0.85rem !important; line-height: 1.6 !important; }
+  .sci-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+  .sci-card {
+    padding: 1rem 0.9rem !important;
+    border-radius: 14px !important;
+    background: var(--paper) !important;
+    border: 1px solid var(--border) !important;
+  }
+  .sci-ico { margin-bottom: 0.5rem !important; }
+  .sci-name { font-size: 0.82rem !important; font-weight: 600 !important; margin-bottom: 0.25rem !important; }
+  .sci-desc { font-size: 0.75rem !important; line-height: 1.45 !important; }
+
+  /* ── ORIGIN: compact strip ───────────────────────────── */
+  .origin-sec {
+    padding: 2rem 1.25rem !important;
+  }
+  .origin-inner {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem !important;
+  }
+  .origin-map { display: none !important; }
+  .origin-quote { font-size: clamp(1.6rem, 6.5vw, 2.2rem) !important; }
+  .origin-text { font-size: 0.88rem !important; line-height: 1.65 !important; }
+  .origin-detail { font-size: 0.82rem !important; padding: 0.8rem 1rem !important; }
+  .origin-stats {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.6rem !important;
+  }
+  .ostat-n { font-size: 1.3rem !important; }
+  .ostat-l { font-size: 0.68rem !important; }
+  .farm-photo-card { display: none !important; }
+
+  /* ── QR TRACEABILITY: icon + text strip ─────────────── */
+  .trace-sec {
+    padding: 2rem 1.25rem !important;
+  }
+  .trace-inner {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem !important;
+  }
+  .trace-visual { display: none !important; }
+  .trace-title { font-size: clamp(1.5rem, 6vw, 2rem) !important; }
+  .trace-text { font-size: 0.88rem !important; line-height: 1.65 !important; }
+  .trace-steps {
+    flex-direction: column !important;
+    gap: 0.6rem !important;
+  }
+  .tstep {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+  }
+  .tstep-n {
+    flex-shrink: 0 !important;
+    width: 28px !important; height: 28px !important;
+    font-size: 0.72rem !important;
+    line-height: 28px !important;
+  }
+
+  /* ── RITUAL: vertical numbered steps ────────────────── */
+  .ritual-sec {
+    padding: 2rem 1.25rem !important;
+  }
+  .ritual-inner {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    display: block !important;
+  }
+  .ritual-header { margin-bottom: 1.2rem !important; }
+  .ritual-title { font-size: clamp(1.5rem, 6vw, 2rem) !important; }
+  .ritual-steps {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 0.9rem !important;
+  }
+  .rstep {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+    background: var(--cream) !important;
+    border-radius: 12px !important;
+    padding: 0.9rem 1rem !important;
+  }
+  .rstep-n {
+    font-size: 1.4rem !important;
+    font-weight: 200 !important;
+    color: var(--amber) !important;
+    flex-shrink: 0 !important;
+    line-height: 1 !important;
+    padding-top: 0.1rem !important;
+    min-width: 2rem !important;
+  }
+  .rstep-t { font-size: 0.88rem !important; font-weight: 600 !important; margin-bottom: 0.25rem !important; }
+  .rstep-d { font-size: 0.8rem !important; line-height: 1.5 !important; }
+  .ritual-visual { display: none !important; }
+
+  /* ── TESTIMONIALS: single card ───────────────────────── */
+  .test-sec {
+    padding: 2rem 1.25rem !important;
+  }
+  .test-inner { max-width: 100% !important; }
+  .test-header { margin-bottom: 1.2rem !important; }
+  .test-title { font-size: clamp(1.4rem, 5.5vw, 1.9rem) !important; }
+  .test-grid-wrap {
+    display: block !important;
+    grid-template-columns: unset !important;
+  }
+  .test-lifestyle-photo { display: none !important; }
+  .test-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+  .tcard {
+    padding: 1rem 1.1rem !important;
+    border-radius: 14px !important;
+  }
+  .tcard-q { font-size: 0.88rem !important; line-height: 1.55 !important; }
+  .tcard-author { font-size: 0.75rem !important; }
+
+  /* ── LEARN PREVIEW: 1-col cards ─────────────────────── */
+  .learn-sec {
+    padding: 2rem 1.25rem !important;
+  }
+  .learn-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.8rem !important;
+    margin-bottom: 1.2rem !important;
+  }
+  .learn-title { font-size: clamp(1.4rem, 5.5vw, 1.9rem) !important; }
+  .learn-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.8rem !important;
+    overflow: unset !important;
+  }
+  .lcard { padding: 1rem 1.1rem !important; border-radius: 14px !important; }
+  .lcard-title { font-size: 0.9rem !important; font-weight: 600 !important; margin-bottom: 0.3rem !important; }
+  .lcard-desc { font-size: 0.8rem !important; line-height: 1.5 !important; }
+
+  /* ── FAQ: all items, tight ────────────────────────────── */
+  .faq-sec {
+    padding: 2rem 1.25rem !important;
+  }
+  .faq-inner { max-width: 100% !important; }
+  .faq-title { font-size: clamp(1.4rem, 5.5vw, 1.8rem) !important; margin-bottom: 1.2rem !important; }
+  .faq-item {
+    padding: 0.8rem 0 !important;
+    border-bottom: 1px solid var(--border) !important;
+  }
+  .faq-q {
+    font-size: 0.88rem !important;
+    font-weight: 500 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    text-align: left !important;
+  }
+  .faq-a {
+    font-size: 0.82rem !important;
+    line-height: 1.6 !important;
+    padding-top: 0.5rem !important;
+  }
+
+  /* ── FINAL CTA: full-width punch ─────────────────────── */
+  .final-sec {
+    padding: 3rem 1.25rem !important;
+  }
+  .final-eyebrow { font-size: 0.68rem !important; }
+  .final-title { font-size: clamp(1.6rem, 7vw, 2.2rem) !important; margin-bottom: 0.6rem !important; }
+  .final-sub { font-size: 0.85rem !important; margin-bottom: 1.5rem !important; }
+  .final-ctas {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.6rem !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+  }
+  .final-ctas .btn-cacao,
+  .final-ctas .btn-outline {
+    display: block !important;
+    width: 100% !important;
+    padding: 0.9rem 1.5rem !important;
+    min-height: 50px !important;
+    font-size: 0.88rem !important;
+    text-align: center !important;
+  }
+
+  /* ── SECTION LABEL common ────────────────────────────── */
+  .sec-label { font-size: 0.62rem !important; letter-spacing: 0.1em !important; }
+
+  /* ── MOBILE COMPARISON STRIP (replaces table) ────────── */
+  .mob-compare {
+    display: none;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  .mob-cmp-col {
+    flex: 1;
+    background: var(--white);
+    border-radius: 12px;
+    padding: 0.9rem;
+    border: 1px solid var(--border);
+  }
+  .mob-cmp-head {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    color: var(--cacao);
+  }
+  .mob-cmp-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+    font-size: 0.72rem;
+    color: var(--muted);
+    line-height: 1.4;
+    margin-bottom: 0.4rem;
+  }
+  .mob-cmp-row .check { color: var(--tropical); font-size: 0.8rem; flex-shrink: 0; }
+  .mob-cmp-row .cross { color: #c0392b; font-size: 0.8rem; flex-shrink: 0; }
+
+  /* ── SCROLL INDICATOR dot on horizontal scrollers ─────── */
+  .mob-scroll-hint {
+    display: block !important;
+    font-size: 0.68rem;
+    color: var(--muted);
+    text-align: right;
+    padding-right: 1.25rem;
+    padding-top: 0.4rem;
+    letter-spacing: 0.04em;
+  }
+
 }
 /* ── END MOBILE CSS ──────────────────────────────────────── */
 
@@ -1781,6 +2278,7 @@ footer {
         and as daily medicine. What we offer is that same ancient food — 
         brought to you from the highlands of Vietnam.
       </p>
+      <button class="ci-read-more" onclick="var a=this.previousElementSibling;a.classList.toggle('expanded');this.textContent=a.classList.contains('expanded')?'Show less ↑':'Read more →'">Read more →</button>
       <a href="/learn/" class="ci-cta">Explore the full guide →</a>
     </div>
     <div class="ci-right">
@@ -1935,6 +2433,7 @@ footer {
     </div>
 
   </div>
+  <p class="mob-scroll-hint" aria-hidden="true">swipe for more →</p>
 </section>
 
 <!-- WHY CACAO -->
@@ -1945,6 +2444,23 @@ footer {
       <h2 class="why-title">Coffee gives energy.<br><em>Cacao gives balance.</em></h2>
       <p class="why-text">Most people rely on coffee — but caffeine often brings jitters, crashes, and elevated cortisol. Cacao works differently. Its primary compound theobromine delivers smooth, sustained energy without the spike.</p>
       <a href="/learn/cacao-vs-coffee/" class="btn-outline" style="margin-top:1.5rem;display:inline-block;">Read: Cacao vs Coffee →</a>
+      <!-- Mobile comparison strip (desktop sees compare-table) -->
+      <div class="mob-compare" aria-hidden="true">
+        <div class="mob-cmp-col">
+          <div class="mob-cmp-head">☕ Coffee</div>
+          <div class="mob-cmp-row"><span class="cross">✗</span>Energy spike &amp; crash</div>
+          <div class="mob-cmp-row"><span class="cross">✗</span>Cortisol rise</div>
+          <div class="mob-cmp-row"><span class="cross">✗</span>Jitters &amp; anxiety</div>
+          <div class="mob-cmp-row"><span class="cross">✗</span>Disrupts sleep</div>
+        </div>
+        <div class="mob-cmp-col">
+          <div class="mob-cmp-head">🍫 Cacao</div>
+          <div class="mob-cmp-row"><span class="check">✓</span>Smooth, steady energy</div>
+          <div class="mob-cmp-row"><span class="check">✓</span>Mood &amp; focus lift</div>
+          <div class="mob-cmp-row"><span class="check">✓</span>No jitters</div>
+          <div class="mob-cmp-row"><span class="check">✓</span>Sleep-friendly</div>
+        </div>
+      </div>
     </div>
     <div class="reveal d2">
       <table class="compare-table">
@@ -2458,22 +2974,25 @@ document.addEventListener('click', function(e) {
 </div>
 <script>
 (function(){
-  var consent = localStorage.getItem('cookie_consent');
-  if (!consent) {
-    document.getElementById('cookieBanner').style.display = 'flex';
+  var consent = localStorage.getItem('kakao_cookie_consent');
+  var banner = document.getElementById('cookieBanner');
+  if (!consent && banner) {
+    banner.style.display = 'flex';
   }
   if (consent === 'declined') {
     window['ga-disable-G-JHHG307613'] = true;
   }
 })();
 function acceptCookies() {
-  localStorage.setItem('cookie_consent', 'accepted');
-  document.getElementById('cookieBanner').style.display = 'none';
+  localStorage.setItem('kakao_cookie_consent', 'accepted');
+  var b = document.getElementById('cookieBanner');
+  if (b) b.style.display = 'none';
 }
 function declineCookies() {
-  localStorage.setItem('cookie_consent', 'declined');
+  localStorage.setItem('kakao_cookie_consent', 'declined');
   window['ga-disable-G-JHHG307613'] = true;
-  document.getElementById('cookieBanner').style.display = 'none';
+  var b = document.getElementById('cookieBanner');
+  if (b) b.style.display = 'none';
 }
 </script>
 </body>
