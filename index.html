@@ -331,9 +331,10 @@ nav {
 .hero-right {
   position: relative; overflow: hidden;
   background: var(--cacao);
+  min-height: 400px;
 }
 .hero-photo-placeholder {
-  position: absolute; inset: 0;
+  position: absolute; inset: 0; width: 100%; height: 100%;
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   gap: 1rem;
@@ -1087,6 +1088,7 @@ footer {
   .practice-sec, .context-sec, .base-sec, .science-sec, .routine-sec,
   .what-sec, .articles-sec, .learn-hero { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
   .hero { grid-template-columns: 1fr !important; }
+  .hero-right { min-height: 320px; }
   .ceremonial-intro-inner { grid-template-columns: 1fr !important; }
   .what-inner { grid-template-columns: 1fr !important; }
   .shop-grid { grid-template-columns: 1fr !important; }
