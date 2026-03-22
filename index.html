@@ -1199,7 +1199,14 @@ footer {
 }
 .mob-drawer-cta a:hover { background: var(--cacao-mid, #6B3A1F); }
 
-/* ── 3. ALL MOBILE RULES (@media ≤ 767px) ───────────────── */
+/* ── 3. ALL MOBILE RULES (.mob-hero-img { display: none; }
+
+
+.why-title-mobile { display: none; }
+.ostat-mobile { display: none; }
+.mob-lcard { display: none !important; }
+.mob-faq-link { display: none; }
+@media ≤ 767px) ───────────────── */
 @media (max-width: 767px) {
 
   /* 3a. SHOW HAMBURGER, HIDE DESKTOP NAV */
@@ -1543,15 +1550,17 @@ footer {
     background: var(--cream) !important;
   }
   /* Show a mobile hero visual strip at top */
-  .hero::before {
-    content: '';
-    display: block;
+  /* Hero image shown on mobile — hero-right is hidden, we use a pseudo img-strip instead */
+  .mob-hero-img {
+    display: block !important;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center top;
     order: 1;
-    height: 200px;
-    background: linear-gradient(135deg, var(--cacao) 0%, var(--cacao-mid) 60%, var(--tropical) 100%);
-    position: relative;
-    overflow: hidden;
+    border-radius: 0;
   }
+  .hero::before { display: none !important; }
   .hero-tag {
     font-size: 0.65rem !important;
     letter-spacing: 0.06em !important;
@@ -1626,30 +1635,8 @@ footer {
   .ci-answer {
     font-size: 0.88rem !important;
     line-height: 1.65 !important;
-    /* Show only first sentence on mobile via line clamp */
-    display: -webkit-box !important;
-    -webkit-line-clamp: 4 !important;
-    -webkit-box-orient: vertical !important;
-    overflow: hidden !important;
   }
-  /* Expand button for ci-answer */
-  .ci-answer.expanded {
-    display: block !important;
-    -webkit-line-clamp: unset !important;
-  }
-  .ci-read-more {
-    display: inline-block !important;
-    margin-top: 0.5rem !important;
-    font-size: 0.8rem !important;
-    color: var(--tropical) !important;
-    cursor: pointer !important;
-    font-weight: 500 !important;
-    text-decoration: none !important;
-    background: none !important;
-    border: none !important;
-    padding: 0 !important;
-    font-family: inherit !important;
-  }
+  .ci-read-more { display: none !important; }
   .ci-pillars { display: none !important; }
 
   /* ── WHAT IS CACAO: horizontal scroll chips ─────────── */
@@ -1994,7 +1981,41 @@ footer {
     padding-top: 0.4rem;
     letter-spacing: 0.04em;
   }
+/* Fix 4: Why title mobile variant */
+  .why-title-desktop { display: none !important; }
+  .why-title-mobile  { display: inline !important; }
 
+  /* Fix 5: Partner farmers mobile count */
+  .ostat-desktop { display: none !important; }
+  .ostat-mobile  { display: inline !important; }
+
+  /* Fix 6: Hide traceability section on mobile */
+  .trace-sec { display: none !important; }
+
+  /* Fix 7: Learn cards — show mobile cards, hide desktop cards */
+  .lcard:not(.mob-lcard) { display: none !important; }
+  .mob-lcard { display: flex !important; flex-direction: column !important; }
+
+  /* Fix 8: FAQ "see all" link */
+  .mob-faq-link {
+    display: block !important;
+    margin-top: 1.2rem !important;
+    text-align: center !important;
+  }
+  .mob-faq-see-all {
+    display: inline-block !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    color: var(--tropical) !important;
+    text-decoration: none !important;
+    border: 1px solid var(--tropical) !important;
+    padding: 0.7rem 1.4rem !important;
+    border-radius: 99px !important;
+    transition: background 0.2s !important;
+  }
+  .mob-faq-see-all:hover {
+    background: var(--trop-pale) !important;
+  }
 }
 /* ── END MOBILE CSS ──────────────────────────────────────── */
 
@@ -2223,6 +2244,7 @@ footer {
 <!-- TRUST BAR -->
 <!-- HERO -->
 <section class="hero">
+  <img class="mob-hero-img" src="/images/hero-1.jpeg" alt="Ceremonial cacao from Vietnam" aria-hidden="true">
   <div class="hero-left">
     <div class="hero-tag">
       <span class="hero-tag-dot"></span>
@@ -2278,7 +2300,6 @@ footer {
         and as daily medicine. What we offer is that same ancient food — 
         brought to you from the highlands of Vietnam.
       </p>
-      <button class="ci-read-more" onclick="var a=this.previousElementSibling;a.classList.toggle('expanded');this.textContent=a.classList.contains('expanded')?'Show less ↑':'Read more →'">Read more →</button>
       <a href="/learn/" class="ci-cta">Explore the full guide →</a>
     </div>
     <div class="ci-right">
@@ -2321,39 +2342,39 @@ footer {
     <div class="wc-item reveal">
       <div class="wc-icon">
         <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
-          <ellipse cx="20" cy="22" rx="10" ry="13" stroke="#C8913A" stroke-width="1.5"/>
-          <ellipse cx="20" cy="22" rx="5" ry="7" stroke="#C8913A" stroke-width="1" stroke-dasharray="2 2"/>
-          <path d="M20 9 C18 5, 14 4, 13 7 C12 10, 15 12, 20 9Z" fill="#2D5E3A" opacity="0.7"/>
-          <path d="M20 9 C22 5, 26 4, 27 7 C28 10, 25 12, 20 9Z" fill="#2D5E3A" opacity="0.5"/>
+          <path d="M20 8 C20 8, 10 14, 10 22 C10 28, 14.5 33, 20 33 C25.5 33, 30 28, 30 22 C30 14, 20 8, 20 8Z" stroke="#C8913A" stroke-width="1.5" fill="none"/>
+          <path d="M14 20 C14 20, 17 23, 20 22 C23 21, 26 18, 26 18" stroke="#2D5E3A" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="20" cy="22" r="3" fill="#C8913A" opacity="0.3"/>
         </svg>
       </div>
-      <div class="wc-title">Not Chocolate. Not Cocoa Powder.</div>
-      <p class="wc-text">Our cacao is stone-ground from whole fermented cacao beans. 100% cacao. No sugar. No additives. This is the real thing.</p>
-      <a href="/learn/" class="wc-link">What is ceremonial cacao? →</a>
+      <div class="wc-title">Cacao &amp; Emotional Wellbeing</div>
+      <p class="wc-text">Anandamide and serotonin precursors support mood elevation and emotional grounding — naturally.</p>
+      <a href="/health/emotional-wellbeing/" class="wc-link">Learn more →</a>
     </div>
     <div class="wc-item reveal d2">
+      <div class="wc-icon">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+          <circle cx="20" cy="20" r="12" stroke="#2D5E3A" stroke-width="1.5"/>
+          <path d="M14 20 C14 16, 16 13, 20 13 C24 13, 26 16, 26 20" stroke="#C8913A" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M17 25 C18 27, 22 27, 23 25" stroke="#2D5E3A" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="16" cy="20" r="1.5" fill="#C8913A" opacity="0.5"/>
+          <circle cx="24" cy="20" r="1.5" fill="#C8913A" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="wc-title">Cacao &amp; Stress Regulation</div>
+      <p class="wc-text">Magnesium and HPA axis modulation help regulate cortisol and calm the nervous system.</p>
+      <a href="/health/stress-regulation/" class="wc-link">Learn more →</a>
+    </div>
+    <div class="wc-item reveal d3">
       <div class="wc-icon">
         <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
           <path d="M20 4 L22 16 L32 10 L24 19 L36 20 L24 21 L32 30 L22 24 L20 36 L18 24 L8 30 L16 21 L4 20 L16 19 L8 10 L18 16 Z" stroke="#C8913A" stroke-width="1.5" stroke-linejoin="round" fill="none"/>
           <circle cx="20" cy="20" r="3" fill="#C8913A" opacity="0.4"/>
         </svg>
       </div>
-      <div class="wc-title">Clean Energy. Calm Focus.</div>
-      <p class="wc-text">Cacao's primary compound theobromine gives smooth, sustained energy — without the jitters, crash or cortisol spike of coffee.</p>
-      <a href="/learn/cacao-vs-coffee/" class="wc-link">Cacao vs coffee →</a>
-    </div>
-    <div class="wc-item reveal d3">
-      <div class="wc-icon">
-        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
-          <path d="M20 34 C20 34, 8 26, 8 16 C8 10.5, 13.5 6, 20 6 C26.5 6, 32 10.5, 32 16 C32 26, 20 34, 20 34Z" stroke="#2D5E3A" stroke-width="1.5" fill="none"/>
-          <path d="M20 6 C20 6, 20 20, 20 34" stroke="#2D5E3A" stroke-width="1" stroke-dasharray="2 3" opacity="0.5"/>
-          <path d="M8 16 C8 16, 20 18, 32 16" stroke="#2D5E3A" stroke-width="1" stroke-dasharray="2 3" opacity="0.5"/>
-          <circle cx="20" cy="16" r="2.5" fill="#C8913A" opacity="0.6"/>
-        </svg>
-      </div>
-      <div class="wc-title">From Vietnam's Highlands.</div>
-      <p class="wc-text">Sourced directly from small farming families in Dak Lak. Traceable from farm to block. Single origin, single purpose.</p>
-      <a href="/origin/" class="wc-link">Our origin story →</a>
+      <div class="wc-title">Cacao &amp; Focus</div>
+      <p class="wc-text">Theobromine's gentle adenosine antagonism provides sustained mental clarity and attention without stimulant side effects.</p>
+      <a href="/health/focus/" class="wc-link">Learn more →</a>
     </div>
   </div>
 </section>
@@ -2441,7 +2462,7 @@ footer {
   <div class="why-inner">
     <div class="reveal">
       <span class="sec-label">Why Cacao</span>
-      <h2 class="why-title">Coffee gives energy.<br><em>Cacao gives balance.</em></h2>
+      <h2 class="why-title"><span class="why-title-desktop">Coffee gives anxiety.</span><span class="why-title-mobile">Coffee gives anxiety.</span><br><em>Cacao gives balance.</em></h2>
       <p class="why-text">Most people rely on coffee — but caffeine often brings jitters, crashes, and elevated cortisol. Cacao works differently. Its primary compound theobromine delivers smooth, sustained energy without the spike.</p>
       <a href="/learn/cacao-vs-coffee/" class="btn-outline" style="margin-top:1.5rem;display:inline-block;">Read: Cacao vs Coffee →</a>
       <!-- Mobile comparison strip (desktop sees compare-table) -->
@@ -2604,7 +2625,7 @@ footer {
       </div>
       <div class="origin-stats">
         <div class="ostat">
-          <div class="ostat-n">205<span class="unit">+</span></div>
+          <div class="ostat-n"><span class="ostat-desktop">3</span><span class="ostat-mobile">3</span></div>
           <div class="ostat-l">Partner Farmers</div>
         </div>
         <div class="ostat">
@@ -2796,6 +2817,52 @@ footer {
           <span class="lcard-arrow">→</span>
         </div>
       </a>
+
+  <!-- Mobile-only learn cards (hidden on desktop) -->
+  <a href="/learn/superfood/" class="lcard mob-lcard reveal d1">
+    <div class="lcard-top">
+      <div class="lcard-cat">Superfood</div>
+      <div class="lcard-title">Why Cacao is a Superfood</div>
+      <p class="lcard-desc">Magnesium, flavonoids, PEA, anandamide — the complete science behind nature's most powerful plant.</p>
+    </div>
+    <div class="lcard-footer">
+      <span class="lcard-read">Read Article</span>
+      <span class="lcard-arrow">→</span>
+    </div>
+  </a>
+  <a href="/health/theobromine/" class="lcard mob-lcard reveal d2">
+    <div class="lcard-top">
+      <div class="lcard-cat">Health Science</div>
+      <div class="lcard-title">Theobromine Benefits</div>
+      <p class="lcard-desc">Complete bioactive profile — mechanism of action, cardiovascular benefits, cognitive effects, and comparison to caffeine.</p>
+    </div>
+    <div class="lcard-footer">
+      <span class="lcard-read">Read Article</span>
+      <span class="lcard-arrow">→</span>
+    </div>
+  </a>
+  <a href="/health/longevity/" class="lcard mob-lcard reveal d3">
+    <div class="lcard-top">
+      <div class="lcard-cat">Health Science</div>
+      <div class="lcard-title">Longevity &amp; Anti-Ageing</div>
+      <p class="lcard-desc">Telomere protection, oxidative stress reduction and cellular longevity pathways — how cacao's polyphenols support ageing biology.</p>
+    </div>
+    <div class="lcard-footer">
+      <span class="lcard-read">Read Article</span>
+      <span class="lcard-arrow">→</span>
+    </div>
+  </a>
+  <a href="/health/heart-health/" class="lcard mob-lcard reveal">
+    <div class="lcard-top">
+      <div class="lcard-cat">Health Science</div>
+      <div class="lcard-title">Heart Health</div>
+      <p class="lcard-desc">Flavanol-driven eNOS activation, blood pressure regulation, LDL oxidation resistance — the cardiovascular science of cacao.</p>
+    </div>
+    <div class="lcard-footer">
+      <span class="lcard-read">Read Article</span>
+      <span class="lcard-arrow">→</span>
+    </div>
+  </a>
     </div>
   </div>
 </section>
@@ -2838,6 +2905,11 @@ footer {
       <button class="faq-q">How do I prepare cacao? <span class="faq-icon">+</span></button>
       <p class="faq-a">Shave or chop 15–30g of cacao paste. Add hot water or warm plant milk (oat milk recommended). Blend for 30 seconds or whisk vigorously until smooth and frothy. Optionally add a pinch of cinnamon or cayenne. Drink slowly and mindfully.</p>
     </div>
+
+  <!-- Mobile FAQ link -->
+  <div class="mob-faq-link">
+    <a href="/faq/" class="mob-faq-see-all">See 100 Frequently Asked Questions →</a>
+  </div>
   </div>
 </section>
 
