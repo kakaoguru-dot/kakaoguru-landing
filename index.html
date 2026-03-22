@@ -1199,7 +1199,8 @@ footer {
 }
 .mob-drawer-cta a:hover { background: var(--cacao-mid, #6B3A1F); }
 
-/* ── 3. ALL MOBILE RULES (.mob-hero-img { display: none; }
+/* ── 3. ALL MOBILE RULES (@media ≤ 767px) ── */
+.mob-hero-img { display: none; }
 
 
 .why-title-mobile { display: none; }
@@ -1544,11 +1545,7 @@ footer {
     flex-direction: column !important;
     background: var(--cream) !important;
   }
-  .hero-left {
-    padding: 2rem 1.25rem 1.5rem !important;
-    order: 2;
-    background: var(--cream) !important;
-  }
+  /* hero-left mobile rule moved to @media */
   /* Show a mobile hero visual strip at top */
   /* Hero image shown on mobile — hero-right is hidden, we use a pseudo img-strip instead */
   .mob-hero-img {
@@ -2016,7 +2013,12 @@ footer {
   .mob-faq-see-all:hover {
     background: var(--trop-pale) !important;
   }
-}
+
+  .hero-left {
+    padding: 2rem 1.25rem 1.5rem !important;
+    order: 2 !important;
+    background: var(--cream) !important;
+  }}
 /* ── END MOBILE CSS ──────────────────────────────────────── */
 
 </style>
