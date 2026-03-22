@@ -1026,6 +1026,476 @@ footer {
 .nav-item.touch-open .dropdown { opacity:1; visibility:visible; pointer-events:auto; transform:translateY(0); }
 .nav-item.touch-open .dropdown.mega-dropdown { opacity:1; visibility:visible; pointer-events:auto; transform:translateY(0); }
 
+
+
+/* ============================================================
+   KAKAO.GURU — UNIVERSAL MOBILE CSS
+   Applies ONLY to viewport < 768px.
+   Desktop layout (≥768px) is 100% untouched.
+   ============================================================ */
+
+/* ── 1. HAMBURGER BUTTON (hidden on desktop) ─────────────── */
+.mob-hamburger {
+  display: none;
+}
+
+/* ── 2. MOBILE OVERLAY NAV ───────────────────────────────── */
+.mob-nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(43,26,14,0.55);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.28s ease;
+  pointer-events: none;
+}
+.mob-nav-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mob-nav-drawer {
+  display: none;
+  position: fixed;
+  top: 0; right: 0;
+  width: min(88vw, 340px);
+  height: 100dvh;
+  background: var(--white, #FDFAF4);
+  z-index: 501;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transform: translateX(100%);
+  transition: transform 0.32s cubic-bezier(0.4,0,0.2,1);
+  padding: 0 0 2rem 0;
+}
+.mob-nav-drawer.open {
+  transform: translateX(0);
+}
+
+.mob-drawer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.4rem;
+  border-bottom: 1px solid var(--border, rgba(59,31,14,0.1));
+  position: sticky;
+  top: 0;
+  background: var(--white, #FDFAF4);
+  z-index: 2;
+}
+.mob-drawer-logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--cacao, #3B1F0E);
+  text-decoration: none;
+}
+.mob-drawer-logo span { color: var(--tropical, #2D5E3A); }
+
+.mob-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--cacao, #3B1F0E);
+  padding: 0.4rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.mob-close-btn:hover { background: var(--paper, #EDE6D6); }
+
+.mob-nav-list {
+  list-style: none;
+  padding: 0.8rem 0;
+}
+.mob-nav-list li { border-bottom: 1px solid var(--border, rgba(59,31,14,0.08)); }
+.mob-nav-list li:last-child { border-bottom: none; }
+
+.mob-nav-top-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text, #2A1A0E);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.mob-nav-top-link:hover { background: var(--trop-pale, #EBF3ED); }
+.mob-nav-top-link.is-link { justify-content: flex-start; }
+
+.mob-nav-chevron {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  margin-top: -2px;
+  transition: transform 0.22s;
+  flex-shrink: 0;
+}
+.mob-nav-group.mob-open .mob-nav-chevron {
+  transform: rotate(-135deg);
+  margin-top: 4px;
+}
+
+.mob-sub-list {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: var(--paper, #EDE6D6);
+}
+.mob-nav-group.mob-open .mob-sub-list {
+  max-height: 800px;
+}
+
+.mob-sub-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted, #9C8878);
+  font-weight: 600;
+  padding: 0.8rem 1.6rem 0.3rem;
+}
+.mob-sub-list a {
+  display: block;
+  padding: 0.65rem 1.6rem;
+  font-size: 0.86rem;
+  color: var(--text, #2A1A0E);
+  text-decoration: none;
+  transition: color 0.15s, padding-left 0.15s;
+}
+.mob-sub-list a:hover {
+  color: var(--tropical, #2D5E3A);
+  padding-left: 2rem;
+}
+.mob-sub-sep {
+  height: 1px;
+  background: var(--warm, #DDD4BF);
+  margin: 0.3rem 1.2rem;
+}
+
+.mob-drawer-cta {
+  padding: 1.2rem 1.4rem 0;
+}
+.mob-drawer-cta a {
+  display: block;
+  background: var(--cacao, #3B1F0E);
+  color: var(--cream, #F7F2E8);
+  text-align: center;
+  padding: 0.85rem 1.5rem;
+  border-radius: 99px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.mob-drawer-cta a:hover { background: var(--cacao-mid, #6B3A1F); }
+
+/* ── 3. ALL MOBILE RULES (@media ≤ 767px) ───────────────── */
+@media (max-width: 767px) {
+
+  /* 3a. SHOW HAMBURGER, HIDE DESKTOP NAV */
+  .mob-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--cacao, #3B1F0E);
+    padding: 0.45rem;
+    border-radius: 8px;
+    transition: background 0.2s;
+    margin-left: auto;
+  }
+  .mob-hamburger:hover { background: var(--paper, #EDE6D6); }
+
+  .mob-nav-overlay { display: block; }
+  .mob-nav-drawer  { display: block; }
+
+  .nav-menu,
+  .nav-icon-btn,
+  .nav-shop-btn { display: none !important; }
+
+  .nav-inner {
+    padding: 0 1.1rem !important;
+    height: 58px !important;
+  }
+
+  /* 3b. ANNOUNCE BAR */
+  .announce { font-size: 0.72rem; padding: 0.45rem 0.8rem; }
+
+  /* 3c. TRUST BAR (ticker) */
+  .trust-bar { display: none; }
+
+  /* 3d. BREADCRUMB */
+  .breadcrumb {
+    padding: 0.8rem 1.1rem 0 !important;
+    font-size: 0.75rem;
+  }
+
+  /* 3e. FOOTER */
+  footer { padding: 2.5rem 1.1rem 1.5rem !important; }
+  .footer-top {
+    grid-template-columns: 1fr !important;
+    gap: 1.8rem !important;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    padding-top: 1.5rem;
+  }
+  .footer-tagline { max-width: 100%; }
+
+  /* ── PAGE: HOMEPAGE ─────────────────────────────── */
+  .hero {
+    grid-template-columns: 1fr !important;
+    padding: 2.5rem 1.1rem 3rem !important;
+    gap: 2rem !important;
+    min-height: unset !important;
+  }
+  .hero-right { display: none; }
+  .hero-h1 { font-size: clamp(2.1rem, 8vw, 2.8rem) !important; }
+  .hero-sub { font-size: 0.95rem; max-width: 100% !important; }
+  .hero-ctas {
+    flex-direction: column !important;
+    gap: 0.7rem !important;
+  }
+  .hero-ctas a, .hero-ctas button {
+    width: 100%;
+    text-align: center;
+  }
+  .hero-badges { gap: 0.4rem; }
+  .hbadge { font-size: 0.75rem; padding: 0.3rem 0.7rem; }
+
+  .ceremonial-intro-inner,
+  .why-inner,
+  .science-header {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .what-inner {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem !important;
+  }
+  .shop-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem !important;
+  }
+  .sci-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1rem !important;
+  }
+  .origin-inner {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Section padding */
+  .ceremonial-intro,
+  .what-sec,
+  .shop-sec,
+  .why-sec,
+  .science-sec,
+  .origin-sec,
+  .final-cta {
+    padding-left: 1.1rem !important;
+    padding-right: 1.1rem !important;
+  }
+
+  /* ── PAGE: LEARN HUB ────────────────────────────── */
+  .learn-hero { padding: 2.5rem 1.1rem 2rem !important; }
+  .learn-hero-title { font-size: clamp(2rem, 8vw, 2.6rem) !important; }
+  .learn-hero-sub { font-size: 0.92rem; }
+  .filter-bar { padding: 0.8rem 1.1rem !important; overflow-x: auto; }
+  .filter-inner { flex-wrap: nowrap; gap: 0.5rem; }
+  .ftag { white-space: nowrap; flex-shrink: 0; }
+  .articles-sec { padding: 2rem 1.1rem 3.5rem !important; }
+  .articles-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem !important;
+  }
+  .acard-img { aspect-ratio: 2/1; font-size: 2rem; }
+
+  /* ── PAGE: HEALTH & LEARN ARTICLES ─────────────── */
+  .article-wrap {
+    grid-template-columns: 1fr !important;
+    padding: 0 1.1rem !important;
+    gap: 0 !important;
+  }
+  .article-main { padding: 1.5rem 0 !important; }
+  .article-sidebar { display: none !important; }
+  .article-title { font-size: clamp(1.6rem, 6vw, 2.2rem) !important; }
+  .article-subtitle { font-size: 0.95rem !important; }
+  .benefits-grid,
+  .mechanism-grid,
+  .safety-grid,
+  .grades-grid,
+  .comparison-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .llm-fact-grid { grid-template-columns: 1fr !important; }
+  .mol-props { grid-template-columns: 1fr 1fr !important; }
+  .highlight-box { padding: 1rem 1.1rem !important; }
+  .callout-amber,
+  .callout-bio,
+  .callout-hist { padding: 1rem 1.1rem !important; }
+
+  /* Health hub grid */
+  .health-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.9rem !important;
+    padding: 0 1.1rem !important;
+    margin: 2rem auto !important;
+  }
+  .health-hub-hero { padding: 2.5rem 1.1rem 2rem !important; }
+
+  /* ── PAGE: SHOP INDEX ───────────────────────────── */
+  .page-header { padding: 2.5rem 1.1rem 1.5rem !important; }
+  .products-section { padding: 1.5rem 1.1rem 3rem !important; }
+  .products-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem !important;
+  }
+
+  /* ── PAGE: SHOP PRODUCT ─────────────────────────── */
+  .product-section {
+    grid-template-columns: 1fr !important;
+    padding: 1rem 1.1rem 3rem !important;
+    gap: 1.5rem !important;
+  }
+  .gallery { position: static !important; }
+  .gallery-thumbs {
+    grid-template-columns: repeat(4,1fr) !important;
+    gap: 0.5rem !important;
+  }
+  .product-title { font-size: clamp(1.6rem, 6vw, 2rem) !important; }
+  .cta-stack { flex-direction: column !important; gap: 0.7rem !important; }
+  .btn-primary, .btn-secondary, .btn-outline {
+    width: 100% !important;
+    text-align: center !important;
+  }
+  .spec-grid { grid-template-columns: 1fr !important; }
+  .steps-grid { grid-template-columns: 1fr 1fr !important; gap: 1rem !important; }
+  .reviews-grid { grid-template-columns: 1fr !important; }
+
+  /* ── PAGE: RITUAL HUB ───────────────────────────── */
+  .page-hero { padding: 2.5rem 1.1rem 2rem !important; }
+  .page-hero-title { font-size: clamp(2rem, 7vw, 2.6rem) !important; }
+  .rituals-sec { padding: 2rem 1.1rem 3.5rem !important; }
+  .rituals-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.1rem !important;
+  }
+
+  /* ── PAGE: RITUAL DETAIL ────────────────────────── */
+  .ritual-hero { padding: 2.5rem 1.1rem 2rem !important; }
+  .ritual-hero-inner { padding: 0 !important; }
+  .ritual-hero-title { font-size: clamp(1.8rem, 7vw, 2.4rem) !important; }
+  .hero-visual { display: none !important; }
+  .hero-stat-grid {
+    grid-template-columns: repeat(3,1fr) !important;
+    gap: 0.7rem !important;
+  }
+  .hero-cta-row {
+    flex-direction: column !important;
+    gap: 0.7rem !important;
+  }
+  .btn-amber, .btn-ghost {
+    width: 100% !important;
+    text-align: center !important;
+  }
+  .steps-sec { padding: 2.5rem 1.1rem !important; }
+  .step-item { gap: 1rem !important; }
+  .dosage-inner { grid-template-columns: 1fr !important; }
+  .intention-prompts { grid-template-columns: 1fr !important; }
+  .other-grid { grid-template-columns: 1fr 1fr !important; }
+
+  /* ── PAGE: TRACE HUB ────────────────────────────── */
+  .qr-hero-visual { display: none !important; }
+  .steps-grid { grid-template-columns: 1fr !important; }
+  .data-fields { grid-template-columns: 1fr !important; }
+  .how-sec, .data-sec { padding: 2.5rem 1.1rem !important; }
+
+  /* ── PAGE: TRACE BATCH ──────────────────────────── */
+  .result-hero,
+  .result-body,
+  .result-actions {
+    padding-left: 1.1rem !important;
+    padding-right: 1.1rem !important;
+  }
+  .rh-inner { grid-template-columns: 1fr !important; }
+  .photo-grid { grid-template-columns: 1fr 1fr !important; }
+  .map-card { grid-template-columns: 1fr !important; }
+
+  /* ── PAGE: FAQ ──────────────────────────────────── */
+  .faq-hero { padding: 2.5rem 1.1rem !important; }
+  .faq-hero-title { font-size: clamp(1.8rem, 7vw, 2.4rem) !important; }
+  .faq-controls { padding: 1rem 1.1rem !important; }
+  .faq-main {
+    grid-template-columns: 1fr !important;
+    padding: 1.5rem 1.1rem 3rem !important;
+  }
+  .faq-sidebar { display: none !important; }
+  .faq-hero-stats { flex-wrap: wrap; gap: 1.2rem; }
+  .cat-tabs { overflow-x: auto; flex-wrap: nowrap !important; }
+  .cat-tab { white-space: nowrap; flex-shrink: 0; }
+
+  /* ── PAGE: CONTACT ──────────────────────────────── */
+  .contact-wrap {
+    grid-template-columns: 1fr !important;
+    padding: 2rem 1.1rem 3rem !important;
+    gap: 2rem !important;
+  }
+  .form-row { grid-template-columns: 1fr !important; }
+
+  /* ── PAGE: ORIGIN / STORY ───────────────────────── */
+  .about-hero .hero-left,
+  .about-hero { padding: 2.5rem 1.1rem 2rem !important; }
+  .about-hero { grid-template-columns: 1fr !important; }
+  .hero-right.about-right { display: none !important; }
+  .pillars-inner { grid-template-columns: 1fr !important; gap: 1rem !important; }
+  .values-grid  { grid-template-columns: 1fr 1fr !important; }
+  .sf-grid      { grid-template-columns: repeat(3,1fr) !important; }
+  .trace-inner  { grid-template-columns: 1fr !important; }
+  .story-sticky { position: static !important; }
+  .pillars, .story-sec { padding: 2.5rem 1.1rem !important; }
+
+  /* ── PAGE: ORIGIN VIETNAM ───────────────────────── */
+  .vietnam-hero,
+  .vn-hero-inner { padding: 2.5rem 1.1rem 2rem !important; }
+  .region-grid  { grid-template-columns: 1fr !important; }
+  .farm-grid    { grid-template-columns: 1fr !important; }
+  .process-steps { grid-template-columns: 1fr !important; }
+
+  /* ── PAGE: PRIVACY ──────────────────────────────── */
+  .privacy-wrap,
+  .policy-content { padding: 2rem 1.1rem !important; }
+
+  /* ── GLOBAL TYPOGRAPHY SCALE ────────────────────── */
+  h1 { line-height: 1.12 !important; }
+  h2 { font-size: clamp(1.4rem, 5.5vw, 1.9rem) !important; }
+  h3 { font-size: clamp(1.1rem, 4.5vw, 1.4rem) !important; }
+
+  /* ── GLOBAL OVERFLOW PROTECTION ─────────────────── */
+  img, video, iframe, table, pre { max-width: 100% !important; }
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  pre   { overflow-x: auto; }
+
+  /* ── SCROLL MARGIN FOR ANCHOR LINKS ─────────────── */
+  [id] { scroll-margin-top: 70px; }
+
+}
+/* ── END MOBILE CSS ──────────────────────────────────────── */
+
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JHHG307613"></script>
@@ -1140,10 +1610,113 @@ footer {
           <circle cx="13" cy="14.5" r="1.5" fill="currentColor"/>
         </svg>
       </button>
+      <button class="mob-hamburger" id="mobHamburger" aria-label="Open menu" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
       <a href="/shop/" class="nav-shop-btn">Shop Now</a>
     </div>
   </div>
 </nav>
+
+<!-- MOB NAV -->
+<div class="mob-nav-overlay" id="mobOverlay"></div>
+<nav class="mob-nav-drawer" id="mobDrawer" aria-label="Mobile navigation">
+  <div class="mob-drawer-head">
+    <a href="/" class="mob-drawer-logo">kakao<span>.</span>guru</a>
+    <button class="mob-close-btn" id="mobClose" aria-label="Close menu">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <ul class="mob-nav-list">
+    <li class="mob-nav-group">
+      <div class="mob-nav-top-link" role="button" tabindex="0">Products <span class="mob-nav-chevron"></span></div>
+      <div class="mob-sub-list">
+        <div class="mob-sub-label">Our Products</div>
+        <a href="/shop/250g/">250g Ceremonial Cacao Block</a>
+        <a href="/shop/500g/">500g Ceremonial Cacao Block</a>
+        <div class="mob-sub-sep"></div>
+        <a href="/shop/">&#8594; View All Products</a>
+      </div>
+    </li>
+    <li class="mob-nav-group">
+      <div class="mob-nav-top-link" role="button" tabindex="0">Health <span class="mob-nav-chevron"></span></div>
+      <div class="mob-sub-list">
+        <div class="mob-sub-label">Wellness</div>
+        <a href="/health/replace-coffee/">Reduce or Replace Coffee</a>
+        <a href="/health/stress-regulation/">Cacao &amp; Stress Regulation</a>
+        <a href="/health/magnesium-sleep/">Magnesium &amp; Sleep</a>
+        <a href="/health/emotional-wellbeing/">Cacao &amp; Emotional Wellbeing</a>
+        <a href="/health/flavonoids/">High in Flavonoids</a>
+        <div class="mob-sub-sep"></div>
+        <div class="mob-sub-label">Biohacking</div>
+        <a href="/health/theobromine/">Theobromine Benefits</a>
+        <a href="/health/focus/">Cacao &amp; Focus</a>
+        <a href="/health/antioxidant/">Antioxidant Power</a>
+        <a href="/health/longevity/">Longevity &amp; Anti-Ageing</a>
+        <a href="/health/gut-microbiome/">Gut Microbiome</a>
+        <a href="/health/stress-mood/">Stress &amp; Mood Support</a>
+        <a href="/health/heart-health/">Heart Health</a>
+        <a href="/health/neuroplasticity/">Neuroplasticity</a>
+        <a href="/health/nitric-oxide/">Nitric Oxide &amp; Circulation</a>
+        <a href="/health/metabolic-health/">Metabolic Health</a>
+        <a href="/health/cognitive-performance/">Cognitive Performance</a>
+      </div>
+    </li>
+    <li class="mob-nav-group">
+      <div class="mob-nav-top-link" role="button" tabindex="0">Learn <span class="mob-nav-chevron"></span></div>
+      <div class="mob-sub-list">
+        <a href="/learn/ceremonial-cacao-101/">Ceremonial Cacao 101</a>
+        <a href="/learn/superfood/">Why Cacao is a Superfood</a>
+        <a href="/learn/cacao-vs-coffee/">Cacao vs Coffee</a>
+        <a href="/learn/cacao-vs-chocolate/">Cacao vs Chocolate</a>
+        <a href="/learn/ceremonial-vs-powder/">Ceremonial vs Cacao Powder</a>
+        <div class="mob-sub-sep"></div>
+        <a href="/learn/">&#8594; All Guides</a>
+      </div>
+    </li>
+    <li class="mob-nav-group">
+      <div class="mob-nav-top-link" role="button" tabindex="0">Rituals <span class="mob-nav-chevron"></span></div>
+      <div class="mob-sub-list">
+        <a href="/ritual/morning/">Morning Ritual</a>
+        <a href="/ritual/evening/">Evening Ritual</a>
+        <a href="/ritual/latte-recipes/">Latte Recipes</a>
+        <a href="/ritual/mindful-practice/">Mindful Cacao Practice</a>
+      </div>
+    </li>
+    <li class="mob-nav-group">
+      <div class="mob-nav-top-link" role="button" tabindex="0">Story <span class="mob-nav-chevron"></span></div>
+      <div class="mob-sub-list">
+        <a href="/origin/">About kakao.guru</a>
+        <a href="/origin/vietnam/">Vietnam Cacao</a>
+        <a href="/trace/">QR Traceability</a>
+      </div>
+    </li>
+    <li><a class="mob-nav-top-link is-link" href="/faq/">FAQ</a></li>
+    <li><a class="mob-nav-top-link is-link" href="/contact/">Contact</a></li>
+  </ul>
+  <div class="mob-drawer-cta"><a href="/shop/">Shop Now</a></div>
+</nav>
+<script>
+(function(){
+  var ham=document.getElementById('mobHamburger'),
+      ov=document.getElementById('mobOverlay'),
+      dr=document.getElementById('mobDrawer'),
+      cl=document.getElementById('mobClose');
+  if(!ham)return;
+  function open(){ov.classList.add('open');dr.classList.add('open');ham.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+  function close(){ov.classList.remove('open');dr.classList.remove('open');ham.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+  ham.addEventListener('click',open);
+  cl.addEventListener('click',close);
+  ov.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  dr.querySelectorAll('.mob-nav-group .mob-nav-top-link').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var li=this.closest('.mob-nav-group'),was=li.classList.contains('mob-open');
+      dr.querySelectorAll('.mob-nav-group').forEach(function(g){g.classList.remove('mob-open');});
+      if(!was)li.classList.add('mob-open');
+    });
+    btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();this.click();}});
+  });
+})();
+</script>
 
 <!-- TRUST BAR -->
 <!-- HERO -->
