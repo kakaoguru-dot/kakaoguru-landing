@@ -20,7 +20,7 @@
 /learn-ceremonial-vs-powder.html     /learn/ceremonial-vs-powder/ 301
 
 # Health pages — new URLs
-/health/                             /health/theobromine/     301
+# /health/ now has its own index.html — redirect removed 2026-03-22
 /health/replace-coffee               /health/replace-coffee/  301
 /health/stress-regulation            /health/stress-regulation/ 301
 /health/magnesium-sleep              /health/magnesium-sleep/ 301
